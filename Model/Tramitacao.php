@@ -15,6 +15,18 @@ class Tramitacao extends AppModel {
             'className' => 'Grupo',
             //'dependent' => true,
             //'type' => 'RIGHT',
-            'foreignKey' => 'Funcao_entrega_id'),
+            'foreignKey' => 'Funcao_entrega_id')
+    );
+
+    public $validate = array(
+        'funcao_entrega_id' => array(
+            'rule' => 'notBlank'
+        ),        
+        'funcao_recebe_id' => array(
+            'rule' => 'notBlank'
+        ),
+        'processos_id' => array(
+            'rule' => 'notBlank',
+        ),
     );
 } ?>

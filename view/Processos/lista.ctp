@@ -92,7 +92,7 @@ $concluso = 70; // $hoje - $inicio;
                                                 <small>Término estimado: <?php echo $this->Formatacao->data($processo['Processo']['previsao_termino']);?></small>
                                         </td>
                                         <td class="project-people">
-                                            Em posse do <?php echo $processo['Processo']['posse'];?>
+                                            Em posse do <?php echo $grupos[$processo['Processo']['posse_id']];?>
                                             <img alt="image" class="img-circle" src="img/a3.jpg"></a>
                                         </td>
                                         <td class="project-actions">

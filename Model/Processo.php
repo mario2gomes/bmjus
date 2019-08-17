@@ -44,7 +44,7 @@ class Processo extends AppModel {
         ),       
         'data_bgo' => array(
             'rule' => 'notBlank'
-        ),       
+        ),
         'tipo_processos_id' => array(
             'rule' => 'notBlank'
         )       

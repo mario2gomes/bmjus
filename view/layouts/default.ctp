@@ -56,7 +56,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     <ul class="nav metismenu" id="side-menu">
                         <li class="nav-header">
                             <div class="dropdown profile-element">
-                                <img alt="image" class="img-circle" src="../img/user.png" />
+                                <img alt="image" class="img-circle" src="user.png" />
                                 <a class="navbar-minimalize" href="#"><h2 class="font-bold"><i class="fa fa-bars"></i> BMJUS</h2></a>
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                     <span class="clear"> 

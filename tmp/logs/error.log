@@ -72740,3 +72740,1368 @@ Stack Trace:
 #1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
 #2 C:\wamp\www\sistemas\bmjusinsp\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2019-08-17 01:55:06 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/c3/c3.min.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:55:06 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/datepicker/datepicker3.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:55:06 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/jquery-2.1.1.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:06 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:55:06 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:55:06 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/font-awesome/css/font-awesome.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:55:06 Error: [MissingActionException] Action ProcessosController::user.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'user.png',
+)
+Request URL: /sistemas/bmjus/processos/user.png
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:06 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/bootstrap.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:06 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/datepicker/datepicker3.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:55:06 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:55:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/font-awesome/css/font-awesome.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:55:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/c3/c3.min.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:55:07 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:55:07 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/metisMenu/jquery.metisMenu.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:07 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/slimscroll/jquery.slimscroll.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:07 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/jquery-2.1.1.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:07 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:55:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:55:08 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/bootstrap.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:55:08 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/inspinia.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:08 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/metisMenu/jquery.metisMenu.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:08 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/jquery-2.1.1.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:55:08 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/pace/pace.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:09 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/slimscroll/jquery.slimscroll.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:09 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/inspinia.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:09 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/pace/pace.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:09 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/jquery-2.1.1.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:09 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/bootstrap.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:10 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/metisMenu/jquery.metisMenu.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:10 Error: [MissingActionException] Action ProcessosController::user.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'user.png',
+)
+Request URL: /sistemas/bmjus/processos/user.png
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:10 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/bootstrap.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:11 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:55:11 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/datepicker/datepicker3.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:55:11 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/c3/c3.min.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:55:11 Error: [MissingControllerException] Controller class User.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'User.pngController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/user.png
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:55:11 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/font-awesome/css/font-awesome.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:55:11 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/slimscroll/jquery.slimscroll.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:11 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/metisMenu/jquery.metisMenu.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:11 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/inspinia.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:12 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/slimscroll/jquery.slimscroll.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:12 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/pace/pace.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:12 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/inspinia.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:55:12 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/pace/pace.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:39 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/datepicker/datepicker3.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:56:39 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:56:39 Error: [MissingActionException] Action ProcessosController::user.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'user.png',
+)
+Request URL: /sistemas/bmjus/processos/user.png
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:39 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:56:40 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/c3/c3.min.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:56:40 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/font-awesome/css/font-awesome.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:56:40 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/jquery-2.1.1.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:40 Error: [MissingActionException] Action ProcessosController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'img',
+)
+Request URL: /sistemas/bmjus/processos/img/a3.jpg
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:40 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:56:40 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/bootstrap.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:40 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/metisMenu/jquery.metisMenu.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:40 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:56:41 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/datepicker/datepicker3.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:56:41 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/slimscroll/jquery.slimscroll.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:41 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/jquery-2.1.1.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:41 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/inspinia.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:41 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/pace/pace.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:41 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/bootstrap.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:41 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/font-awesome/css/font-awesome.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:56:41 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/c3/c3.min.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:56:41 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/metisMenu/jquery.metisMenu.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:42 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/datepicker/datepicker3.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:56:42 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/slimscroll/jquery.slimscroll.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:42 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:56:42 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:56:42 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/jquery-2.1.1.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:42 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/inspinia.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:42 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/bootstrap.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:42 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/metisMenu/jquery.metisMenu.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:43 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/slimscroll/jquery.slimscroll.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:43 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/pace/pace.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:43 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/inspinia.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:43 Error: [MissingActionException] Action ProcessosController::user.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'user.png',
+)
+Request URL: /sistemas/bmjus/processos/user.png
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:43 Error: [MissingActionException] Action ProcessosController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'js',
+)
+Request URL: /sistemas/bmjus/processos/js/plugins/pace/pace.min.js
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:56:43 Error: [MissingActionException] Action ProcessosController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'ProcessosController',
+  'action' => 'img',
+)
+Request URL: /sistemas/bmjus/processos/img/a3.jpg
+Stack Trace:
+#0 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ProcessosController), Object(CakeRequest))
+#2 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2019-08-17 01:57:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:57:30 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/c3/c3.min.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:57:30 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/datepicker/datepicker3.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:57:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:57:30 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/font-awesome/css/font-awesome.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:57:30 Error: [MissingControllerException] Controller class User.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'User.pngController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/user.png
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:57:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:57:30 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/datepicker/datepicker3.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:57:30 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/font-awesome/css/font-awesome.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:57:31 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:57:31 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/c3/c3.min.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:57:31 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:57:31 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/datepicker/datepicker3.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:57:31 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:57:31 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/font-awesome/css/font-awesome.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:57:32 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:57:32 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/c3/c3.min.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:57:32 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:57:32 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:57:32 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/datepicker/datepicker3.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/font-awesome/css/font-awesome.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/c3/c3.min.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/datepicker/datepicker3.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:29 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:28 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:29 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/font-awesome/css/font-awesome.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:29 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:29 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/c3/c3.min.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:29 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:29 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/c3/c3.min.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:30 Error: [MissingControllerException] Controller class User.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'User.pngController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/user.png
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:31 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:50 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/datepicker/datepicker3.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:51 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/font-awesome/css/font-awesome.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:51 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/c3/c3.min.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:51 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:51 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:51 Error: [MissingControllerException] Controller class User.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'User.pngController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/user.png
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:52 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/datepicker/datepicker3.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:52 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/font-awesome/css/font-awesome.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:52 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:52 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:52 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/c3/c3.min.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:52 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:53 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:58:54 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:59:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/datepicker/datepicker3.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:59:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/font-awesome/css/font-awesome.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:59:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/c3/c3.min.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:59:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/datepicker/datepicker3.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:59:07 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:59:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:59:08 Error: [MissingControllerException] Controller class User.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'User.pngController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/user.png
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:59:08 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/font-awesome/css/font-awesome.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:59:08 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/css/plugins/c3/c3.min.css
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:59:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/bootbox/bootbox.min.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2019-08-17 01:59:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/gatilhos.js
+Stack Trace:
+#0 C:\wamp\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

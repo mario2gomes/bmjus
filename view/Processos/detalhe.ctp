@@ -1,4 +1,13 @@
-<?php   echo $this->element('modal/prorrogar');
+<?php   
+
+    if( $grupos != 1 && $grupos != 2 && (
+            ($grupos == 3 && $processo['Processo']['encarregado']!=$usuarios) ||
+            ($grupos == 4  && $processo['Processo']['instaurador'] != $usuarios) ||
+            ($grupos == 5 && $processo['Processo']['escrivao'] != $usuarios) ||
+            ($grupos == 6 && $processo['Processo']['investigado'] != $usuarios))){
+        echo 'Você não tem permissão de acessar esse processo!';
+    } else{
+        echo $this->element('modal/prorrogar');
         echo $this->element('modal/suspender');
         echo $this->element('modal/tramitar');
 ?>
@@ -63,7 +72,7 @@
                                 <div class="col-lg-7" id="cluster_info">
                                     <dl class="dl-horizontal" >
                                         <dt>Incluído por:</dt> <dd>Militar que inseriu o processo</dd>
-                                        <dt>Em posse de:</dt> <dd><?php echo $processo['Processo']['posse']?></dd>
+                                        <dt>Em posse de:</dt> <dd><?php echo $funcoes[$processo['Processo']['posse_id']]?></dd>
                                         <dt>Aut. instauradora:</dt> <dd><?php echo $processo['Processo']['instaurador']?></dd>
                                         <dt>Encarregado:</dt> <dd> <?php echo $processo['Processo']['encarregado']?> </dd>
                                         <dt>Escrivão:</dt> <dd> <?php echo $processo['Processo']['escrivao']?> </dd>
@@ -123,11 +132,12 @@ $concluso = 90; // $hoje - $inicio;
                                         <tbody>
                                         <?php foreach ($tramitacoes as $tramitacao){ ?>
                                         <tr>
-                                        <?php if ($tramitacao['Tramitacao']['processos_id'] === $processo['Processo']['id']){ ?>
+                                        <?php 
+                                        if ($tramitacao['Tramitacao']['processos_id'] === $processo['Processo']['id']){ ?>
                                             <td class="hidden-480"><?php echo $this->Formatacao->data($tramitacao['Tramitacao']['created']); ?></td>
                                             <td class="hidden-480"><?php echo $funcoes[$tramitacao['Tramitacao']['funcao_entrega_id']]; ?></td>
                                             <td class="hidden-480"><?php echo $funcoes[$tramitacao['Tramitacao']['funcao_recebe_id']]; ?></td>
-                                            <td class="hidden-phone"><?php echo $tramitacao['Tramitacao']['despacho'];?></td>
+                                            <td class="hidden-phone"><?php echo $tramitacao['Tramitacao']['usuario_tramita_id'], ': ',$tramitacao['Tramitacao']['despacho']; ?></td>
                                         <?php } ?>
                                         </tr>
                                         <?php 
@@ -181,9 +191,16 @@ $concluso = 90; // $hoje - $inicio;
                     <p>
                         <?php echo $processo['Processo']['descricao']; ?>
                     </p>
+                    <?php
+                        if( $grupos == 1 || $grupos == 2 || $grupos == $processo['Processo']['posse_id']){
+                    ?>
                     <div class="text-center">
                         <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#tramitar">Tramitar</button>
                     </div>
+                    <?php }; 
+
+                        if( $grupos == 1 || $grupos == 2){
+                    ?>
                     <div class="text-center m-t-md">
                         <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#prorrogar">Prorrogar</button>
                     </div>
@@ -195,6 +212,8 @@ $concluso = 90; // $hoje - $inicio;
                         <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#editar">Editar</button>
                         <?php #echo $this->Html->link('Editar processo', array('controller' => 'processos', 'action' => 'editar', $processo['Processo']['id'])); ?>
                     </div>
+                    <?php }; ?>
+                    
                     <h3>Documentos digitalizados:</h3>
                     <ul class="list-unstyled project-files">
                         <li><a href=""><i class="fa fa-file"></i> termo de abertura.pdf</a></li>
@@ -248,3 +267,6 @@ $concluso = 90; // $hoje - $inicio;
             }
         }
     </script>
+<?php 
+    };
+?>
