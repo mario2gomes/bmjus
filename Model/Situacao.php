@@ -3,10 +3,14 @@
 
     public $hasMany = array(
     	'Processo' => array(
-        'className' => 'Processo',
-        'foreignKey' => 'Situacoes_id',
-        'dependent' => true)
-        //'type' => 'RIGHT')
+            'className' => 'Processo',
+            'foreignKey' => 'Situacoes_id',
+            'dependent' => true),
+        'Relatorio' => array(
+            'className' => 'Relatorio',
+            'dependent' => true,
+            //'type' => 'RIGHT',
+            'foreignKey' => 'Situacao_id'),
     );
 
 	public $validate = array(

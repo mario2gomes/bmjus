@@ -79,17 +79,22 @@ $hoje = 'DateTime de hoje';
 $inicio = $processo['Processo']['data_bgo'];
 $fim = $processo['Processo']['previsao_termino'];
 $duracao = 100;// $fim - $inicio;
-$concluso = 70; // $hoje - $inicio;
+$concluso = 10; // $hoje - $inicio;
 
                                         $prog = 100 * $concluso / $duracao;
                                         $progresso = $prog.'%';
                                         ?>
                                         <td class="project-completion">
-                                                <?php echo $processo['Estado']['descricao']; ?>
+                                                <?php echo 'Previsão de término do processo: ', $this->Formatacao->data($processo['Processo']['previsao_termino']);?>
                                                 <div class="progress progress-mini">
                                                     <div style="width: <?php echo $progresso ?>;" class="progress-bar"></div>
                                                 </div>
-                                                <small>Término estimado: <?php echo $this->Formatacao->data($processo['Processo']['previsao_termino']);?></small>
+                                                <?php echo 'Prazo para entrega do ', $processo['Estado']['descricao'], ': ', $this->Formatacao->data($processo['Processo']['previsao_termino']); ?>
+                                                <div class="progress progress-mini">
+                                                    <div style="width: 40%;" class="progress-bar"></div>
+                                                </div>
+
+                                                <!-- <small>Término estimado: <?php echo $this->Formatacao->data($processo['Processo']['previsao_termino']);?></small> -->
                                         </td>
                                         <td class="project-people">
                                             Em posse do <?php echo $grupos[$processo['Processo']['posse_id']];?>
