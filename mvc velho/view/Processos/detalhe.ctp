@@ -1,6 +1,14 @@
-<?php   echo $this->element('modal/prorrogar');
-        echo $this->element('modal/suspender');
+<?php   
+    if( $grupos != 1 && $grupos != 2 && (
+            ($grupos == 3 && $processo['Processo']['encarregado']!=$usuarios) ||
+            ($grupos == 4  && $processo['Processo']['instaurador'] != $usuarios) ||
+            ($grupos == 5 && $processo['Processo']['escrivao'] != $usuarios) ||
+            ($grupos == 6 && $processo['Processo']['investigado'] != $usuarios))){
+        echo 'Você não tem permissão de acessar esse processo!';
+    } else{
         echo $this->element('modal/tramitar');
+        echo $this->element('modal/prorrogar');
+        echo $this->element('modal/suspender');
 ?>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-sm-4">
@@ -46,7 +54,7 @@
                                                     break;
                                             }
                                         ?>
-                                        <dt>Situação: </dt> <dd><span class="label <?php echo $label?>"><?php echo $processo['Situacao']['descricao']?></span></dd>
+                                        <dt>Situação: </dt> <dd><span class="label <?php echo $label ?>"><?php echo $processo['Situacao']['descricao']; ?></span></dd>
                                     </dl>
                                 </div>
                             </div>
@@ -56,60 +64,77 @@
 
                                         <dt>Portaria:</dt> <dd><?php echo $processo['Processo']['num_portaria']; ?></dd>
                                         <dt>Data de abertura: </dt> <dd> <?php echo $this->Formatacao->data($processo['Processo']['data_bgo']); ?></dd>
-                                        <dt>Previsão de término:</dt> <dd><?php echo $this->Formatacao->data($processo['Processo']['previsao_termino']); ?></dd>
-                                        <dt>Estado:</dt> <dd><?php echo $processo['Estado']['descricao'];?></dd>
+                                        <?php 
+                                        if ($processo['Processo']['situacoes_id']==5){
+                                            echo ' ';
+                                        }else{ ?>
+                                            <dt>Previsão de término:</dt><dd class="project-completion"> <?php
+                                            if ($processo['Processo']['estados_id'] == 2){
+                                                echo 'Indefinido';
+                                            }else{
+                                                echo $this -> Prazos-> data_termino($processo['Processo']['data_bgo'], $processo['Relatorio']['prazo'] + 10);
+                                             }; ?>
+                                            </dd>
+                                            <dt>Estado:</dt> <dd><?php echo $processo['Estado']['descricao']; }; ?></dd>
                                     </dl>
                                 </div>
                                 <div class="col-lg-7" id="cluster_info">
                                     <dl class="dl-horizontal" >
                                         <dt>Incluído por:</dt> <dd>Militar que inseriu o processo</dd>
-                                        <dt>Em posse de:</dt> <dd><?php echo $processo['Processo']['posse']?></dd>
-                                        <dt>Aut. instauradora:</dt> <dd><?php echo $processo['Processo']['instaurador']?></dd>
-                                        <dt>Encarregado:</dt> <dd> <?php echo $processo['Processo']['encarregado']?> </dd>
-                                        <dt>Escrivão:</dt> <dd> <?php echo $processo['Processo']['escrivao']?> </dd>
-                                        <dt>Investigado:</dt> <dd> <?php echo $processo['Processo']['investigado']?> </dd>
+                                        <dt>Em posse de:</dt> <dd><?php echo $funcoes[$processo['Processo']['posse_id']]; ?></dd>
+                                        <dt>Aut. instauradora:</dt> <dd><?php echo $processo['Processo']['instaurador']; ?></dd>
+                                        <dt>Encarregado:</dt> <dd> <?php echo $processo['Processo']['encarregado']; ?> </dd>
+                                        <dt>Escrivão:</dt> <dd> <?php echo $processo['Processo']['escrivao']; ?> </dd>
+                                        <dt>Investigado:</dt> <dd> <?php echo $processo['Processo']['investigado']; ?> </dd>
                                     </dl>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <dl class="dl-horizontal">
-                                        <dt>Progresso estimado:</dt>
-                                            <?php 
-$hoje = 'DateTime de hoje';
-$inicio = $processo['Processo']['data_bgo'];
-$fim = $processo['Processo']['previsao_termino'];
-$duracao = 100;// $fim - $inicio;
-$concluso = 90; // $hoje - $inicio;
+                            <?php 
+                                if ($processo['Processo']['situacoes_id']==5){
+                                            echo ' ';
+                                        }else{ ?>
 
-                                        $prog = 100 * $concluso / $duracao;
-                                        $progresso = $prog.'%';
-                                        ?>
-                                        <dd>
-                                            <div class="progress progress-striped active m-b-sm">
-                                                <div style="width: <?php echo $progresso ?>;" class="progress-bar"></div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <dl class="dl-horizontal">
+                                                        <dt>Progresso estimado:</dt>
+                                                        <dd>
+                                                            <div class="progress progress-striped active m-b-sm">
+                                                                <div style="width: <?php echo $this -> Prazos-> progresso($processo['Processo']['data_bgo'], $processo['Relatorio']['prazo']); ?>" class="progress-bar"></div>
+                                                            </div>
+                                                            <?php
+                                                            $resto = $this -> Prazos -> resto($processo['Processo']['data_bgo'], $processo['Relatorio']['prazo']);
+                                                            if ($processo['Processo']['estados_id'] == 2){
+                                                                echo 'Processo suspenso';
+                                                            }else{
+                                                                if ($resto > 0) { ?>
+                                                                    <small><strong><?php echo $this -> Prazos-> progresso($processo['Processo']['data_bgo'], $processo['Relatorio']['prazo']); ?></strong>
+                                                                <?php 
+                                                                    echo $resto, 'dias para conclusao.';
+                                                                }else{
+                                                                    echo 'Processo ', -$resto, ' dias atrasado';
+                                                                };  
+                                                            }; ?> </small>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
                                             </div>
-                                            <small> <strong><?php echo $progresso ?></strong>. <?php echo $duracao-$concluso ?> dias para conclusao.</small>
-                                        </dd>
-                                    </dl>
-                                </div>
-                            </div>
+                                        <?php }; ?>
                             <div class="row m-t-sm">
                                 <div class="col-lg-12">
-                                <div class="panel blank-panel">
-                                <div class="panel-heading">
-                                    <div class="panel-options">
-                                        <ul class="nav nav-tabs">
-                                            <li class="active"><a href="#tab-1" data-toggle="tab">Tramitação</a></li>
-                                            <li class=""><a href="#tab-2" data-toggle="tab">Processo digitalizado</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                    <div class="panel blank-panel">
+                                        <div class="panel-heading">
+                                            <div class="panel-options">
+                                                <ul class="nav nav-tabs">
+                                                    <li class="active"><a href="#tab-1" data-toggle="tab">Tramitação</a></li>
+                                                    <li class=""><a href="#tab-2" data-toggle="tab">Processo digitalizado</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
 
-                                <div class="panel-body">
-
-                                <div class="tab-content">
-                                <div class="tab-pane active" id="tab-1">
+                                    <div class="panel-body">
+                                    <div class="tab-content">
+                                    <div class="tab-pane active" id="tab-1">
 
                                     <table class="table table-striped">
                                         <thead>
@@ -123,15 +148,16 @@ $concluso = 90; // $hoje - $inicio;
                                         <tbody>
                                         <?php foreach ($tramitacoes as $tramitacao){ ?>
                                         <tr>
-                                        <?php if ($tramitacao['Tramitacao']['processos_id'] === $processo['Processo']['id']){ ?>
+                                        <?php 
+                                        if ($tramitacao['Tramitacao']['processos_id'] === $processo['Processo']['id']){ ?>
                                             <td class="hidden-480"><?php echo $this->Formatacao->data($tramitacao['Tramitacao']['created']); ?></td>
                                             <td class="hidden-480"><?php echo $funcoes[$tramitacao['Tramitacao']['funcao_entrega_id']]; ?></td>
                                             <td class="hidden-480"><?php echo $funcoes[$tramitacao['Tramitacao']['funcao_recebe_id']]; ?></td>
-                                            <td class="hidden-phone"><?php echo $tramitacao['Tramitacao']['despacho'];?></td>
-                                        <?php } ?>
+                                            <td class="hidden-phone"><?php echo $tramitacao['Tramitacao']['usuario_tramita_id'], ': ',$tramitacao['Tramitacao']['despacho']; ?></td>
+                                        <?php }; ?>
                                         </tr>
                                         <?php 
-                                        } ?>
+                                        }; ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -181,20 +207,31 @@ $concluso = 90; // $hoje - $inicio;
                     <p>
                         <?php echo $processo['Processo']['descricao']; ?>
                     </p>
+                    <?php
+                        if( $grupos == 1 || $grupos == 2 || $grupos == $processo['Processo']['posse_id']){
+                    ?>
                     <div class="text-center">
                         <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#tramitar">Tramitar</button>
                     </div>
+                    <?php }; 
+
+                        if( $grupos == 1 || $grupos == 2){
+                    ?>
                     <div class="text-center m-t-md">
                         <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#prorrogar">Prorrogar</button>
                     </div>
                     <div class="text-center m-t-md">
+                        <?php if ($processo['Processo']['estados_id'] == 2){ ?>
+                            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#reabrir">Reabrir</button>
+                        <?php } else{ ?>
                         <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#suspender">Suspender</button>
-                            <?php #echo $this->Html->link('Suspender', array('controller' => 'processos', 'action' => 'suspender', $processo['Processo']['id'])); ?>
+                        <?php }; ?>
                     </div>
                     <div class="text-center m-t-md">
                         <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#editar">Editar</button>
-                        <?php #echo $this->Html->link('Editar processo', array('controller' => 'processos', 'action' => 'editar', $processo['Processo']['id'])); ?>
                     </div>
+                    <?php }; ?>
+                    
                     <h3>Documentos digitalizados:</h3>
                     <ul class="list-unstyled project-files">
                         <li><a href=""><i class="fa fa-file"></i> termo de abertura.pdf</a></li>
@@ -210,6 +247,7 @@ $concluso = 90; // $hoje - $inicio;
                 </div>
             </div>
         </div>
+
     <!-- Mainly scripts -->
     <script src="js/jquery-2.1.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -248,3 +286,6 @@ $concluso = 90; // $hoje - $inicio;
             }
         }
     </script>
+<?php 
+    };
+?>

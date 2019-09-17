@@ -48,7 +48,9 @@ $_pluralIrregular = array(
 	'reptil' => 'repteis',
 	'sacristao' => 'sacristaes',
 	'sotao' => 'sotaos',
-	'tabeliao' => 'tabeliaes'
+	'tabeliao' => 'tabeliaes',
+	'prorrogacao' => 'prorrogacoes',
+	'suspensao' => 'suspensoes',
 );
 
 Inflector::rules('singular', array(

@@ -38,7 +38,9 @@
                             <div class="project-list">
                                 <table class="table table-hover table-mail table-striped">
                                     <tbody>
-                                    <?php foreach ($processos as $processo){
+                                    <?php 
+
+                                    foreach ($processos as $processo){
                                     $numero = $processo['Processo']['num_processo'] ;
                                         if( $grupos != 1 && 
                                             $grupos != 2 &&
@@ -74,25 +76,45 @@
                                             <br/>
                                             <small>Aberto em: <?php echo $this->Formatacao->data($processo['Processo']['data_bgo']);?></small>
                                         </td>
-                                        <?php 
-$hoje = 'DateTime de hoje';
-$inicio = $processo['Processo']['data_bgo'];
-$fim = $processo['Processo']['previsao_termino'];
-$duracao = 100;// $fim - $inicio;
-$concluso = 70; // $hoje - $inicio;
-
-                                        $prog = 100 * $concluso / $duracao;
-                                        $progresso = $prog.'%';
-                                        ?>
                                         <td class="project-completion">
-                                                <?php echo $processo['Estado']['descricao']; ?>
+                                        <?php
+                                        switch ($processo['Processo']['situacoes_id']) {
+                                            case 2:
+                                                echo 'Processo suspenso';
+                                                break;
+                                            case 4:
+                                                echo 'Previsão de término do processo: ', $this -> Prazos-> data_termino($processo['Processo']['data_bgo'], $processo['Relatorio']['prazo'] +10);;?>
                                                 <div class="progress progress-mini">
-                                                    <div style="width: <?php echo $progresso ?>;" class="progress-bar"></div>
+                                                    <div style="width: <?php echo $this -> Prazos-> progresso($processo['Processo']['data_bgo'], $processo['Relatorio']['prazo'] +10) ?>;" class="progress-bar"></div>
                                                 </div>
-                                                <small>Término estimado: <?php echo $this->Formatacao->data($processo['Processo']['previsao_termino']);?></small>
+                                                <?php echo 'Prazo para entrega da solução: ', $this -> Prazos-> data_termino($processo['Relatorio']['entrega'], 10); ?>
+                                                <div class="progress progress-mini">
+                                                    <div style="width: <?php echo $this -> Prazos-> progresso($processo['Relatorio']['entrega'], 10) ?>;" class="progress-bar"></div>
+                                                </div> 
+                                            <?php
+                                                break;
+                                            case 5:
+                                                echo 'Processo concluído em: ', $processo['Relatorio']['entrega'];
+                                                echo 'Aguardando análise';
+                                                break;
+                                            case 6:
+                                                echo 'Processo arquivado';
+                                                break;
+                                            default:
+                                                echo 'Previsão de término do processo: ', $this -> Prazos-> data_termino($processo['Processo']['data_bgo'], $processo['Relatorio']['prazo'] +10);;?>
+                                                <div class="progress progress-mini">
+                                                    <div style="width: <?php echo $this -> Prazos-> progresso($processo['Processo']['data_bgo'], $processo['Relatorio']['prazo'] +10) ?>;" class="progress-bar"></div>
+                                                </div>
+                                                <?php echo 'Prazo para entrega do relatório: ', $this -> Prazos-> data_termino($processo['Processo']['data_bgo'], $processo['Relatorio']['prazo']); ?>
+                                                <div class="progress progress-mini">
+                                                    <div style="width: <?php echo $this -> Prazos-> progresso($processo['Processo']['data_bgo'], $processo['Relatorio']['prazo']) ?>;" class="progress-bar"></div>
+                                                </div> 
+                                            <?php
+                                                break;
+                                            } ?>
                                         </td>
                                         <td class="project-people">
-                                            Em posse do <?php echo $processo['Processo']['posse'];?>
+                                            Em posse do <?php echo $grupos[$processo['Processo']['posse_id']];?>
                                             <img alt="image" class="img-circle" src="img/a3.jpg"></a>
                                         </td>
                                         <td class="project-actions">

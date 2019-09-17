@@ -1,6 +1,8 @@
 <?php 
 class Processo extends AppModel {
 
+    public $sequence = 'cor_processos_seq';
+
 	public $belongsTo = array(
         'Situacao' => array(
             'className' => 'Situacao',
@@ -14,7 +16,14 @@ class Processo extends AppModel {
         'Tipo_processo' => array(
             'className' => 'Tipo_processo',
     		'foreignKey' => 'tipo_processos_id')
-            //'dependent' => true)
+    );
+
+    public $hasOne = array(
+        'Relatorio' => array(
+            'className' => 'Relatorio',
+            //'dependent' => true,
+            //'type' => 'RIGHT',
+            'foreignKey' => 'Processo_id')
     );
             
 	public $validate = array(
@@ -44,10 +53,10 @@ class Processo extends AppModel {
         ),       
         'data_bgo' => array(
             'rule' => 'notBlank'
-        ),       
+        ),
         'tipo_processos_id' => array(
             'rule' => 'notBlank'
         )       
-    );
+    ); 
 }
 ?>

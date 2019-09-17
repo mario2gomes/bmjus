@@ -1,28 +1,44 @@
-<div class="modal fade" id="prorrogar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="prorrogar" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">NOVO PROCESSO</h3>
+                    <div class="col-sm-6 b-r">
+                        <h3 class="m-t-none m-b"><?php echo 'Prorrogar ', $processo['Tipo_processo']['descricao'],' ', $processo['Processo']['num_processo'], ' por:'; ?></h3>
+                            <div class="widget-box"> 
+                           <?php
+                                echo $this->Form->create('Prorrogacao',array('url' => array('controller'=>'processos','action' => 'prorrogar')));
 
-                        <p>Preencha os dados do novo processo</p>
+                                switch ($processo['Processo']['tipo_processos_id']) {
+                                    case 1:
+                                        $qtd_dias = 15;
+                                        break;
+                                    case 2:
+                                        $qtd_dias = 15;
+                                        break;
+                                    case 3:
+                                        $qtd_dias = 20;
+                                        break;
+                                    case 4:
+                                        $qtd_dias = 10;
+                                        break;
+                                }
 
-                        <div class="widget-box"> 
-
-                            <?php echo $this->Form->create('Processo', ['url' => ['action' => 'novo']]); ?>
-                            <?php echo $this->Form->input('tipo_processos_id',array('class' => 'form-control', 'div' => 'form-group', 'placeholder' => "procedimento", 'label'=>'Procedimento','options' => $tipos, 'empty' => '--Selecione--') );?>
-                            <?php echo $this->Form->date('data_bgo',array('label'=>'Data do BGO', 'class' => 'form-control', 'div' => 'form-group', 'placeholder' => "Data BGO", 'dateFormat'=>'DMY', 'minYear' => date('Y') - 90, 'maxYear' => date('Y') + 16));?>
-                            <?php echo $this->Form->input('num_processo',array('label'=>'Número do processo', 'upper' => 'true', 'class' => 'form-control', 'div' => 'form-group', 'placeholder' => "Número do processo"));?>
-                            <?php echo $this->Form->input('num_portaria',array('label'=>'Número da portaria', 'class' => 'form-control', 'div' => 'form-group', 'placeholder' => "Número da portaria"));?>
-                            <?php echo $this->Form->input('num_bgo',array('label'=>'Número do BGO', 'class' => 'form-control', 'div' => 'form-group', 'placeholder' => "Número do BGO"));?>
-                            <?php echo $this->Form->input('obm',array( 'class' => 'form-control', 'div' => 'form-group', 'placeholder' => "OBM"));?>
-                            <?php echo $this->Form->input('instaurador',array('label'=>'Autoridade Instauradora', 'class' => 'form-control', 'div' => 'form-group', 'placeholder' => "Instaurador"));?>
-                            <?php echo $this->Form->input('encarregado',array('class' => 'form-control', 'div' => 'form-group', 'placeholder' => "encarregado"));?>
-                            <?php echo $this->Form->input('investigado',array('label'=>'Investigado (se houver)', 'class' => 'form-control', 'div' => 'form-group', 'placeholder' => "investigado"));?>
-                            <?php echo $this->Form->input('escrivao',array('label'=>'Escrivao (se houver)', 'class' => 'form-control', 'div' => 'form-group', 'placeholder' => "escrvão"));?>
-                            <?php echo $this->Form->input('descricao',array('type'=>'textarea', 'class' => 'form-control', 'div' => 'form-group', 'placeholder' => "descrição"));?>
+                                echo $this->Form->input('qtd_dias', array('value' => $qtd_dias, 'type' => 'hidden'));
+                                echo $this->Form->input('relatorio_id', array('value' => $processo['Relatorio']['id'], 'type'=> 'hidden'));
+                                echo $this->Form->input('responsavel_funcional', array('value' => $usuarios, 'type'=> 'hidden'));
+                                echo $this->Form->input('responsavel_legal',array('label'=>'Autoridade responsável'));
+                                ?>
+                                <!--<b>Inicia em:</b>
+                                <br> -->
+                                <?php
+                                //echo $this->Form->date('data_inicio',array('label'=>'Inicia em: ', 'dateFormat'=>'DMY', 'minYear' => date('Y') - 90, 'maxYear' => date('Y') + 16));
+                                echo $this->Form->input('bgo', array('label' => 'Publicado no BGO Nº: '));
+                                echo $this->Form->input('motivo', array('type'=>'textarea'));
+                                echo $this->Form->end(array('label'=>'Prorrogar','class'=>'btn btn-sm btn-primary pull-right m-t-n-xs'));?>
+                            ?>
+                            <!-- <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Prorrogar</strong></button> -->
                             <?php //echo $this->Form->end('Salvar', array('class'=>"btn btn-sm btn-primary pull-right m-t-n-xs"));?>
-                            <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Enviar</strong></button>
                         </div>
                     </div>
                 </div>
@@ -30,17 +46,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-<ul class="dropdown-menu">
-    <li><?php echo $this->Html->link('10 dias', array('controller' => 'processos', 'action' => 'prorrogar', $processo['Processo']['id'], $prazo=10)); ?></li>
-    <li><?php echo $this->Html->link('20 dias', array('controller' => 'processos', 'action' => 'prorrogar', $processo['Processo']['id'], $prazo=20)); ?></li>
-    <li><?php echo $this->Html->link('30 dias', array('controller' => 'processos', 'action' => 'prorrogar', $processo['Processo']['id'], $prazo=30)); ?></li>
-</ul>
