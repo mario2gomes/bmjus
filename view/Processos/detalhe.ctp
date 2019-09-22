@@ -75,7 +75,7 @@
                                             if ($processo['Processo']['estados_id'] == 2){
                                                 echo 'Indefinido';
                                             }else{
-                                                echo $this -> Prazos-> data_termino($processo['Processo']['data_bgo'], $processo['Processo']['prazo']);
+                                                echo $this -> Formatacao -> data ($processo['Processo']['previsao_termino']);
                                              }; ?>
                                             </dd>
                                             <dt>Estado:</dt> <dd><?php echo $processo['Estado']['descricao']; }; ?></dd>

@@ -74,15 +74,15 @@
                                         <td class="project-title">
                                             <a><?php echo $processo['Tipo_processo']['descricao'], ' ', $this->Html->link($numero, array('controller' => 'processos', 'action' => 'detalhe', $processo['Processo']['id'])); ?></a>
                                             <br/>
-                                            <small>Aberto em: <?php echo $this->Formatacao->data($processo['Processo']['data_bgo']);?></small>
+                                            <small>Aberto em: <?php echo $this-> Formatacao ->data($processo['Processo']['data_bgo']);?></small>
                                         </td>
                                         <td class="project-completion">
                                         <?php
                                         switch ($processo['Processo']['estados_id']) {
                                             case 1:
-                                                echo 'Previsão de término: ', $this -> Prazos-> data_termino($processo['Processo']['data_bgo'], $processo['Relatorio']['prazo'] +10);;?>
+                                                echo 'Previsão de término: ', $this -> Formatacao -> data ($processo['Processo']['previsao_termino']);?>
                                                 <div class="progress progress-mini">
-                                                    <div style="width: <?php echo $this -> Prazos-> progresso($processo['Processo']['data_bgo'], $processo['Relatorio']['prazo'] +10) ?>;" class="progress-bar"></div>
+                                                    <div style="width: <?php echo $this -> Prazos-> progresso($processo['Processo']['data_bgo'], $processo['Processo']['prazo']) ?>;" class="progress-bar"></div>
                                                 </div>
                                                 <?php //echo 'Prazo para entrega do relatório: ', $this -> Prazos-> data_termino($processo['Processo']['data_bgo'], $processo['Relatorio']['prazo']); ?>
                                                 <!-- <div class="progress progress-mini">
@@ -94,7 +94,7 @@
                                                 echo 'Processo suspenso';
                                                 break;
                                             case 3:
-                                                echo 'Previsão de término: ', $this -> Prazos-> data_termino($processo['Processo']['data_bgo'], $processo['Processo']['prazo'] +10);;?>
+                                                echo 'Previsão de término: ', $this -> Formatacao -> data($processo['Processo']['previsao_termino']);?>
                                                 <div class="progress progress-mini">
                                                     <div style="width: <?php echo $this -> Prazos-> progresso($processo['Processo']['data_bgo'], $processo['Processo']['prazo'] +10) ?>;" class="progress-bar"></div>
                                                 </div>

@@ -13,7 +13,6 @@
                                         if(!$sus['data_termino']){
                                             $suspensao = $sus;
                                         }
-                                       pr($sus);
                                    }
                                     echo $this->Form->create('Suspensao',array('url' => array('controller'=>'processos','action' => 'reabrir')));
                                     echo $this->Form->input('id', array('value'=> $suspensao['id'], 'type'=>'hidden'));

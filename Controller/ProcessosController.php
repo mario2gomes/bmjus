@@ -1,7 +1,7 @@
 <?php 
 class ProcessosController extends AppController {
     public $helpers = array ('Html','Form', 'Flash', 'CakePtbr.Formatacao');
-    public $components = array('Flash');
+    public $components = array('Flash', 'Prazos');
 
     function index(){
         $this->set('title_for_layout', 'Corregedoria');           
@@ -55,7 +55,9 @@ $this->set('usuarios',$Usuario);
         if ($this->request->is('post')) {
             $id_tipo = $this -> request -> data['Processo']['tipo_processos_id'];
             $tipoProcesso = $this -> Tipo_processo -> findById($id_tipo);
+            $inicio = $this -> request -> data['Processo']['data_bgo'];
             $prazo = $tipoProcesso['Tipo_processo']['prazo_processo'];
+            $termino = $this -> Prazos -> termino_em_dia_util($inicio, $prazo);
 //            $data_bgo = $this->request->data['Processo']['data_bgo'];
 //            $data_termino = new DateTime($data_bgo);
 //            $data_termino -> add (new DateInterval("P".$prazo."D"));
@@ -64,6 +66,7 @@ $this->set('usuarios',$Usuario);
             $this -> request -> data ['Processo']['situacoes_id'] = 1;
             $this -> request -> data ['Processo']['estados_id'] = 1;
             $this -> request -> data ['Processo']['posse_id'] = 1;
+            $this -> request -> data ['Processo']['previsao_termino'] = $termino->format('Y-m-d');
           
 //            $dataSourceProcesso = $this-> Processo ->getDataSource();
 //            $dataSourceProcesso->begin();    
@@ -131,11 +134,14 @@ $this->set('usuarios',$Usuario);
                 $id = $this-> request -> data['Prorrogacao']['processo_id'];
                 $qtd_dias = $this-> request -> data['Prorrogacao']['qtd_dias'];
                 $this -> Processo -> id = $id;
+                $inicio = $this -> Processo -> field('data_bgo');;
                 $prazo = $this -> Processo -> field('prazo');
                 $novo_prazo = $qtd_dias + $prazo;
+                $termino = $this -> Prazos -> termino_em_dia_util($inicio, $novo_prazo);
                 $prorrogacoes = $this -> Processo -> field('prorrogacoes');
                 $prorrogacoes = $prorrogacoes + 1;
-                $this -> Processo -> set(array('prazo'=>$novo_prazo,'prorrogacoes'=> $prorrogacoes));             
+                $this -> Processo -> set(array('prazo'=>$novo_prazo,'prorrogacoes'=> $prorrogacoes,'previsao_termino' => $termino->format('Y-m-d')));
+
                 if ($this -> Processo -> save()){
                     $dataSourceProrrogacao -> commit();
                     $this-> Flash -> success('Processo prorrogado');
@@ -195,8 +201,10 @@ $this->set('usuarios',$Usuario);
         if ($this -> Suspensao -> save ($this->request->data)){
             $id = $suspensao['Suspensao']['processo_id'];
             $this -> Processo -> id = $id;
+            $inicio = $this -> Processo->field('data_bgo');;
             $novo_prazo = $this -> Processo->field('prazo') + $duracao;
-            $this -> Processo -> set(array('estados_id'=>1,'prazo'=>$novo_prazo));
+            $termino = $this -> Prazos -> termino_em_dia_util($inicio, $novo_prazo);
+            $this -> Processo -> set(array('estados_id'=>1,'prazo'=>$novo_prazo, 'previsao_termino' => $termino->format('Y-m-d')));
             if ($this -> Processo -> save()){
                 $dataSourceSuspensao -> commit();
                 $this-> Flash -> success('Processo reaberto');
