@@ -11,7 +11,7 @@
         echo $this->element('modal/suspender');
         echo $this->element('modal/reabrir');
         echo $this->element('modal/editar');
-        echo $this->element('modal/enviar');
+        echo $this->element('modal/enviar_documento');
 ?>
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-sm-4">
@@ -130,7 +130,8 @@
                                             <div class="panel-options">
                                                 <ul class="nav nav-tabs">
                                                     <li class="active"><a href="#tab-1" data-toggle="tab">Tramitação</a></li>
-                                                    <li class=""><a href="#tab-2" data-toggle="tab">Processo digitalizado</a></li>
+                                                    <li class=""><a href="#tab-2" data-toggle="tab">Autos do processo</a></li>
+                                                    <li class=""><a href="#tab-3" data-toggle="tab">Processo digitalizado</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -166,20 +167,36 @@
                                 </div>
                                 <div class="tab-pane" id="tab-2">
                                     <div class="feed-activity-list">
+                                        <?php 
+                                        foreach ($documentos as $documento){
+                                            if ($documento['Documento']['processo_id'] == $processo['Processo']['id']){
+                                        ?>
                                         <div class="feed-element">
-                                            <a href="#" class="pull-left">
-                                                <img alt="image" class="img-circle" src="img/a2.jpg">
-                                            </a>
+                                            <div href="#" class="pull-left">
+                                                <?php echo $this->Html->link('Visualizar', array('controller' => 'processos', 'action' => 'abrir_documento', $processo['Tipo_processo']['descricao'], $processo['Processo']['num_processo'] , $documento['Documento']['nome_arquivo']),array('type'=>'button','class'=>'btn btn-primary')); ?>
+                                            </div>
                                             <div class="media-body ">
-                                                <small class="pull-right">2h ago</small>
-                                                <strong>Mark Johnson</strong> posted message on <strong>Monica Smith</strong> site. <br>
-                                                <small class="text-muted">Today 2:10 pm - 12.06.2014</small>
-                                                <div class="well">
-                                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                                                    Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                                                </div>
+                                                <small class="pull-right"><?php echo $documento['Documento']['created']; ?></small>
+                                                <strong><?php echo $documento['Tipo_documento']['descricao']; ?></strong>
+                                                , enviado por: <strong><?php echo $documento['Documento']['usuario_envia_id']; ?></strong><br>
+                                                <a> <?php echo $documento['Documento']['nome_arquivo']; ?></a><br>
+                                                <small class="text-muted"><?php echo $documento['Documento']['created']; ?></small>
+                                                    <?php 
+                                                    if ($documento['Documento']['observacao']){ ?>
+                                                        <div class="well">
+                                                            <?php echo substr($documento['Documento']['observacao'],0,100); ?>
+                                                        </div>
+                                                    <?php } ?>
                                             </div>
                                         </div>
+                                        <?php
+                                            }
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tab-3">
+                                    <div class="feed-activity-list">
                                         <div class="feed-element">
                                             <a href="#" class="pull-left">
                                                 <img alt="image" class="img-circle" src="img/a3.jpg">
@@ -190,6 +207,7 @@
                                                 <small class="text-muted">2 days ago at 8:30am</small>
                                             </div>
                                         </div>
+                                        
                                     </div>
                                 </div>
                                 </div>
@@ -237,18 +255,39 @@
                     </div>
                     <?php }; ?>
                     
-                    <h3>Documentos digitalizados:</h3>
-                    <ul class="list-unstyled project-files">
-                        <li><a href=""><i class="fa fa-file"></i> termo de abertura.pdf</a></li>
-                        <li><a href=""><i class="fa fa-file-picture-o"></i> juntada 00.pdf</a></li>
-                        <li><a href=""><i class="fa fa-stack-exchange"></i> portaria.pdf</a></li>
-                        <li><a href=""><i class="fa fa-file"></i> parte 001/2019 CGC.pdf</a></li>
-                    </ul>
                     <div class="text-center m-t-md">
-                        <a href="#" class="btn btn-xs btn-primary">Adicionar arquivo</a>
-                        <a href="#" class="btn btn-xs btn-primary">Report contact</a>
-
+                        <button type="button" class="btn btn-s btn-primary" data-toggle="modal" data-target="#enviar_documento">Adicionar documento</button>
                     </div>
+
+                    <h3>Histórico:</h3>
+                    <ul class="list-unstyled project-files">
+                        <li class='well'>
+                            <?php
+                            for ($i=0; $i <count($processo['Prorrogacao']); $i++) { 
+                                if($processo['Prorrogacao'][$i]){
+                                    echo 'Foi <b>prorrogado</b> em: ', $this->Formatacao->data($processo['Prorrogacao'][$i]['data_inicio']), '<br> por: ', $processo['Prorrogacao'][$i]['qtd_dias'],' dias, pelo: ', $processo['Prorrogacao'][$i]['responsavel_legal'], ', BGO: ',$processo['Prorrogacao'][$i]['bgo'], '<hr>';
+                                }    
+                            }
+                                ?>
+                            <?php
+                            for ($i=0; $i <count($processo['Suspensao']) ; $i++) { 
+                                if($processo['Suspensao'][$i]){
+                                    if($processo['Suspensao'][$i]['data_termino']){
+                                        $inicio = 'Foi <b>suspenso</b> <br> de: ';
+                                        $meio = ' até: ';
+                                        $fim = $this->Formatacao->data($processo['Suspensao'][$i]['data_termino']);
+                                    }else{
+                                        $inicio = 'Está <b>suspenso</b> desde: ';
+                                        $meio = '';
+                                        $fim = '';
+                                    }
+                                    echo $inicio, $this->Formatacao->data($processo['Suspensao'][$i]['data_inicio']), $meio, $fim,'<br> pelo: ', $processo['Suspensao'][$i]['responsavel_legal'], ', BGO: ',$processo['Suspensao'][$i]['bgo'], '<hr>';
+                                }    
+                            }
+                                ?>
+                        </li>
+                    </ul>
+
                 </div>
             </div>
         </div>

@@ -30,17 +30,17 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         <?php
         echo $this->Html->meta('icon');
 
-        echo $this->Html->css(array('plugins/datepicker/datepicker3'));
+        //echo $this->Html->css(array('plugins/datepicker/datepicker3'));
         echo $this->Html->css(array('plugins/toastr/toastr.min'));
-        echo $this->Html->css(array('bootstrap.min', 'font-awesome/css/font-awesome', 'animate', 'style', 'plugins/c3/c3.min'));
+        echo $this->Html->css(array('bootstrap.min', 'font-awesome', 'animate', 'style'));//, 'plugins/c3/c3.min'));
         ?>
         <?php
         //Main Scripts
         echo $this->Html->script(array('jquery-2.1.1', 'bootstrap.min'));
         //Custom Scripts
-        echo $this->Html->script(array('inspinia', 'plugins/pace/pace.min', 'plugins/metisMenu/jquery.metisMenu', 'plugins/slimscroll/jquery.slimscroll.min', 'plugins/toastr/toastr.min', 'plugins/bootbox/bootbox.min', 'gatilhos'));
+        echo $this->Html->script(array('inspinia', 'plugins/pace/pace.min', 'plugins/metisMenu/jquery.metisMenu', 'plugins/slimscroll/jquery.slimscroll.min', 'plugins/toastr/toastr.min', 'tabelaPesquisa'));//,'plugins/bootbox/bootbox.min', 'gatilhos'));
         //Inclui o chat
-        //echo $this->element('chat');
+        echo $this->element('chat');
         echo $this->fetch('meta');
         echo $this->fetch('css');
         echo $this->fetch('script');
@@ -73,7 +73,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                             </div>
                         </li>
                         <li class="active">
-                            <a><i class="fa fa-angellist"></i><span class="nav-label">Processos</span> <span class="fa arrow"></span></a>
+                            <a><i class="fa fa-file-text-o"></i><span class="nav-label">Processos</span> <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li class="active"><?php echo $this->Html->link('Relação de processos', array('controller' => 'processos', 'action' => 'lista')); ?></li>
                                 <li ><a data-toggle="modal" data-target="#novo">Novo processo</a></li>
@@ -81,7 +81,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                             </ul>
                         </li>
                         <li>
-                            <a><i class="fa fa-th-large"></i> <span class="nav-label">Usuários</span> <span class="fa arrow"></span></a>
+                            <a><i class="fa fa-user"></i> <span class="nav-label">Usuários</span> <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li class="active"><a href="index.html">Relação de usuários</a></li>
                                 <li ><a href="dashboard_3.html">Novo usuário</a></li>
@@ -89,7 +89,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                             </ul>
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Modelos de documento</span> <span class="fa arrow"></span></a>
+                            <a><i class="fa fa-book"></i> <span class="nav-label">Downloads</span> <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li class="active"><?php echo $this->Html->link('Modelos de documentos', array('controller' => 'arquivos', 'action' => 'lista')); ?></li>
+                                <li ><?php echo $this->Html->link('Cartilhas', array('controller' => 'arquivos', 'action' => 'lista')); ?></li>
+                                <li ><a href="dashboard_4_1.html">---</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span> <span class="label label-primary pull-right">NEW</span></a>
