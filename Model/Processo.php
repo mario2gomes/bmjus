@@ -68,13 +68,15 @@ class Processo extends AppModel {
             'rule' => 'notBlank'
         ),       
         'num_processo' => array(
-            'rule' => 'isUnique',
-            'message' => 'Já existe um processo com esse número'
+            'rule' => 'notBlank'
         ),  
         'situacoes_id' => array(
             'rule' => 'notBlank'
         ),       
         'data_bgo' => array(
+            'rule' => 'notBlank'
+        ),
+        'resumo' => array(
             'rule' => 'notBlank'
         ),
         'tipo_processos_id' => array(

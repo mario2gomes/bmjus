@@ -15,16 +15,21 @@ class Prorrogacao extends AppModel {
             'rule' => 'notBlank',
         ),
         'processo_id' => array(
-                    'rule' => 'notBlank',
-                ),
+            'rule' => 'notBlank',
+        ),
         'responsavel_legal' => array(
-                    'rule' => 'notBlank',
-                ),
+            'rule' => 'notBlank',
+        ),
         'responsavel_funcional' => array(
-                    'rule' => 'notBlank',
-                ),
+            'rule' => 'notBlank',
+        ),
         'bgo' => array(
-                    'rule' => 'notBlank',
-                ),
+            'rule' => 'notBlank',
+        ),
+        'qtd_dias' => array(
+            'rule' => 'notBlank',
+            'rule' => 'naturalNumber',
+            'message' => 'Apenas números',
+        )
     );
 } ?>

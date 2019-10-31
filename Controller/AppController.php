@@ -32,12 +32,14 @@ App::uses('File','Utility');
  * @package		app.Controller
  * @link		https://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
+
 class AppController extends Controller {
 
-
-/*
+    public $helpers = array ('Html','Form', 'Flash', 'CakePtbr.Formatacao');
 	public $components = array(
-        'Session',
+        'Flash',
+        'Prazos',
+/*        'Session',
         'Auth' => array(
             'flash' => array(
                 'element' => 'error',
@@ -45,14 +47,44 @@ class AppController extends Controller {
                 'params' => array()
             ),
             'authError' => 'Você não tem permissão para acessar essa funcionalidade.',
-/*                'authorize' => array(
+                'authorize' => array(
                     'Actions' => array('actionPath' => 'controllers'),
                     'all' => array('userModel' => 'Usuario')
-            ),*/
-    }
+            ),
+            'loginAction' => array(
+                'controller' => 'usuarios',
+                'action' => 'login',
+                'plugin' => null
+            ),
+            'logoutRedirect' => array(
+                'controller' => 'usuarios',
+                'action' => 'login',
+            ),
+            'loginRedirect' => array(
+                'controller' => 'painel',
+                'action' => 'index',
+                'plugin' => false
+            )
+           ),
+*/
+//          'Acl'
+//        'DebugKit.Toolbar'
+      );
 
 	function beforeFilter(){
+        $this->loadModel('ViewMilitar');
+        $this->loadModel('Usuario');
+        
+        //$Usuario = $this-> ViewMilitar->getPessoa(287555); 
+        $Usuario = $this-> ViewMilitar->getPessoa(113930); // comandante geral       
+        $Grupo = //pr($this-> Session-> read('Auth'));;
+        $Grupo = 4;
 
+        $this->set('usuarios',$Usuario);
+        $this->set('grupos',$Grupo);
+        pr ('Grupo id: ');
+        pr ($Grupo);
+        pr($Usuario);
 
         //Configure AuthComponent (de acordo com o tutorial cakephp, mas essa configuração já está no component auth)
 /*        $this->Auth->loginAction = array(
@@ -120,3 +152,4 @@ class AppController extends Controller {
         $grupo_atual = 2;
         return $grupo_atual;
     }
+}

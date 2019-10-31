@@ -23,11 +23,15 @@
                                         $qtd_dias = 10;
                                         break;
                                 }
-
-                                echo $this->Form->input('qtd_dias', array('value' => $qtd_dias, 'type' => 'hidden'));
+                                //caso seja o comandante geral a quantidade de dias precisa ser definida por ele
+                                if ($usuarios['funcao_id'] == 52) {
+                                    echo $this->Form->input('qtd_dias', array('label'=>'Quantos dias?'));
+                                }else{
+                                    echo $this->Form->input('qtd_dias', array('value' => $qtd_dias, 'type' => 'hidden'));
+                                }
                                 echo $this->Form->input('processo_id', array('value' => $processo['Processo']['id'], 'type'=> 'hidden'));
-                                echo $this->Form->input('responsavel_funcional', array('value' => $usuarios, 'type'=> 'hidden'));
-                                echo $this->Form->input('responsavel_legal',array('label'=>'Autoridade responsável'));
+                                echo $this->Form->input('responsavel_funcional', array('value' => $usuarios['num_matricula'], 'type'=> 'hidden'));
+                                echo $this->Form->input('responsavel_legal',array('value' => $usuarios['num_matricula'], 'type'=> 'hidden'));
                                 ?>
                                 <!--<b>Inicia em:</b>
                                 <br> -->

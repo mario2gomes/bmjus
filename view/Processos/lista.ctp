@@ -1,3 +1,5 @@
+<?php echo $this->element('modal/novo') ?>
+
 <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-sm-4">
                     <h2>Relação de processos</h2>
@@ -18,15 +20,18 @@
                     <div class="ibox">
                         <div class="ibox-title">
                             <h5>Meus processos</h5>
-                            <div class="ibox-tools">
-                                <!-- Button trigger modal -->
-                                <?php echo $this->element('modal/novo') ?>
-                                <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#novo">Novo processo</button>
-                            </div>
+                            <?php //Apenas autoridade instauradora e corregdoria podem abrir um processo;
+                                if ($grupos == 4 || $grupos == 2){ ?>
+                                    <div class="ibox-tools">
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#novo">Novo processo</button>
+                                    </div>
+                            <?php } ?>
                         </div>
                         <div class="ibox-content">    
                             <div class="project-list">
-                                <table id="tabela-processos" class="table table-hover table-mail table-striped dataTables-example">
+                                <!--dataTables-example: tabela dinâmica moldável javascript-->
+                                <table class="table table-hover table-mail table-striped dataTables-example">
                                     <thead>
                                         <tr>
                                             <th onclick="sortTable(0)" >Processo</th>
@@ -39,16 +44,19 @@
                                     <tbody>
                                     <?php foreach ($processos as $processo){
                                     $numero = $processo['Processo']['num_processo'] ;
+                                    //O usuário visualiza apenas os processos com os quais está envolvido
+                                    //usuário adm ou corregedoria visualiza todos
                                         if( $grupos != 1 && 
                                             $grupos != 2 &&
-                                            (($grupos == 3 && $processo['Processo']['encarregado']!=$usuarios) ||
-                                            ($grupos == 4  && $processo['Processo']['instaurador'] != $usuarios) ||
-                                            ($grupos == 5 && $processo['Processo']['investigado'] != $usuarios))
+                                            (($grupos == 3 && $processo['Processo']['encarregado']!=$usuarios['num_matricula']) ||
+                                            ($grupos == 4  && $processo['Processo']['instaurador'] != $usuarios['num_matricula']) ||
+                                            ($grupos == 5 && $processo['Processo']['investigado'] != $usuarios['num_matricula'])) &&
+                                            $usuarios['funcao_id'] != 1260
                                         ){ continue; } 
                                         ?>                        
                                     <tr
                                         <?php if($processo['Processo']['situacoes_id'] == 2){ ?>
-                                    style="background-color:#FFEAEA"'
+                                    style="background-color:#FFEAEA"
                                         <?php } ?> >
                                         <td class="project-title">
                                             <a><?php echo $processo['Tipo_processo']['descricao'], ' ', $this->Html->link($numero, array('controller' => 'processos', 'action' => 'detalhe', $processo['Processo']['id'])),' ', $processo['Processo']['obm']; ?></a>
@@ -63,7 +71,11 @@
                                         </td>
                                         <td>
                                             <div>
-                                                <?php echo substr($processo['Processo']['resumo'],0,20); ?>
+                                                <?php                   
+                                                if($processo['Processo']['resumo']) {
+                                                    ?>
+                                                        <a rel='popover' title='Resumo' data-content='tt'><?php echo substr($processo['Processo']['resumo'],0,20); ?></a>
+                                                <?php } ?>
                                             </div>
                                         </td>
                                         <?php 

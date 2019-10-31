@@ -1,9 +1,9 @@
     <?php   
-    if( $grupos != 1 && $grupos != 2 && (
-            ($grupos == 3 && $processo['Processo']['encarregado']!=$usuarios) ||
-            ($grupos == 4  && $processo['Processo']['instaurador'] != $usuarios) ||
-            ($grupos == 5 && $processo['Processo']['escrivao'] != $usuarios) ||
-            ($grupos == 6 && $processo['Processo']['investigado'] != $usuarios))){
+    if($usuarios['funcao_id'] != 1260 && $grupos != 1 && $grupos != 2 && (
+            ($grupos == 3 && $processo['Processo']['encarregado']!=$usuarios['num_matricula']) ||
+            ($grupos == 4  && $processo['Processo']['instaurador'] != $usuarios['num_matricula']) ||
+            ($grupos == 5 && $processo['Processo']['escrivao'] != $usuarios['num_matricula']) ||
+            ($grupos == 6 && $processo['Processo']['investigado'] != $usuarios['num_matricula']))){
         echo 'Você não tem permissão de acessar esse processo!';
     } else{
         echo $this->element('modal/tramitar');
@@ -223,14 +223,13 @@
             </div>
             <div class="col-lg-3">
                 <div class="wrapper wrapper-content project-manager">
-                    <h3>Descrição do processo: </h3>
-                    <img src="img/zender_logo.png" class="img-responsive">
+                    <h3>Resumo: </h3>
                     <p>
-                        <?php echo $processo['Processo']['descricao']; ?>
+                        <?php echo $processo['Processo']['resumo']; ?>
                     </p>
                     <?php
                         if( $grupos == 1 || $grupos == 2 || $grupos == $processo['Processo']['posse_id']){
-                            if( $grupos == 4 && $processo['Processo']['instaurador'] == $usuarios && $processo['Processo']['estados_id'] == 3){ ?>
+                            if( $grupos == 4 && $processo['Processo']['instaurador'] == $usuarios['num_matricula'] && $processo['Processo']['estados_id'] == 3){ ?>
                     <div class="text-center">
                         <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#solucionar">Emitir solucao</button>
                     </div>
@@ -239,9 +238,14 @@
                         <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#tramitar">Tramitar</button>
                     </div>
                     <?php }; 
-
-                        if( $grupos == 1 || $grupos == 2){
-                            if ($processo['Processo']['estados_id'] != 2 && $processo['Processo']['prorrogacoes'] < 2){
+                    //Apenas a autoridade instauradora pode prorrogar pela 1ªvez e apenas o comandante geral pode prorrogar pela 2ª
+                        if($usuarios['funcao_id'] == 1260 && $processo['Processo']['estados_id'] == 1 && $processo['Processo']['prorrogacoes'] == 1){ ?>
+                    <div class="text-center m-t-md">
+                        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#prorrogar">Prorrogar</button>
+                    </div>
+                <?php }
+                        if($grupos == 4 && $processo['Processo']['instaurador'] == $usuarios['num_matricula']){
+                            if ($processo['Processo']['estados_id'] == 1 && $processo['Processo']['prorrogacoes'] == 0){
                     ?>
                     <div class="text-center m-t-md">
                         <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#prorrogar">Prorrogar</button>

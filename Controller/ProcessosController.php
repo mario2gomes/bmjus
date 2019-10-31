@@ -1,7 +1,7 @@
 <?php 
 class ProcessosController extends AppController {
-    public $helpers = array ('Html','Form', 'Flash', 'CakePtbr.Formatacao');
-    public $components = array('Flash', 'Prazos');
+
+    var $components = array('RequestHandler');
 
     function index(){
         $this->set('title_for_layout', 'Corregedoria');           
@@ -15,13 +15,13 @@ class ProcessosController extends AppController {
         $this -> set('processos', $this -> Processo -> find('all',['order'=> ['Processo.created'=> 'DESC']]));
         $this->set('punicoes', $this-> Punicao ->find('all'));
       
-        $this->loadModel('Usuario');
-        $this->loadModel('Grupo');
-$Grupo = 2 ;//grupos: 1-adm; 2- corregedoria, 3-encarregado,4-autoridade,5-acusado
+//        $this->loadModel('Usuario');
+//        $this->loadModel('Grupo');
+//$Grupo = 2 ;//grupos: 1-adm; 2- corregedoria, 3-encarregado,4-autoridade,5-acusado
 //$this-> Grupo -> find('list',array('fields' => array('Grupo.Dsc_grupo')));
-$this->set('grupos',$Grupo);
-$Usuario = 1;//$this-> Usuario -> find('list',array('fields' => array('Usuario.grupo_bmjus')));
-$this->set('usuarios',$Usuario);
+//$this->set('grupos',$Grupo);
+//$Usuario = 1;//$this-> Usuario -> find('list',array('fields' => array('Usuario.grupo_bmjus')));
+//$this->set('usuarios',$Usuario);
     }
 
     function detalhe($id = null) {
@@ -49,11 +49,11 @@ $this->set('usuarios',$Usuario);
         $funcoes = $this -> Grupo -> find('list', array('fields'=>array('Grupo.dsc_grupo')));
         $this->set('funcoes', $funcoes);
 
-$Grupo = 2 ;//grupos: 1-adm; 2- corregedoria, 3-encarregado,4-autoridade,5-acusado
+//$Grupo = 2 ;//grupos: 1-adm; 2- corregedoria, 3-encarregado,4-autoridade,5-acusado
 //$this-> Grupo -> find('list',array('fields' => array('Grupo.Dsc_grupo')));
-$this->set('grupos',$Grupo);
-$Usuario = 1;//$this-> Usuario -> find('list',array('fields' => array('Usuario.grupo_bmjus')));
-$this->set('usuarios',$Usuario);
+//$this->set('grupos',$Grupo);
+//$Usuario = 1;//$this-> Usuario -> find('list',array('fields' => array('Usuario.grupo_bmjus')));
+//$this->set('usuarios',$Usuario);
 
 
         $processo = $this->Processo->find('all');
@@ -66,9 +66,12 @@ $this->set('usuarios',$Usuario);
     }
 
     public function novo() {
+        $this->layout= 'default';
         $this->loadModel('Tipo_processo');
 //        $this->loadModel('Relatorio');
         if ($this->request->is('post')) {
+            pr($this -> request -> data);
+            echo 1;
             $id_tipo = $this -> request -> data['Processo']['tipo_processos_id'];
             $tipoProcesso = $this -> Tipo_processo -> findById($id_tipo);
             $inicio = $this -> request -> data['Processo']['data_bgo'];
@@ -79,16 +82,19 @@ $this->set('usuarios',$Usuario);
 //            $data_termino -> add (new DateInterval("P".$prazo."D"));
 //$this -> request -> data ['Processo']['previsao_termino'] = $data_termino -> format("Y-m-d");
             $this -> request -> data ['Processo']['prazo'] = $prazo;
-            $this -> request -> data ['Processo']['numero'] = str_replace('/', '_',$this -> request -> data ['Processo']['numero']);
+            $this -> request -> data ['Processo']['num_processo'] = str_replace('/', '_',$this -> request -> data ['Processo']['num_processo']);
             $this -> request -> data ['Processo']['situacoes_id'] = 1;
             $this -> request -> data ['Processo']['estados_id'] = 1;
             $this -> request -> data ['Processo']['posse_id'] = 3;
+            $this -> request -> data ['Processo']['prorrogacoes'] = 0;
             $this -> request -> data ['Processo']['previsao_termino'] = $termino->format('Y-m-d');
           
 //            $dataSourceProcesso = $this-> Processo ->getDataSource();
 //            $dataSourceProcesso->begin();    
             $this -> Processo ->create();
             if ($this -> Processo -> save($this-> request-> data)) {
+                pr($this -> request -> data);
+                echo 2;
 /*                $dataSourceRelatorio = $this-> Relatorio ->getDataSource();
                 $dataSourceRelatorio->begin();    
                 $this -> request -> data ['Relatorio']['situacao_id'] = 1;
@@ -111,7 +117,10 @@ $this->set('usuarios',$Usuario);
             }
             else{
 //                $dataSourceProcesso->rollback();
+                pr($this -> request -> data);
+            echo 3;
                 $this-> Flash-> success('Houve um erro, processo não adicionado');
+                $this -> redirect(array('action' => 'lista'));
             }
         }
     }
