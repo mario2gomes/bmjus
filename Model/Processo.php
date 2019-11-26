@@ -19,6 +19,7 @@ class Processo extends AppModel {
             'foreignKey' => 'Posse_id'),
         'Tipo_processo' => array(
             'className' => 'Tipo_processo',
+            'dependent' => true,
     		'foreignKey' => 'tipo_processos_id')
     );
 
@@ -46,11 +47,6 @@ class Processo extends AppModel {
     );
             
 	public $validate = array(
-        'num_portaria' => array(
-            'rule' => 'notBlank',
-            'rule' => 'isUnique',
-            'message' =>'Já existe um processo com esse número'
-        ),
         'prorrogacoes' => array(
             'rule' => array('range',-1,3),
             'message' =>'Esse processo já foi prorrogado 2 vezes, portanto não cabem mais prorrogações'
@@ -68,6 +64,15 @@ class Processo extends AppModel {
             'rule' => 'notBlank'
         ),       
         'num_processo' => array(
+            'rule' => 'notBlank'
+        ),  
+        'num_ordem' => array(
+            'rule' => 'notBlank'
+        ),  
+        'ano' => array(
+            'rule' => 'notBlank'
+        ),  
+        'criador_processo_id' => array(
             'rule' => 'notBlank'
         ),  
         'situacoes_id' => array(

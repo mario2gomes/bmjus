@@ -74,17 +74,20 @@ class AppController extends Controller {
 	function beforeFilter(){
         $this->loadModel('ViewMilitar');
         $this->loadModel('Usuario');
+        $this->loadModel('Processo');
         
         //$Usuario = $this-> ViewMilitar->getPessoa(287555); 
-        $Usuario = $this-> ViewMilitar->getPessoa(113930); // comandante geral       
-        $Grupo = //pr($this-> Session-> read('Auth'));;
-        $Grupo = 4;
-
-        $this->set('usuarios',$Usuario);
-        $this->set('grupos',$Grupo);
-        pr ('Grupo id: ');
-        pr ($Grupo);
-        pr($Usuario);
+        $Usuario_atual = $this-> ViewMilitar->getPessoa('02382122463'); // administrador       
+        //$Usuario_atual = $this-> ViewMilitar->getPessoa('20827202415'); // corregedoria       
+        //$Usuario_atual = $this-> ViewMilitar->getPessoa('05125027499'); // encarregado       
+        //$Grupo = pr($this-> Session-> read('Auth'));;
+        //$Grupo_atual = 4;
+        //$this->set('processos',$this-> Processo-> find('all'));
+        $this->set('usuario_atual',$Usuario_atual);
+        //$this->set('grupo_atual',$Grupo_atual);
+        //pr ('Grupo id: '.$Grupo_atual);
+        //pr ('Usuário: ');
+        //pr($Usuario_atual);
 
         //Configure AuthComponent (de acordo com o tutorial cakephp, mas essa configuração já está no component auth)
 /*        $this->Auth->loginAction = array(
@@ -143,13 +146,13 @@ class AppController extends Controller {
         
 	}
 	
-	function getUserId() {
-        $usuario_atual = 1;
+	function getUserId($cpf) {
+        $usuario_atual = $cpf;
 		return $usuario_atual;
 	}
 
-    function getGrupoId(){
-        $grupo_atual = 2;
-        return $grupo_atual;
+    function getGrupoId($id){
+        $usuario_atual['grupo'] = $id;
+        return $usuario_atual['grupo'];
     }
 }

@@ -1,11 +1,11 @@
-<?php echo $this->element('modal/novo') ?>
+<?php echo $this->element('modal/processos/novo') ?>
 
 <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-sm-4">
                     <h2>Relação de processos</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.html">Processos</a>
+                            <a>Processos</a>
                         </li>
                         <li class="active">
                             <strong>lista</strong>
@@ -19,9 +19,9 @@
 
                     <div class="ibox">
                         <div class="ibox-title">
-                            <h5>Meus processos</h5>
-                            <?php //Apenas autoridade instauradora e corregdoria podem abrir um processo;
-                                if ($grupos == 4 || $grupos == 2){ ?>
+                            <h5>Processos</h5>
+                            <?php //Apenas autoridade instauradora e corregdoria podem abrir um processo;                            
+                                if ($usuario_atual['grupo'] == 4 || $usuario_atual['grupo'] == 2){ ?>
                                     <div class="ibox-tools">
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#novo">Novo processo</button>
@@ -46,12 +46,12 @@
                                     $numero = $processo['Processo']['num_processo'] ;
                                     //O usuário visualiza apenas os processos com os quais está envolvido
                                     //usuário adm ou corregedoria visualiza todos
-                                        if( $grupos != 1 && 
-                                            $grupos != 2 &&
-                                            (($grupos == 3 && $processo['Processo']['encarregado']!=$usuarios['num_matricula']) ||
-                                            ($grupos == 4  && $processo['Processo']['instaurador'] != $usuarios['num_matricula']) ||
-                                            ($grupos == 5 && $processo['Processo']['investigado'] != $usuarios['num_matricula'])) &&
-                                            $usuarios['funcao_id'] != 1260
+                                        if( $usuario_atual['grupo'] != 1 && 
+                                            $usuario_atual['grupo'] != 2 &&
+                                            (($usuario_atual['grupo'] == 3 && $processo['Processo']['encarregado']!=$usuario_atual['cpf']) ||
+                                            ($usuario_atual['grupo'] == 4  && $processo['Processo']['instaurador'] != $usuario_atual['cpf']) ||
+                                            ($usuario_atual['grupo'] == 5 && $processo['Processo']['investigado'] != $usuario_atual['cpf'])) &&
+                                            $usuario_atual['funcao_id'] != 1260
                                         ){ continue; } 
                                         ?>                        
                                     <tr
@@ -78,7 +78,7 @@
                                                 <?php } ?>
                                             </div>
                                         </td>
-                                        <?php 
+                                        <?php
                                             switch ($processo['Estado']['id']) {
                                                 case 1:
                                                     $label = 'label-primary';
@@ -132,7 +132,6 @@
                                                 break;
                                             } ?>
                                         </td>
-
                                     </tr>
                                 <?php }?>
                                     </tbody>

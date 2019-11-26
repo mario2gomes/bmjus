@@ -3,8 +3,163 @@
 App::uses('AppController', 'Controller');
 
 class UsuariosController extends AppController {
-    var $components = array('RequestHandler');
-	
+    public $helpers = array ('Html','Form','Flash','Estatistica');
+    public $components = array('Flash','Acl');
+
+    //funÃ§Ã£o de login
+/*  public function login() {
+
+        if ($this->Auth->login()) {
+            $this->redirect($this->Auth->redirect());
+        } else {
+            $this->Session->error('Login ou senha invÃ¡lidas! Por favor, tente novamente!');
+        }
+    }
+
+    //funÃ§Ã£o de logout
+    public function logout() {
+        $this->redirect($this->Auth->logout());
+    }
+
+    //index: 
+    public function index() {
+        $this->User->recursive = 0;
+        $this->set('users', $this->paginate());
+        $this -> loadModel('Extra');
+        $this->set('users', $this->User->find('all'));
+        $this->set('extras', $this->Extra->find('all'));
+    }    
+*/
+    public function lista() {
+        $this->set('usuarios', $this-> Usuario-> find('all', array('conditions'=>array('Usuario.grupo_bmjus !='=>0))));
+        $this->set('nomes', $this-> Usuario-> find('list', array('fields' => 'nome')));
+
+    }
+
+    public function perfil($cpf=null){
+        $this->layout = 'ajax';
+        $this->set(compact('cpf'));
+    }
+
+    function detalhe($cpf = null) {
+        $processo = $this->Processo->find('all');
+        $this-> set ('processo', $processo);
+        if ($this->request->is('get')){
+            $this->request->data = $this->Usuario->findByCpf($cpf);
+            $this->set('usuario', $this->Usuario->findByCpf($cpf));
+        }
+    }
+
+    //DesignaÃ§Ã£o de autoridade instauradora (reduzir pra uma sÃ³ funÃ§Ã£o de designaÃ§Ã£o com todos as funÃ§Ãµes por variÃ¡vel)
+    public function novo_instaurador(){
+        if ($this-> request->is('post')) {
+            $this-> Usuario-> id= $this->request->data['Usuario']['cpf'];
+            if($this-> Usuario->saveField('grupo_bmjus',4)){
+                $this-> Flash-> success('Autoridade designada');
+                $this-> redirect(array('action'=>'lista','ã…¤'));
+            }
+            else{
+                $this-> Flash-> error('Erro na designaÃ§Ã£oo');
+                $this-> redirect(array('action'=>'lista','ã…¤'));
+            }
+        }
+    }
+
+    //DesignaÃ§Ã£o de escrivÃ£o
+    public function novo_escrivao(){
+        if ($this-> request->is('post')) {
+            $this-> Usuario-> id= $this->request->data['Usuario']['cpf'];
+            if($this-> Usuario-> saveField('grupo_bmjus',5)){
+                $id = $this->request->data['Usuario']['id'];
+                $this-> Processo-> id = $id;
+                $this-> Processo-> saveField('escrivao',$this->request->data['Usuario']['cpf']);
+                $this-> Flash-> success('EscrivÃ£o designado');
+                $this-> redirect(array('controller'=>'processos','action'=>'detalhe',$id));
+            }
+            else{
+                $this-> Flash-> error('Erro na designaÃ§Ã£oo');
+                $this-> redirect(array('controller'=>'processos','action'=>'detalhe',$id));
+            }
+        }
+    }
+
+    //DesignaÃ§Ã£o de escrivÃ£o
+    public function novo_encarregado(){
+        if ($this-> request->is('post')) {
+            $this-> Usuario-> id= $this->request->data['Usuario']['cpf'];
+            if($this-> Usuario-> saveField('grupo_bmjus',3)){
+                $id = $this->request->data['Usuario']['id'];
+                $this-> Processo-> id = $id;
+                $this-> Processo-> saveField('encarregado',$this->request->data['Usuario']['cpf']);
+                $this-> Flash-> success('Encarregado substituÃ­do');
+                $this-> redirect(array('controller'=>'processos','action'=>'detalhe',$id));
+            }
+            else{
+                $this-> Flash-> error('Erro na substituiÃ§Ã£o');
+                $this-> redirect(array('controller'=>'processos','action'=>'detalhe',$id));
+            }
+        }
+    }
+
+
+//encarregados sÃ£o designados pela autoridade (na abertura do processo)
+
+//escrivÃ£es sÃ£o designados pelo encarregado a qualquer momento
+
+//invetigados sao incluÃ­dos na citaÃ§Ã£o
+
+
+//>>>>>>>>>>>>>>>>>>>>>>>>
+
+    //exibiÃ§Ã£o do usuÃ¡rios
+/*    public function perfil($id = null) {
+        if (!$this->User->exists($id)) {
+            throw new NotFoundException(__('UsuÃ¡rio invÃ¡lido'));
+        }
+        $this->set('user', $this->User->findById($id));
+    }
+*/
+    //adicionar usuÃ¡rio
+    public function add() {
+        $this->set('userId', $this->Auth->user('id'));
+        $this->set('userRolesId', $this->Auth->user('roles_id'));
+        if ($this->request->is('post')) {
+            $this->User->create();
+            if ($this->User->save($this->request->data)) {
+                $this->Flash->success(__('Militar adicionado'));
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Flash->error(__('Ocorreu um erro, por favor tente novamente'));
+            }
+        }
+    }
+
+
+
+
+    //editar usuÃ¡rio
+    public function edit($id = null) {
+        $this->User->id = $id;
+        if (!$this->User->exists()) {
+            throw new NotFoundException(__('UsuÃ¡rio invÃ¡lido'));
+        }
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if ($this->User->save($this->request->data)) {
+                $this->Flash->success(__('Dados do militar alterados'));
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Flash->error(__('Erro, por favor tente novamente'));
+            }
+        } else {
+            $this->request->data = $this->User->findById($id);
+            unset($this->request->data['User']['password']);
+        }
+    }    
+
+
+}
+
+/*
     public function index() {
         $this->Usuario->recursive = 0;
         $this->set('usuarios', $this->paginate());
@@ -17,7 +172,7 @@ class UsuariosController extends AppController {
                 $this->Session->setFlash('A sua senha foi alterada com sucesso!', 'default', array('class' => 'success'));
                 $this->redirect(array('action' => 'perfil'));
             } else {
-                $this->Session->setFlash('A sua senha não pôde ser alterada!Tente novamente!');
+                $this->Session->setFlash('A sua senha nÃ£o pÃ´de ser alterada!Tente novamente!');
             }
         }
         if (empty($this->data)) {
@@ -27,15 +182,6 @@ class UsuariosController extends AppController {
         }
     }
 
-    public function login() {
-/*
-        if ($this->Auth->login()) {
-            $this->redirect($this->Auth->redirect());
-        } else {
-            $this->Session->error('Matricula ou senha inválidas! Por favor, tente novamente!');
-        }
-    }
-*/
         $this->set('title_for_layout', 'BMJUS - Login');
         $this->layout = 'login';
 		if ($this->request->is('mobile')) {
@@ -53,7 +199,7 @@ class UsuariosController extends AppController {
 //            $this->redirect(array('Controller' => 'processos', 'action'=>'lista'));
             } else {
 
-                $this->Session->setFlash('Matricula e senha inválidas! Por favor, tente novamente!', 'Flash/error_animated');
+                $this->Session->setFlash('Matricula e senha invÃ¡lidas! Por favor, tente novamente!', 'Flash/error_animated');
             }
         }
     }
@@ -132,14 +278,14 @@ class UsuariosController extends AppController {
             $usuario = $this->Usuario->find('first', array('fields'=>array('mat_usuario', 'grupo_sgo', 'cpf'), 'conditions' => array('mat_usuario' => $this->request->data['Usuario']['mat_busca'])));
             
             if(empty($usuario)){
-                $this->Session->setFlash('Usuário não encontrado.', 'Flash/error');
+                $this->Session->setFlash('UsuÃ¡rio nÃ£o encontrado.', 'Flash/error');
             }
             $this->set(compact('perfis', 'usuario'));
         }
     }
 
     function edit_perfil() {
-        //Faz a alteração
+        //Faz a alteraÃ§Ã£o
         if ($this->request->is('post')) {
             $this->loadModel('Usuario');
             $this->Usuario->create();
@@ -164,112 +310,27 @@ class UsuariosController extends AppController {
 <?php
 //tirado do app folgas
 /*
-    class UsersController extends AppController {
-    public $helpers = array ('Html','Form','Flash');
-    public $components = array('Flash','Acl');
 
-    //funções executadas sem autenticação (add)
+    //funÃ§Ãµes executadas sem autenticaÃ§Ã£o (add)
     public function beforeFilter() {
         parent::beforeFilter();
         $this->Auth->allow('add');
     }
 
-    //função de login
-    public function login() {
-        if ($this->Auth->login()) {
-            $this->redirect($this->Auth->redirect());
-        } else {
-            $this->Flash->error('Usuário ou senha inválidos, tente novamente');
-        }
-    }
-
-    //função de logout
-    public function logout() {
-        $this->redirect($this->Auth->logout());
-    }
-
-    //index
-    public function index() {
-        $this->User->recursive = 0;
-        $this->set('users', $this->paginate());
-        $this -> loadModel('Extra');
-        $this->set('users', $this->User->find('all'));
-        $this->set('extras', $this->Extra->find('all'));
-    }    
-
-    //exibição do usuários
-    public function view($id = null) {
-        if (!$this->User->exists($id)) {
-            throw new NotFoundException(__('Usuário inválido'));
-        }
-        $this->set('user', $this->User->findById($id));
-    }
-
-
-    public function lista() {
-        $this->set('users', $this->User->find('all'));
-    }
-
-    //adicionar usuário
-    public function add() {
-        $this->set('userId', $this->Auth->user('id'));
-        $this->set('userRolesId', $this->Auth->user('roles_id'));
-        if ($this->request->is('post')) {
-            $this->User->create();
-            if ($this->User->save($this->request->data)) {
-                $this->Flash->success(__('Militar adicionado'));
-                $this->redirect(array('action' => 'index'));
-            } else {
-                $this->Flash->error(__('Ocorreu um erro, por favor tente novamente'));
-            }
-        }
-    }
-
-    //editar usuário
-    public function edit($id = null) {
-        $this->User->id = $id;
-        if (!$this->User->exists()) {
-            throw new NotFoundException(__('Usuário inválido'));
-        }
-        if ($this->request->is('post') || $this->request->is('put')) {
-            if ($this->User->save($this->request->data)) {
-                $this->Flash->success(__('Dados do militar alterados'));
-                $this->redirect(array('action' => 'index'));
-            } else {
-                $this->Flash->error(__('Erro, por favor tente novamente'));
-            }
-        } else {
-            $this->request->data = $this->User->findById($id);
-            unset($this->request->data['User']['password']);
-        }
-    }    
-    
-    public function perfil($id = null) {
-        $this->set('users', $this->User->findById($id));
-    }
-
-    public function novo() {
-        if ($this->request->is('Post')) {
-            if ($this->User->save($this->request->data)) {
-                $this->Flash->success('Militar adicionado');
-                $this->redirect(array('action' => 'index'));
-            }
-        }
-    }
-    
+   
     public function delete($id = null) {
         if (!$this->request->is('post')) {
             throw new MethodNotAllowedException();
         }
         $this->User->id = $id;
         if (!$this->User->exists()) {
-            throw new NotFoundException(__('Usuário inválido'));
+            throw new NotFoundException(__('UsuÃ¡rio invÃ¡lido'));
         }
         if ($this->User->delete()) {
             $this->Flash->success(__('Militar removido'));
             $this->redirect(array('action' => 'index'));
         }
-        $this->Flash->error(__('Erro, militar não removido'));
+        $this->Flash->error(__('Erro, militar nÃ£o removido'));
         $this->redirect(array('action' => 'index'));
     }
 
@@ -286,7 +347,7 @@ class UsuariosController extends AppController {
     public function criar_aro_grupos() {
     $aro = $this->Acl->Aro;
 
-        //Criação do array com descrição dos grupos
+        //CriaÃ§Ã£o do array com descriÃ§Ã£o dos grupos
         $groups = array(
             0 => array(
                 'alias' => 'administrador'
@@ -299,7 +360,7 @@ class UsuariosController extends AppController {
             ),
         );
 
-        // Iteraçao para criação do ARO grupo
+        // IteraÃ§ao para criaÃ§Ã£o do ARO grupo
         foreach ($groups as $data) {
             // Remember to call create() when saving in loops...
             $aro->create();
@@ -308,7 +369,7 @@ class UsuariosController extends AppController {
             $aro->save($data);
         }
 
-        $this->Flash->success('Grupo de usuários criado');
+        $this->Flash->success('Grupo de usuÃ¡rios criado');
         $this->redirect(array('action' => 'index'));
         // Other action logic goes here...
     }
@@ -347,7 +408,7 @@ class UsuariosController extends AppController {
             $aro->save($data);
         }
 
-        $this->Flash->success('Grupo de usuários criado');
+        $this->Flash->success('Grupo de usuÃ¡rios criado');
         $this->redirect(array('action' => 'index'));
 
         // Other action logic goes here...

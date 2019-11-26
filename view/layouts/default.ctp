@@ -1,5 +1,5 @@
 <?php
-$usuario['cargo_nome'] = 'Seja bem vindo ten fulano';
+$usuario_atual['cargo_nome'] = 'Seja bem vindo ten fulano';
 /**
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
@@ -58,7 +58,6 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 </head>
 
 <body class="pace-done mini-navbar">
-    <?php echo $this->element('modal/novo') ?>
 
         <div id="wrapper">
             <nav class="navbar-default navbar-static-side" role="navigation">
@@ -70,7 +69,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                 <a class="navbar-minimalize" href="#"><h2 class="font-bold"><i class="fa fa-bars"></i> BMJUS</h2></a>
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                     <span class="clear"> 
-                                        <span class="block m-t-xs"> <strong class="font-bold"><?= $usuario['cargo_nome'] ?></strong></span>
+                                        <span class="block m-t-xs"> <strong class="font-bold"><?= $usuario_atual['cargo_nome'] ?></strong></span>
                                     </span> 
                                 </a>
                                 <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -86,16 +85,13 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                             <a><i class="fa fa-file-text-o"></i><span class="nav-label">Processos</span> <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li class="active"><?php echo $this->Html->link('Relação de processos', array('controller' => 'processos', 'action' => 'lista')); ?></li>
-                                <li ><a data-toggle="modal" data-target="#novo">Novo processo</a></li>
                                 <li ><a>Calendário</a></li>
                             </ul>
                         </li>
                         <li>
                             <a><i class="fa fa-user"></i> <span class="nav-label">Usuários</span> <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li class="active"><a href="index.html">Relação de usuários</a></li>
-                                <li ><a href="dashboard_3.html">Novo usuário</a></li>
-                                <li ><a href="dashboard_4_1.html">---</a></li>
+                                <li class="active"><?php echo $this->Html->link('Relação de usuários', array('controller' => 'usuarios', 'action' => 'lista')); ?></li>
                             </ul>
                         </li>
                         <li>
@@ -152,7 +148,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
         <?php echo $this->element('sql_dump'); ?>
 
-        <script>
+    <script>
         $(document).ready(function() {
             $('.dataTables-example').dataTable({
                 responsive: true,

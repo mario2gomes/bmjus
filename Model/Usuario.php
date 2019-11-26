@@ -5,27 +5,36 @@ App::uses('UsuariosGrupo','Model');
 
 class Usuario extends AppModel {
     
-    //do tutorial cakephp
-    public $belongsTo = array('Grupo');
-
 	public $name = 'Usuario';
 	public $useDbConfig = 'seg';
 	public $useTable = 'cad_usuario';
 	public $primaryKey = 'cpf';
 //	descomentar a linha abaixo pra ativar o ACL
-	public $actsAs = array('Acl' => array('type' => 'requester'/*, 'enabled' => false*/));
+	//public $actsAs = array('Acl' => array('type' => 'requester'/*, 'enabled' => false*/));
 	//Dados do Usuário Autenticado
 	public $userData = null;
-	
+
+    public $belongsTo = array(
+    	'Grupo'=>array(
+    		'classname'=>'Grupo',
+    		'foreignKey'=>'grupo_bmjus')
+    );
+
+	public $hasOne = array(
+    	'ViewMilitar'=>array(
+    		'classname'=>'ViewMilitar',
+    		'foreignKey'=>'num_cpf')
+    );
+
 //	Funções do acl (descomentar as 2 próximas função pra ativar o ACL)
 	public function parentNode() {
 		if (!$this->id && empty($this->data)) {
 			return null;
 		}
-		if (isset($this->data['Usuario']['GRUPO_BMJUS'])) {
-			$groupId = $this->data['Usuario']['GRUPO_BMJUS'];
+		if (isset($this->data['Usuario']['grupo_bmjus'])) {
+			$groupId = $this->data['Usuario']['grupo_bmjus'];
 		} else {
-			$groupId = $this->field('GRUPO_BMJUS');
+			$groupId = $this->field('grupo_bmjus');
 		}
 		if (!$groupId) {
 			return null;
@@ -34,7 +43,7 @@ class Usuario extends AppModel {
 	}
         
 	public function bindNode($user) {
-		return array('model' => 'Grupo', 'foreign_key' => $user['Usuario']['GRUPO_BMJUS']);
+		return array('model' => 'Grupo', 'foreign_key' => $user['Usuario']['grupo_bmjus']);
 	}
         
 	public function autenticar($cpf, $pass){
@@ -77,6 +86,15 @@ class Usuario extends AppModel {
 		return  $this->userData;
 	}
     	
+    public $validate = array(
+        'grupo_bmjus' => array(
+            'rule' => 'notBlank',
+        ),
+        'cpf' => array(
+            'rule' => 'notBlank',
+        )
+    );
+    
 	
 }
 ?>

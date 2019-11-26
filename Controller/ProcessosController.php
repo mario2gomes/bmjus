@@ -9,12 +9,13 @@ class ProcessosController extends AppController {
     
     function lista() {
         $this->loadModel('Tipo_processo');
+        $this->loadModel('Usuario');        
         $tipo = $this-> Tipo_processo -> find('list',array('fields' => array('Tipo_processo.descricao')));
         $this->set('tipos', $tipo);
         $this->loadModel('Punicao');
         $this -> set('processos', $this -> Processo -> find('all',['order'=> ['Processo.created'=> 'DESC']]));
         $this->set('punicoes', $this-> Punicao ->find('all'));
-      
+        $this->set('nomes', $this-> Usuario-> find('list', array('fields' => 'nome')));
 //        $this->loadModel('Usuario');
 //        $this->loadModel('Grupo');
 //$Grupo = 2 ;//grupos: 1-adm; 2- corregedoria, 3-encarregado,4-autoridade,5-acusado
@@ -49,6 +50,9 @@ class ProcessosController extends AppController {
         $funcoes = $this -> Grupo -> find('list', array('fields'=>array('Grupo.dsc_grupo')));
         $this->set('funcoes', $funcoes);
 
+        $this->loadModel('Usuario');
+        $this->set('nomes', $this-> Usuario-> find('list', array('fields' => 'nome')));
+
 //$Grupo = 2 ;//grupos: 1-adm; 2- corregedoria, 3-encarregado,4-autoridade,5-acusado
 //$this-> Grupo -> find('list',array('fields' => array('Grupo.Dsc_grupo')));
 //$this->set('grupos',$Grupo);
@@ -62,6 +66,7 @@ class ProcessosController extends AppController {
         if ($this->request->is('get')){
             $this->request->data = $this->Processo->findById($id);
             $this->set('processo', $this->Processo->findById($id));
+            $this->set('id', $id);
         }
     }
 
@@ -70,8 +75,6 @@ class ProcessosController extends AppController {
         $this->loadModel('Tipo_processo');
 //        $this->loadModel('Relatorio');
         if ($this->request->is('post')) {
-            pr($this -> request -> data);
-            echo 1;
             $id_tipo = $this -> request -> data['Processo']['tipo_processos_id'];
             $tipoProcesso = $this -> Tipo_processo -> findById($id_tipo);
             $inicio = $this -> request -> data['Processo']['data_bgo'];
@@ -82,12 +85,20 @@ class ProcessosController extends AppController {
 //            $data_termino -> add (new DateInterval("P".$prazo."D"));
 //$this -> request -> data ['Processo']['previsao_termino'] = $data_termino -> format("Y-m-d");
             $this -> request -> data ['Processo']['prazo'] = $prazo;
-            $this -> request -> data ['Processo']['num_processo'] = str_replace('/', '_',$this -> request -> data ['Processo']['num_processo']);
             $this -> request -> data ['Processo']['situacoes_id'] = 1;
             $this -> request -> data ['Processo']['estados_id'] = 1;
             $this -> request -> data ['Processo']['posse_id'] = 3;
             $this -> request -> data ['Processo']['prorrogacoes'] = 0;
             $this -> request -> data ['Processo']['previsao_termino'] = $termino->format('Y-m-d');
+            $data_bgo = $this -> request -> data ['Processo']['data_bgo'];
+            $this -> request -> data ['Processo']['ano'] = date("Y", strtotime($data_bgo));
+            $numero_ultimo_processo = $this -> Processo -> find('first', array('order' => array('Processo.num_ordem'=>'desc'), 'conditions'=>array('Processo.ano'=>$this-> request-> data ['Processo']['ano'], 'Processo.obm'=>$this-> request-> data ['Processo']['obm'])));
+            if ($numero_ultimo_processo['Processo']['num_ordem']){
+               $this -> request -> data ['Processo']['num_ordem'] = $numero_ultimo_processo['Processo']['num_ordem'] + 1;
+            }else{
+                $this -> request -> data ['Processo']['num_ordem'] = 1;
+            }
+            $this -> request -> data ['Processo']['num_processo'] = $this -> request -> data ['Processo']['num_ordem'].'/'.$this -> request -> data ['Processo']['ano'];
           
 //            $dataSourceProcesso = $this-> Processo ->getDataSource();
 //            $dataSourceProcesso->begin();    

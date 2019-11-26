@@ -1,25 +1,28 @@
-    <?php   
-    if($usuarios['funcao_id'] != 1260 && $grupos != 1 && $grupos != 2 && (
-            ($grupos == 3 && $processo['Processo']['encarregado']!=$usuarios['num_matricula']) ||
-            ($grupos == 4  && $processo['Processo']['instaurador'] != $usuarios['num_matricula']) ||
-            ($grupos == 5 && $processo['Processo']['escrivao'] != $usuarios['num_matricula']) ||
-            ($grupos == 6 && $processo['Processo']['investigado'] != $usuarios['num_matricula']))){
+<?php   
+echo $this->element('modal/usuarios/novo_escrivao');
+echo $this->element('modal/usuarios/novo_encarregado');
+
+    if($usuario_atual['funcao_id'] != 1260 && $usuario_atual['grupo'] != 1 && $usuario_atual['grupo'] != 2 && (
+            ($usuario_atual['grupo'] == 3 && $processo['Processo']['encarregado']!=$usuario_atual['cpf']) ||
+            ($usuario_atual['grupo'] == 4  && $processo['Processo']['instaurador'] != $usuario_atual['cpf']) ||
+            ($usuario_atual['grupo'] == 5 && $processo['Processo']['escrivao'] != $usuario_atual['cpf']) ||
+            ($usuario_atual['grupo'] == 6 && $processo['Processo']['investigado'] != $usuario_atual['cpf']))){
         echo 'Você não tem permissão de acessar esse processo!';
     } else{
-        echo $this->element('modal/tramitar');
-        echo $this->element('modal/prorrogar');
-        echo $this->element('modal/suspender');
-        echo $this->element('modal/reabrir');
-        echo $this->element('modal/editar');
-        echo $this->element('modal/enviar_documento');
-        echo $this->element('modal/solucionar');
+        echo $this->element('modal/processos/tramitar');
+        echo $this->element('modal/processos/prorrogar');
+        echo $this->element('modal/processos/suspender');
+        echo $this->element('modal/processos/reabrir');
+        echo $this->element('modal/processos/editar');
+        echo $this->element('modal/processos/enviar_documento');
+        echo $this->element('modal/processos/solucionar');
 ?>
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-sm-4">
         <h2>Detalhes do projeto</h2>
         <ol class="breadcrumb">
             <li>
-                <a href="index.html">Projeto</a>
+                <a href="dashboard.ctp">Projeto</a>
             </li>
             <li class="active">
                 <strong>detalhe</strong>
@@ -78,7 +81,29 @@
                                                 echo $this -> Formatacao -> data ($processo['Processo']['previsao_termino']);
                                              }; ?>
                                             </dd>
-                                            <dt>Estado:</dt> <dd><?php echo $processo['Estado']['descricao']; }; ?></dd>
+                                            <dt>Estado:</dt> 
+                                            <dd><?php echo $processo['Estado']['descricao']; }; ?></dd>
+
+                                            <?php
+                                                //Apenas o encarregado por esse processo pode designar um escrivão para o mesmo;
+                                                if ($usuario_atual['grupo'] == 3 && $usuario_atual['cpf'] == $processo['Processo']['encarregado'] && $processo['Processo']['estados_id'] != 5){ 
+                                                    if($processo['Processo']['escrivao']){?>
+                                                        <div class="ibox-tools">
+                                                            <button type="button" class="btn btn-primary btn-m" data-toggle="modal" data-target="#novo_escrivao">Substituir Escrivão</button>
+                                                        </div>
+                                                <?php }else{ ?>
+                                                    <div class="ibox-tools">
+                                                        <button type="button" class="btn btn-primary btn-m" data-toggle="modal" data-target="#novo_escrivao">Designar Escrivão</button>
+                                                    </div>
+                                                <?php }} 
+                                                    //Apenas o instaurador desse processo pode substituir o encarregado para o mesmo;
+                                                    if ($usuario_atual['grupo'] == 2 && $usuario_atual['cpf'] == $processo['Processo']['instaurador'] && $processo['Processo']['estados_id'] != 5){ 
+                                                ?>
+                                                    <div class="ibox-tools">
+                                                        <button type="button" class="btn btn-primary btn-m" data-toggle="modal" data-target="#novo_encarregado">Substituir Encarregado</button>
+                                                    </div>
+                                            <?php } ?>
+
                                     </dl>
                                 </div>
                                 <div class="col-lg-7" id="cluster_info">
@@ -92,6 +117,7 @@
                                     </dl>
                                 </div>
                             </div>
+
                             <?php 
                                 if ($processo['Processo']['situacoes_id']==5){
                                             echo ' ';
@@ -228,8 +254,8 @@
                         <?php echo $processo['Processo']['resumo']; ?>
                     </p>
                     <?php
-                        if( $grupos == 1 || $grupos == 2 || $grupos == $processo['Processo']['posse_id']){
-                            if( $grupos == 4 && $processo['Processo']['instaurador'] == $usuarios['num_matricula'] && $processo['Processo']['estados_id'] == 3){ ?>
+                        if( $usuario_atual['grupo'] == 1 || $usuario_atual['grupo'] == 2 || $usuario_atual['grupo'] == $processo['Processo']['posse_id']){
+                            if( $usuario_atual['grupo'] == 4 && $processo['Processo']['instaurador'] == $usuario_atual['cpf'] && $processo['Processo']['estados_id'] == 3){ ?>
                     <div class="text-center">
                         <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#solucionar">Emitir solucao</button>
                     </div>
@@ -239,12 +265,12 @@
                     </div>
                     <?php }; 
                     //Apenas a autoridade instauradora pode prorrogar pela 1ªvez e apenas o comandante geral pode prorrogar pela 2ª
-                        if($usuarios['funcao_id'] == 1260 && $processo['Processo']['estados_id'] == 1 && $processo['Processo']['prorrogacoes'] == 1){ ?>
+                        if($usuario_atual['funcao_id'] == 1260 && $processo['Processo']['estados_id'] == 1 && $processo['Processo']['prorrogacoes'] == 1){ ?>
                     <div class="text-center m-t-md">
                         <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#prorrogar">Prorrogar</button>
                     </div>
                 <?php }
-                        if($grupos == 4 && $processo['Processo']['instaurador'] == $usuarios['num_matricula']){
+                        if($usuario_atual['grupo'] == 4 && $processo['Processo']['instaurador'] == $usuario_atual['cpf']){
                             if ($processo['Processo']['estados_id'] == 1 && $processo['Processo']['prorrogacoes'] == 0){
                     ?>
                     <div class="text-center m-t-md">
@@ -252,11 +278,15 @@
                     </div>
                 <?php } ?>
                     <div class="text-center m-t-md">
-                        <?php if ($processo['Processo']['estados_id'] == 2){ ?>
-                            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#reabrir">Reabrir</button>
-                        <?php } else{ ?>
-                            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#suspender">Suspender</button>
-                        <?php }; ?>
+                        <?php 
+                    //Apenas a autoridade instauradora, o comandante geral e o sub comandante geral podem suspenbder o processo
+                        if($usuario_atual['funcao_id'] == (1260||1259) || $processo['Processo']['instaurador'] == $usuario_atual['cpf'] ){
+                            if ($processo['Processo']['estados_id'] == 2){ ?>
+                                <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#reabrir">Reabrir</button>
+                            <?php } else{ ?>
+                                <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#suspender">Suspender</button>
+                        <?php };
+                            }; ?>
                     </div>
                     <div class="text-center m-t-md">
                         <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#editar">Editar</button>
