@@ -140,7 +140,7 @@ EOF;
  */
 	public function testEndereco() {
 		$retorno = <<<EOF
-<!-- Aqui vem uma penca de c贸digo dos Correios, mas esta sendo suprimido pro teste -->
+<!-- Aqui vem uma penca de c骴igo dos Correios, mas esta sendo suprimido pro teste -->
 <table align="center" width="540" border="0" cellspacing="2" cellpadding="3">
 <tr>
 <td align="right">
@@ -172,8 +172,8 @@ EOF;
 <td>
 <b>Endere&ccedil;o:</b>
 </td>
-<td align="center">Rua Acad锚mico Reinaldo Consoni</td>
-<td align="center">Rua Acad锚mico Reinaldo Consoni</td>
+<td align="center">Rua Acad阭ico Reinaldo Consoni</td>
+<td align="center">Rua Acad阭ico Reinaldo Consoni</td>
 </tr>
 <tr class="tdAzul" height="20">
 <td>
@@ -186,8 +186,8 @@ EOF;
 <td height="20">
 <b>Cidade/UF:</b>
 </td>
-<td align="center">Florian贸polis/SC</td>
-<td align="center">Florian贸polis/SC</td>
+<td align="center">Florian髉olis/SC</td>
+<td align="center">Florian髉olis/SC</td>
 </tr>
 <tr class="tdAzul">
 <td height="20">
@@ -250,14 +250,14 @@ Localidade de origem com <b>DISQUE COLETA</b>. <a href="disquecoleta/pedido/defa
 </td>
 </tr>
 </table>
-<!-- Aqui vem mais um monte de c贸digo, mas suprimido pro teste -->
+<!-- Aqui vem mais um monte de c骴igo, mas suprimido pro teste -->
 EOF;
 		$this->Correios->setReturnValueAt(0, '_requisitaUrl', utf8_decode($retorno));
 		$correios = $this->Correios->endereco($model, '88037-100');
 		$correto = array(
-			'logradouro' => 'Rua Acad锚mico Reinaldo Consoni',
+			'logradouro' => 'Rua Acad阭ico Reinaldo Consoni',
 			'bairro' => 'Santa M么nica',
-			'cidade' => 'Florian贸polis',
+			'cidade' => 'Florian髉olis',
 			'uf' => 'SC'
 		);
 		$this->assertEqual($correios, $correto);

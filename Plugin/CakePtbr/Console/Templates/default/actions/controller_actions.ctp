@@ -38,7 +38,7 @@ require_once dirname(dirname(__FILE__)) . DS . 'Inflexao.php';
 	public function <?php echo $admin ?>view($id = null) {
 		$this-><?php echo $currentModelName; ?>->id = $id;
 		if (!$this-><?php echo $currentModelName; ?>->exists()) {
-			throw new NotFoundException(__('<?php echo Inflexao::acentos(ucfirst(strtolower($singularHumanName))); ?> inv√°lido'));
+			throw new NotFoundException(__('<?php echo Inflexao::acentos(ucfirst(strtolower($singularHumanName))); ?> inv·lido'));
 		}
 		$this->set('<?php echo $singularName; ?>', $this-><?php echo $currentModelName; ?>->read(null, $id));
 	}
@@ -61,7 +61,7 @@ require_once dirname(dirname(__FILE__)) . DS . 'Inflexao.php';
 <?php endif; ?>
 			} else {
 <?php if ($wannaUseSession): ?>
-				$this->Session->setFlash(__('O <?php echo Inflexao::acentos(strtolower($singularHumanName)); ?> n√£o pode ser salvo. Por favor, tente novamente.'));
+				$this->Session->setFlash(__('O <?php echo Inflexao::acentos(strtolower($singularHumanName)); ?> n„o pode ser salvo. Por favor, tente novamente.'));
 <?php endif; ?>
 			}
 		}
@@ -92,7 +92,7 @@ require_once dirname(dirname(__FILE__)) . DS . 'Inflexao.php';
 	public function <?php echo $admin; ?>edit($id = null) {
 		$this-><?php echo $currentModelName; ?>->id = $id;
 		if (!$this-><?php echo $currentModelName; ?>->exists()) {
-			throw new NotFoundException(__('<?php echo Inflexao::acentos(ucfirst(strtolower($singularHumanName))); ?> inv√°lido.'));
+			throw new NotFoundException(__('<?php echo Inflexao::acentos(ucfirst(strtolower($singularHumanName))); ?> inv·lido.'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this-><?php echo $currentModelName; ?>->save($this->request->data)) {
@@ -104,7 +104,7 @@ require_once dirname(dirname(__FILE__)) . DS . 'Inflexao.php';
 <?php endif; ?>
 			} else {
 <?php if ($wannaUseSession): ?>
-				$this->Session->setFlash(__('O <?php echo Inflexao::acentos(strtolower($singularHumanName)); ?> n√£o pode ser salvo. Por favor, tente novamente.'));
+				$this->Session->setFlash(__('O <?php echo Inflexao::acentos(strtolower($singularHumanName)); ?> n„o pode ser salvo. Por favor, tente novamente.'));
 <?php endif; ?>
 			}
 		} else {
@@ -139,7 +139,7 @@ require_once dirname(dirname(__FILE__)) . DS . 'Inflexao.php';
 		}
 		$this-><?php echo $currentModelName; ?>->id = $id;
 		if (!$this-><?php echo $currentModelName; ?>->exists()) {
-			throw new NotFoundException(__('<?php echo Inflexao::acentos(strtolower($singularHumanName)); ?> inv√°lido.'));
+			throw new NotFoundException(__('<?php echo Inflexao::acentos(strtolower($singularHumanName)); ?> inv·lido.'));
 		}
 		if ($this-><?php echo $currentModelName; ?>->delete()) {
 <?php if ($wannaUseSession): ?>
@@ -150,9 +150,9 @@ require_once dirname(dirname(__FILE__)) . DS . 'Inflexao.php';
 <?php endif; ?>
 		}
 <?php if ($wannaUseSession): ?>
-		$this->Session->setFlash(__('<?php echo Inflexao::acentos(ucfirst(strtolower($singularHumanName))); ?> n√£o pode ser exclu√≠do.'));
+		$this->Session->setFlash(__('<?php echo Inflexao::acentos(ucfirst(strtolower($singularHumanName))); ?> n„o pode ser exclu√≠do.'));
 <?php else: ?>
-		$this->flash(__('<?php echo Inflexao::acentos(ucfirst(strtolower($singularHumanName))); ?> n√£o pode ser exclu√≠do.'), array('action' => 'index'));
+		$this->flash(__('<?php echo Inflexao::acentos(ucfirst(strtolower($singularHumanName))); ?> n„o pode ser exclu√≠do.'), array('action' => 'index'));
 <?php endif; ?>
 		$this->redirect(array('action' => 'index'));
 	}

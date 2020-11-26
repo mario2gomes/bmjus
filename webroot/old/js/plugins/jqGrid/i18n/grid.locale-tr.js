@@ -19,7 +19,7 @@ $.extend($.jgrid,{
 	    caption: "Arama...",
 	    Find: "Bul",
 	    Reset: "Temizle",	    
-	    odata: [{ oper:'eq', text:"eşit"},{ oper:'ne', text:"eşit değil"},{ oper:'lt', text:"daha az"},{ oper:'le', text:"daha az veya eşit"},{ oper:'gt', text:"daha fazla"},{ oper:'ge', text:"daha fazla veya eşit"},{ oper:'bw', text:"ile başlayan"},{ oper:'bn', text:"ile başlamayan"},{ oper:'in', text:"içinde"},{ oper:'ni', text:"içinde değil"},{ oper:'ew', text:"ile biten"},{ oper:'en', text:"ile bitmeyen"},{ oper:'cn', text:"içeren"},{ oper:'nc', text:"içermeyen"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}],
+	    odata: [{ oper:'eq', text:"eşit"},{ oper:'ne', text:"eşit değil"},{ oper:'lt', text:"daha az"},{ oper:'le', text:"daha az veya eşit"},{ oper:'gt', text:"daha fazla"},{ oper:'ge', text:"daha fazla veya eşit"},{ oper:'bw', text:"ile başlayan"},{ oper:'bn', text:"ile başlamayan"},{ oper:'in', text:"i�inde"},{ oper:'ni', text:"i�inde değil"},{ oper:'ew', text:"ile biten"},{ oper:'en', text:"ile bitmeyen"},{ oper:'cn', text:"i�eren"},{ oper:'nc', text:"i�ermeyen"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}],
 	    groupOps: [	{ op: "VE", text: "tüm" },	{ op: "VEYA",  text: "herhangi" }],
 		operandTitle : "Click to select search operation.",
 		resetTitle : "Reset Search Value"
@@ -38,10 +38,10 @@ $.extend($.jgrid,{
 	        required:"Alan gerekli",
 	        number:"Lütfen bir numara giriniz",
 	        minValue:"girilen değer daha büyük ya da buna eşit olmalıdır",
-	        maxValue:"girilen değer daha küçük ya da buna eşit olmalıdır",
-	        email: "geçerli bir e-posta adresi değildir",
+	        maxValue:"girilen değer daha kü�ük ya da buna eşit olmalıdır",
+	        email: "ge�erli bir e-posta adresi değildir",
 	        integer: "Lütfen bir tamsayı giriniz",
-			url: "Geçerli bir URL değil. ('http://' or 'https://') ön eki gerekli.",
+			url: "Ge�erli bir URL değil. ('http://' or 'https://') ön eki gerekli.",
 			nodefined : " is not defined!",
 			novalue : " return value is required!",
 			customarray : "Custom function should return array!",
@@ -54,25 +54,25 @@ $.extend($.jgrid,{
 	},
 	del : {
 	    caption: "Sil",
-	    msg: "Seçilen kayıtlar silinsin mi?",
+	    msg: "Se�ilen kayıtlar silinsin mi?",
 	    bSubmit: "Sil",
 	    bCancel: "İptal"
 	},
 	nav : {
 		edittext: " ",
-	    edittitle: "Seçili satırı düzenle",
+	    edittitle: "Se�ili satırı düzenle",
 		addtext:" ",
 	    addtitle: "Yeni satır ekle",
 	    deltext: " ",
-	    deltitle: "Seçili satırı sil",
+	    deltitle: "Se�ili satırı sil",
 	    searchtext: " ",
 	    searchtitle: "Kayıtları bul",
 	    refreshtext: "",
 	    refreshtitle: "Tabloyu yenile",
 	    alertcap: "Uyarı",
-	    alerttext: "Lütfen bir satır seçiniz",
+	    alerttext: "Lütfen bir satır se�iniz",
 		viewtext: "",
-		viewtitle: "Seçilen satırı görüntüle"
+		viewtitle: "Se�ilen satırı görüntüle"
 	},
 	col : {
 	    caption: "Sütunları göster/gizle",

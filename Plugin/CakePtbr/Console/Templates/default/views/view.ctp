@@ -42,11 +42,11 @@ foreach ($fields as $field) {
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php echo "<?php echo __('AÃ§Ãµes'); ?>"; ?></h3>
+	<h3><?php echo "<?php echo __('Ações'); ?>"; ?></h3>
 	<ul>
 <?php
 	echo "\t\t<li><?php echo \$this->Html->link(__('Editar " . Inflexao::acentos($singularHumanName) ."'), array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?> </li>\n";
-	echo "\t\t<li><?php echo \$this->Form->postLink(__('Excluir " . Inflexao::acentos($singularHumanName) . "'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), null, __('VocÃª tem certeza que deseja excluir o # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?> </li>\n";
+	echo "\t\t<li><?php echo \$this->Form->postLink(__('Excluir " . Inflexao::acentos($singularHumanName) . "'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), null, __('Você tem certeza que deseja excluir o # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?> </li>\n";
 	echo "\t\t<li><?php echo \$this->Html->link(__('Listar " . Inflexao::acentos($pluralHumanName) . "'), array('action' => 'index')); ?> </li>\n";
 	echo "\t\t<li><?php echo \$this->Html->link(__('Novo " . Inflexao::acentos($singularHumanName) . "'), array('action' => 'add')); ?> </li>\n";
 
@@ -109,7 +109,7 @@ foreach ($relations as $alias => $details):
 				echo "\t\t<th><?php echo __('" . Inflexao::acentos(Inflector::humanize($field)) . "'); ?></th>\n";
 			}
 ?>
-		<th class="actions"><?php echo "<?php echo __('AÃ§Ãµes');?>";?></th>
+		<th class="actions"><?php echo "<?php echo __('Ações');?>";?></th>
 	</tr>
 <?php
 echo "\t<?php
@@ -122,7 +122,7 @@ echo "\t<?php
 				echo "\t\t\t<td class=\"actions\">\n";
 				echo "\t\t\t\t<?php echo \$this->Html->link(__('Ver'), array('controller' => '{$details['controller']}', 'action' => 'view', \${$otherSingularVar}['{$details['primaryKey']}'])); ?>\n";
 				echo "\t\t\t\t<?php echo \$this->Html->link(__('Editar'), array('controller' => '{$details['controller']}', 'action' => 'edit', \${$otherSingularVar}['{$details['primaryKey']}'])); ?>\n";
-				echo "\t\t\t\t<?php echo \$this->Form->postLink(__('Excluir'), array('controller' => '{$details['controller']}', 'action' => 'delete', \${$otherSingularVar}['{$details['primaryKey']}']), null, __('VocÃª tem certeza que deseja excluir o # %s?', \${$otherSingularVar}['{$details['primaryKey']}'])); ?>\n";
+				echo "\t\t\t\t<?php echo \$this->Form->postLink(__('Excluir'), array('controller' => '{$details['controller']}', 'action' => 'delete', \${$otherSingularVar}['{$details['primaryKey']}']), null, __('Você tem certeza que deseja excluir o # %s?', \${$otherSingularVar}['{$details['primaryKey']}'])); ?>\n";
 				echo "\t\t\t</td>\n";
 			echo "\t\t</tr>\n";
 

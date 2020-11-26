@@ -34,7 +34,7 @@
  * In production mode, flash messages redirect after a time interval.
  * In development mode, you need to click the flash message to continue.
  */
-	Configure::write('debug', 0);
+	Configure::write('debug', 2);
 
 /**
  * Configure the Error handler used to handle errors for your application. By default
@@ -53,7 +53,7 @@
  */
 	Configure::write('Error', array(
 		'handler' => 'ErrorHandler::handleError',
-		'level' => E_ALL & ~E_DEPRECATED & ~E_STRICT, 
+		'level' => E_ALL & ~E_DEPRECATED & ~E_STRICT & ~E_WARNING &~E_NOTICE, 
 		'trace' => true
 	));
 
@@ -79,16 +79,18 @@
  *
  * @see ErrorHandler for more information on exception handling and configuration.
  */
-	Configure::write('Exception', array(
-		'handler' => 'ErrorHandler::handleException',
-		'renderer' => 'ExceptionRenderer',
-		'log' => true
-	));
+	Configure::write(
+		'Exception', array(
+			'handler' => 'ErrorHandler::handleException',
+			'renderer' => 'ExceptionRenderer',
+			'log' => true
+		)
+	);
 
 /**
  * Application wide charset encoding
  */
-	Configure::write('App.encoding', 'UTF-8');
+	Configure::write('App.encoding', 'ISO-8859-1');
 
 /**
  * To configure CakePHP *not* to use mod_rewrite and to
@@ -160,7 +162,7 @@
  *	`admin_index()` and `/admin/controller/index`
  *	`manager_index()` and `/manager/controller/index`
  */
-	//Configure::write('Routing.prefixes', array('admin'));
+	Configure::write('Routing.prefixes', array('admin'));
 
 /**
  * Turn off all caching application-wide.
@@ -275,7 +277,8 @@
  *	Configure::write('Acl.database', 'default');
 */
 
-Configure::write('Acl.classname', 'IniAcl');
+//Configure::write('Acl.classname', 'IniAcl');
+Configure::write('Acl.classname', 'DbAcl');
 
 /**
  * Uncomment this line and correct your server timezone to fix

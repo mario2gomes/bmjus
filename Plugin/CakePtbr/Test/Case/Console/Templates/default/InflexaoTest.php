@@ -1,6 +1,6 @@
 <?php
 /**
- * Teste do ajuste de inflexÃ£o
+ * Teste do ajuste de inflexão
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
@@ -25,15 +25,15 @@ class InflexaoTest extends CakeTestCase {
  * @access public
  */
 	public function testAcentos() {
-		$this->assertEqual('caminhÃ£o', Inflexao::acentos('caminhao'));
-		$this->assertEqual('PÃ£o', Inflexao::acentos('Pao'));
-		$this->assertEqual('canÃ§Ã£o', Inflexao::acentos('cancao'));
-		$this->assertEqual('canÃ§Ãµes', Inflexao::acentos('cancoes'));
-		$this->assertEqual('limÃµes', Inflexao::acentos('limoes'));
-		$this->assertEqual('mÃ£es', Inflexao::acentos('maes'));
+		$this->assertEqual('caminhão', Inflexao::acentos('caminhao'));
+		$this->assertEqual('Pão', Inflexao::acentos('Pao'));
+		$this->assertEqual('canção', Inflexao::acentos('cancao'));
+		$this->assertEqual('canções', Inflexao::acentos('cancoes'));
+		$this->assertEqual('limões', Inflexao::acentos('limoes'));
+		$this->assertEqual('mães', Inflexao::acentos('maes'));
 
-		$this->assertEqual('joÃ£o do caminhÃ£o', Inflexao::acentos('joao do caminhao'));
-		$this->assertEqual('joÃ£o_do_caminhÃ£o', Inflexao::acentos('joao_do_caminhao'));
+		$this->assertEqual('joão do caminhão', Inflexao::acentos('joao do caminhao'));
+		$this->assertEqual('joão_do_caminhão', Inflexao::acentos('joao_do_caminhao'));
 	}
 
 }

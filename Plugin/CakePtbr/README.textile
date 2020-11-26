@@ -1,10 +1,10 @@
-h1. CakePHP em portuguÃªs
+h1. CakePHP em português
 
-Caso vocÃª tenha dÃºvidas, elogios, reclamaÃ§Ãµes, sugestÃµes, etc., acesse o
-"Grupo de discursÃ£o CakePHP-PT":http://groups.google.com/group/cakephp-pt e envie uma mensagem.
+Caso você tenha dúvidas, elogios, reclamações, sugestões, etc., acesse o
+"Grupo de discursão CakePHP-PT":http://groups.google.com/group/cakephp-pt e envie uma mensagem.
 
-Este plugin foi desenvolvido para a versÃ£o 2.0 do CakePHP.
+Este plugin foi desenvolvido para a versão 2.0 do CakePHP.
 
-Sobre a utilizaÃ§Ã£o deste plugin, consulte a documentaÃ§Ã£o no GitHub:http://wiki.github.com/jrbasso/cake_ptbr/
+Sobre a utilização deste plugin, consulte a documentação no GitHub:http://wiki.github.com/jrbasso/cake_ptbr/
 
-Se vocÃª usa o Ohloh, diga que usa o projeto: http://www.ohloh.net/p/cake_ptbr
+Se você usa o Ohloh, diga que usa o projeto: http://www.ohloh.net/p/cake_ptbr

@@ -11,23 +11,23 @@
 $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
 	defaults : {
-		recordtext: "Zobrazeno {0} - {1} z {2} záznamů",
-	    emptyrecords: "Nenalezeny žádné záznamy",
-		loadtext: "Načítám...",
+		recordtext: "Zobrazeno {0} - {1} z {2} z�znamů",
+	    emptyrecords: "Nenalezeny ž�dn� z�znamy",
+		loadtext: "Načít�m...",
 		pgtext : "Strana {0} z {1}"
 	},
 	search : {
-		caption: "Vyhledávám...",
+		caption: "Vyhled�v�m...",
 		Find: "Hledat",
 		Reset: "Reset",
-	    odata: [{ oper:'eq', text:"rovno"},{ oper:'ne', text:"nerovno"},{ oper:'lt', text:"menší"},{ oper:'le', text:"menší nebo rovno"},{ oper:'gt', text:"větší"},{ oper:'ge', text:"větší nebo rovno"},{ oper:'bw', text:"začíná s"},{ oper:'bn', text:"nezačíná s"},{ oper:'in', text:"je v"},{ oper:'ni', text:"není v"},{ oper:'ew', text:"končí s"},{ oper:'en', text:"nekončí s"},{ oper:'cn', text:"obsahuje"},{ oper:'nc', text:"neobsahuje"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}],
-	    groupOps: [	{ op: "AND", text: "všech" },	{ op: "OR",  text: "některého z" }	],
+	    odata: [{ oper:'eq', text:"rovno"},{ oper:'ne', text:"nerovno"},{ oper:'lt', text:"menší"},{ oper:'le', text:"menší nebo rovno"},{ oper:'gt', text:"větší"},{ oper:'ge', text:"větší nebo rovno"},{ oper:'bw', text:"začín� s"},{ oper:'bn', text:"nezačín� s"},{ oper:'in', text:"je v"},{ oper:'ni', text:"není v"},{ oper:'ew', text:"končí s"},{ oper:'en', text:"nekončí s"},{ oper:'cn', text:"obsahuje"},{ oper:'nc', text:"neobsahuje"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}],
+	    groupOps: [	{ op: "AND", text: "všech" },	{ op: "OR",  text: "někter�ho z" }	],
 		operandTitle : "Click to select search operation.",
 		resetTitle : "Reset Search Value"
 	},
 	edit : {
-		addCaption: "Přidat záznam",
-		editCaption: "Editace záznamu",
+		addCaption: "Přidat z�znam",
+		editCaption: "Editace z�znamu",
 		bSubmit: "Uložit",
 		bCancel: "Storno",
 		bClose: "Zavřít",
@@ -36,45 +36,45 @@ $.extend($.jgrid,{
 		bNo : "Ne",
 		bExit : "Zrušit",
 		msg: {
-		    required:"Pole je vyžadováno",
+		    required:"Pole je vyžadov�no",
 		    number:"Prosím, vložte validní číslo",
-		    minValue:"hodnota musí být větší než nebo rovná ",
-		    maxValue:"hodnota musí být menší než nebo rovná ",
+		    minValue:"hodnota musí být větší než nebo rovn� ",
+		    maxValue:"hodnota musí být menší než nebo rovn� ",
 		    email: "není validní e-mail",
-		    integer: "Prosím, vložte celé číslo",
+		    integer: "Prosím, vložte cel� číslo",
 			date: "Prosím, vložte validní datum",
-			url: "není platnou URL. Vyžadován prefix ('http://' or 'https://')",
-			nodefined : " není definován!",
-			novalue : " je vyžadována návratová hodnota!",
-			customarray : "Custom function mělá vrátit pole!",
+			url: "není platnou URL. Vyžadov�n prefix ('http://' or 'https://')",
+			nodefined : " není definov�n!",
+			novalue : " je vyžadov�na n�vratov� hodnota!",
+			customarray : "Custom function měl� vr�tit pole!",
 			customfcheck : "Custom function by měla být přítomna v případě custom checking!"
 		}
 	},
 	view : {
-	    caption: "Zobrazit záznam",
+	    caption: "Zobrazit z�znam",
 	    bClose: "Zavřít"
 	},
 	del : {
 		caption: "Smazat",
-		msg: "Smazat vybraný(é) záznam(y)?",
+		msg: "Smazat vybraný(�) z�znam(y)?",
 		bSubmit: "Smazat",
 		bCancel: "Storno"
 	},
 	nav : {
 		edittext: " ",
-		edittitle: "Editovat vybraný řádek",
+		edittitle: "Editovat vybraný ř�dek",
 		addtext:" ",
-		addtitle: "Přidat nový řádek",
+		addtitle: "Přidat nový ř�dek",
 		deltext: " ",
-		deltitle: "Smazat vybraný záznam ",
+		deltitle: "Smazat vybraný z�znam ",
 		searchtext: " ",
-		searchtitle: "Najít záznamy",
+		searchtitle: "Najít z�znamy",
 		refreshtext: "",
 		refreshtitle: "Obnovit tabulku",
-		alertcap: "Varování",
-		alerttext: "Prosím, vyberte řádek",
+		alertcap: "Varov�ní",
+		alerttext: "Prosím, vyberte ř�dek",
 		viewtext: "",
-		viewtitle: "Zobrazit vybraný řádek"
+		viewtitle: "Zobrazit vybraný ř�dek"
 	},
 	col : {
 		caption: "Zobrazit/Skrýt sloupce",
@@ -84,8 +84,8 @@ $.extend($.jgrid,{
 	errors : {
 		errcap : "Chyba",
 		nourl : "Není nastavena url",
-		norecords: "Žádné záznamy ke zpracování",
-		model : "Délka colNames <> colModel!"
+		norecords: "Ž�dn� z�znamy ke zpracov�ní",
+		model : "D�lka colNames <> colModel!"
 	},
 	formatter : {
 		integer : {thousandsSeparator: " ", defaultValue: '0'},
@@ -93,12 +93,12 @@ $.extend($.jgrid,{
 		currency : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: '0.00'},
 		date : {
 			dayNames:   [
-				"Ne", "Po", "Út", "St", "Čt", "Pá", "So",
-				"Neděle", "Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota"
+				"Ne", "Po", "Út", "St", "Čt", "P�", "So",
+				"Neděle", "Pondělí", "Úterý", "Středa", "Čtvrtek", "P�tek", "Sobota"
 			],
 			monthNames: [
-				"Led", "Úno", "Bře", "Dub", "Kvě", "Čer", "Čvc", "Srp", "Zář", "Říj", "Lis", "Pro",
-				"Leden", "Únor", "Březen", "Duben", "Květen", "Červen", "Červenec", "Srpen", "Září", "Říjen", "Listopad", "Prosinec"
+				"Led", "Úno", "Bře", "Dub", "Kvě", "Čer", "Čvc", "Srp", "Z�ř", "Říj", "Lis", "Pro",
+				"Leden", "Únor", "Březen", "Duben", "Květen", "Červen", "Červenec", "Srpen", "Z�ří", "Říjen", "Listopad", "Prosinec"
 			],
 			AmPm : ["do","od","DO","OD"],
 			S: function (j) {return j < 11 || j > 13 ? ['st', 'nd', 'rd', 'th'][Math.min((j - 1) % 10, 3)] : 'th'},

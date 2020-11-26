@@ -9,11 +9,18 @@ class Usuario extends AppModel {
 	public $useDbConfig = 'seg';
 	public $useTable = 'cad_usuario';
 	public $primaryKey = 'cpf';
+	public $tablePrefix = 'seg_';
 //	descomentar a linha abaixo pra ativar o ACL
-	//public $actsAs = array('Acl' => array('type' => 'requester'/*, 'enabled' => false*/));
+	public $actsAs = array('Acl' => array('type' => 'requester'/*, 'enabled' => false*/));
 	//Dados do Usuário Autenticado
 	public $userData = null;
-
+	
+	//impedir permissões de usuário, aceitar apenas de grupo
+/*	public $actsAs = array('Acl' => array('type' => 'requester', 'enabled' => false));
+	public function bindNode($user) {
+		return array('model' => 'Group', 'foreign_key' => $user['User']['group_id']);
+	}
+*/
     public $belongsTo = array(
     	'Grupo'=>array(
     		'classname'=>'Grupo',
@@ -57,7 +64,7 @@ class Usuario extends AppModel {
 		if (!empty($valor1)){                  
 
 			$ViewMilitar = new ViewMilitar();                
-			$militar = $ViewMilitar->getPessoa($valor1['Usuario']['mat_usuario']);
+			$militar = $ViewMilitar->getPessoa($valor1['Usuario']['cpf']);
 			//$user = $this->read(null, $mat);
 			$user = array_merge($militar, $valor1['Usuario']);
 			$this->userData = $user;
@@ -74,7 +81,7 @@ class Usuario extends AppModel {
 		$password = md5($salt.$pass);
 
 /*		$password = md5($pass);
-		//AdaptaÃ§Ã£o para o banco de dados legado
+		//Adaptação para o banco de dados legado
 		$password = substr($password, 0, -2);
 	*/	
 		return $password;

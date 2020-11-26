@@ -3,20 +3,28 @@
 class DATABASE_CONFIG {
 
     //Oracle
+    
     public $default = array(
         'datasource' => 'Database/Oracle',
-        'persistent' => false,
+        //'driver' => 'oracle',
+        'connect' => 'oci_connect',
+        'persistent' => true,
         'host' => 'localhost',
         'port' => '1521',
         'login' => 'bmjus',
         'password' => 'bmjus',
         'database' => '172.16.39.228/cbm',
-        'prefix' => 'cor_',
-        'encoding' => 'IS-8859-1'
+        'prefix' => '',
+        'encoding' => 'WE8MSWIN1252'
+        //'encoding' => 'AL32UTF8'
+        //'encoding' => 'iso88591',
+        //'encoding' => 'utf8'
     );
 
+    
+        
     //MySQL
-    /*
+/*    
     public $default = array(
         'datasource' => 'Database/Mysql',
         'persistent' => false,
@@ -28,8 +36,20 @@ class DATABASE_CONFIG {
         'prefix' => 'cor_',
         'encoding' => 'utf8',
     );
-    */
-
+*/  
+    //homologa��o
+    public $bmrh = array(
+        'datasource' => 'Database/Oracle',
+        'persistent' => false,
+        'host' => 'localhost',
+        'port' => '1521',
+        'login' => 'bmrh',
+        'password' => 'bmrh112640',
+        'database' => '172.16.39.228:1521/CBM',
+        'prefix' => 'rh_',
+        'encoding' => 'WE8MSWIN1252',
+    );
+/*
     public $bmrh = array(
         'datasource' => 'Database/Oracle',
         'persistent' => false,
@@ -41,7 +61,7 @@ class DATABASE_CONFIG {
         'prefix' => 'rh_',
         'encoding' => 'WE8MSWIN1252'
     );
-
+*/
     public $seg = array(
         'datasource' => 'Database/Oracle',
         'persistent' => false,
@@ -49,9 +69,9 @@ class DATABASE_CONFIG {
         'port' => '1521',
         'login' => 'producao',
         'password' => 'prod2904',
-        'database' => 'itechml-scan.itec.al.gov.br:1521/CBM',
+        'database' => '172.16.39.230:1521/CBM',
         'prefix' => 'seg_',
-        'encoding' => 'WE8MSWIN1252'
+        'encoding' => 'WE8MSWIN1252',
     );
 
 /*

@@ -1,8 +1,7 @@
 <?php 
 class Processo extends AppModel {
-
     public $sequence = 'cor_processos_seq';
-
+    public $tablePrefix = 'cor_';
 	public $belongsTo = array(
         'Situacao' => array(
             'className' => 'Situacao',
@@ -49,7 +48,7 @@ class Processo extends AppModel {
 	public $validate = array(
         'prorrogacoes' => array(
             'rule' => array('range',-1,3),
-            'message' =>'Esse processo jÃ¡ foi prorrogado 2 vezes, portanto nÃ£o cabem mais prorrogaÃ§Ãµes'
+            'message' =>'Esse processo já foi prorrogado 2 vezes, portanto não cabem mais prorrogações'
         ),
         'num_bgo' => array(
             'rule' => 'notBlank'

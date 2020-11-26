@@ -1,7 +1,7 @@
 {
 	"name": "jrbasso/cake_ptbr",
 	"type": "cakephp-plugin",
-	"description": "RepositÃ³rio com arquivos para deixar seu Cake falando portuguÃªs.",
+	"description": "Repositório com arquivos para deixar seu Cake falando português.",
 	"homepage": "http://github.com/jrbasso/cake_ptbr",
 	"license": "MIT",
 	"authors": [

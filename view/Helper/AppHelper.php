@@ -20,7 +20,7 @@
  */
 
 App::uses('Helper', 'View');
-
+App::import('ViewMilitar');
 /**
  * Application helper
  *
@@ -30,4 +30,10 @@ App::uses('Helper', 'View');
  * @package       app.View.Helper
  */
 class AppHelper extends Helper {
+
+    function getUsuario($cpf){
+        $this->ViewMilitar = new ViewMilitar() ;
+        $pessoa = $this->ViewMilitar->getPessoa($cpf);
+        return $pessoa;
+    }
 }

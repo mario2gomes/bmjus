@@ -18,7 +18,7 @@ $.extend($.jgrid,{
 	    caption: "Leita...",
 	    Find: "Leita",
 	    Reset: "Endursetja",
-	    odata: [{ oper:'eq', text:"sama og"},{ oper:'ne', text:"ekki sama og"},{ oper:'lt', text:"minna en"},{ oper:'le', text:"minna eða jafnt og"},{ oper:'gt', text:"stærra en"},{ oper:'ge', text:"stærra eða jafnt og"},{ oper:'bw', text:"byrjar á"},{ oper:'bn', text:"byrjar ekki á"},{ oper:'in', text:"er í"},{ oper:'ni', text:"er ekki í"},{ oper:'ew', text:"endar á"},{ oper:'en', text:"endar ekki á"},{ oper:'cn', text:"inniheldur"},{ oper:'nc', text:"inniheldur ekki"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}],
+	    odata: [{ oper:'eq', text:"sama og"},{ oper:'ne', text:"ekki sama og"},{ oper:'lt', text:"minna en"},{ oper:'le', text:"minna eða jafnt og"},{ oper:'gt', text:"stærra en"},{ oper:'ge', text:"stærra eða jafnt og"},{ oper:'bw', text:"byrjar �"},{ oper:'bn', text:"byrjar ekki �"},{ oper:'in', text:"er í"},{ oper:'ni', text:"er ekki í"},{ oper:'ew', text:"endar �"},{ oper:'en', text:"endar ekki �"},{ oper:'cn', text:"inniheldur"},{ oper:'nc', text:"inniheldur ekki"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}],
 	    groupOps: [	{ op: "AND", text: "allt" },	{ op: "OR",  text: "eða" }	],
 		operandTitle : "Click to select search operation.",
 		resetTitle : "Reset Search Value"
@@ -30,7 +30,7 @@ $.extend($.jgrid,{
 	    bCancel: "Hætta við",
 		bClose: "Loka",
 		saveData: "Gögn hafa breyst! Vista breytingar?",
-		bYes : "Já",
+		bYes : "J�",
 		bNo : "Nei",
 		bExit : "Hætta við",
 	    msg: {
@@ -75,13 +75,13 @@ $.extend($.jgrid,{
 		viewtitle: "Skoða valda færslu"
 	},
 	col : {
-	    caption: "Sýna / fela dálka",
+	    caption: "Sýna / fela d�lka",
 	    bSubmit: "Vista",
 	    bCancel: "Hætta við"	
 	},
 	errors : {
 		errcap : "Villa",
-		nourl : "Vantar slóð",
+		nourl : "Vantar sl�ð",
 		norecords: "Engar færslur valdar",
 	    model : "Lengd colNames <> colModel!"
 	},
@@ -91,12 +91,12 @@ $.extend($.jgrid,{
 		currency : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: '0.00'},
 		date : {
 			dayNames:   [
-				"Sun", "Mán", "Þri", "Mið", "Fim", "Fös", "Lau",
-				"Sunnudagur", "Mánudagur", "Þriðjudagur", "Miðvikudagur", "Fimmtudagur", "Föstudagur", "Laugardagur"
+				"Sun", "M�n", "Þri", "Mið", "Fim", "Fös", "Lau",
+				"Sunnudagur", "M�nudagur", "Þriðjudagur", "Miðvikudagur", "Fimmtudagur", "Föstudagur", "Laugardagur"
 			],
 			monthNames: [
-				"Jan", "Feb", "Mar", "Apr", "Maí", "Jún", "Júl", "Ágú", "Sep", "Oct", "Nóv", "Des",
-				"Janúar", "Febrúar", "Mars", "Apríl", "Maí", "Júný", "Júlý", "Ágúst", "September", "Október", "Nóvember", "Desember"
+				"Jan", "Feb", "Mar", "Apr", "Maí", "J�n", "J�l", "Ág�", "Sep", "Oct", "N�v", "Des",
+				"Jan�ar", "Febr�ar", "Mars", "Apríl", "Maí", "J�ný", "J�lý", "Ág�st", "September", "Okt�ber", "N�vember", "Desember"
 			],
 			AmPm : ["am","pm","AM","PM"],
 			S: function (j) {return j < 11 || j > 13 ? ['st', 'nd', 'rd', 'th'][Math.min((j - 1) % 10, 3)] : 'th'},

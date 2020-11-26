@@ -1,22 +1,42 @@
 <?php   
-echo $this->element('modal/usuarios/novo_escrivao');
-echo $this->element('modal/usuarios/novo_encarregado');
+//($documento['Documento']['usuario_assina_id'])['cargo_nome'];
+    if($usuario_atual['funcao_id'] == 1260 || 
+        $usuario_atual['grupo'] == 1 || 
+        $usuario_atual['grupo'] == 2 || 
+        $processo['Processo']['encarregado'] ==$usuario_atual['cpf'] ||
+            $processo['Processo']['instaurador'] == $usuario_atual['cpf'] || 
+            $processo['Processo']['escrivao'] == $usuario_atual['cpf'] || 
+            $processo['Processo']['investigado'] == $usuario_atual['cpf']){
 
-    if($usuario_atual['funcao_id'] != 1260 && $usuario_atual['grupo'] != 1 && $usuario_atual['grupo'] != 2 && (
-            ($usuario_atual['grupo'] == 3 && $processo['Processo']['encarregado']!=$usuario_atual['cpf']) ||
-            ($usuario_atual['grupo'] == 4  && $processo['Processo']['instaurador'] != $usuario_atual['cpf']) ||
-            ($usuario_atual['grupo'] == 5 && $processo['Processo']['escrivao'] != $usuario_atual['cpf']) ||
-            ($usuario_atual['grupo'] == 6 && $processo['Processo']['investigado'] != $usuario_atual['cpf']))){
-        echo 'Voc√™ n√£o tem permiss√£o de acessar esse processo!';
-    } else{
+        echo $this->element('modal/usuarios/novo_escrivao');
+        echo $this->element('modal/usuarios/novo_encarregado');
         echo $this->element('modal/processos/tramitar');
         echo $this->element('modal/processos/prorrogar');
         echo $this->element('modal/processos/suspender');
         echo $this->element('modal/processos/reabrir');
         echo $this->element('modal/processos/editar');
-        echo $this->element('modal/processos/enviar_documento');
+        echo $this->element('modal/documentos/enviar');
+        echo $this->element('modal/processos/emitir_parecer');
         echo $this->element('modal/processos/solucionar');
+        //Aviso de falta de arquivo(documento) no processo:
+//$pasta = new Folder(WWW_ROOT.'arquivos'.DS.'processos'.DS.$processo['Processo']['Tipo_processo'].DS.$processo['Processo']['num_processo']);
+//$arquivos = $pasta->find($processo['Processo']['num_processo'].'*\.ctp');
+
+//criar texto do aviso caso o processo n„o tenha: autuaÁ„o(1), portaria de abertura(2),  ou termo de abertura(3)
+
+foreach ($tipos_obrigatorios as $identificador => $tipo) {
+    if (!in_array($identificador, $tipo_documento_desse_processo)){
+        $aviso = 'Processo sem '.$tipo;
+        break;
+    }
+}
+
+if (in_array(30, $tipo_documento_desse_processo) && in_array(31, $tipo_documento_desse_processo) && $processo['Processo']['posse_id'] == 3 && $processo['Processo']['estados_id'] == 1){
+    $aviso = 'Processo encerrado, tramite ‡ corregedoria para parecer';
+}
+
 ?>
+
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-sm-4">
         <h2>Detalhes do projeto</h2>
@@ -38,6 +58,15 @@ echo $this->element('modal/usuarios/novo_encarregado');
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="m-b-md">
+                            <?php //Aviso ‡ autoridade instauradora                            
+                                if ($aviso){ ?>
+                                    <div class="ibox-tools">
+                                        <!-- Button trigger modal -->
+                                        <div class="btn-danger btn-lg" >
+                                            <?php echo $aviso; ?>
+                                        </div>
+                                    </div>
+                            <?php } ?>
                                         <h2><?php echo $processo['Tipo_processo']['descricao'], ' ', $processo['Processo']['num_processo']; ?></h2>
                                     </div>
                                     <dl class="dl-horizontal">
@@ -60,7 +89,7 @@ echo $this->element('modal/usuarios/novo_encarregado');
                                                     break;
                                             }
                                         ?>
-                                        <dt>Situa√ß√£o: </dt> <dd><span class="label <?php echo $label ?>"><?php echo $processo['Situacao']['descricao']; ?></span></dd>
+                                        <dt>SituaÁ„o: </dt> <dd><span class="label <?php echo $label ?>"><?php echo $processo['Situacao']['descricao']; ?></span></dd>
                                     </dl>
                                 </div>
                             </div>
@@ -74,7 +103,7 @@ echo $this->element('modal/usuarios/novo_encarregado');
                                         if ($processo['Processo']['situacoes_id']==5){
                                             echo ' ';
                                         }else{ ?>
-                                            <dt>Previs√£o de t√©rmino:</dt><dd class="project-completion"> <?php
+                                            <dt>Previs„o de tÈrmino:</dt><dd class="project-completion"> <?php
                                             if ($processo['Processo']['estados_id'] == 2){
                                                 echo 'Indefinido';
                                             }else{
@@ -84,42 +113,22 @@ echo $this->element('modal/usuarios/novo_encarregado');
                                             <dt>Estado:</dt> 
                                             <dd><?php echo $processo['Estado']['descricao']; }; ?></dd>
 
-                                            <?php
-                                                //Apenas o encarregado por esse processo pode designar um escriv√£o para o mesmo;
-                                                if ($usuario_atual['grupo'] == 3 && $usuario_atual['cpf'] == $processo['Processo']['encarregado'] && $processo['Processo']['estados_id'] != 5){ 
-                                                    if($processo['Processo']['escrivao']){?>
-                                                        <div class="ibox-tools">
-                                                            <button type="button" class="btn btn-primary btn-m" data-toggle="modal" data-target="#novo_escrivao">Substituir Escriv√£o</button>
-                                                        </div>
-                                                <?php }else{ ?>
-                                                    <div class="ibox-tools">
-                                                        <button type="button" class="btn btn-primary btn-m" data-toggle="modal" data-target="#novo_escrivao">Designar Escriv√£o</button>
-                                                    </div>
-                                                <?php }} 
-                                                    //Apenas o instaurador desse processo pode substituir o encarregado para o mesmo;
-                                                    if ($usuario_atual['grupo'] == 2 && $usuario_atual['cpf'] == $processo['Processo']['instaurador'] && $processo['Processo']['estados_id'] != 5){ 
-                                                ?>
-                                                    <div class="ibox-tools">
-                                                        <button type="button" class="btn btn-primary btn-m" data-toggle="modal" data-target="#novo_encarregado">Substituir Encarregado</button>
-                                                    </div>
-                                            <?php } ?>
-
                                     </dl>
                                 </div>
                                 <div class="col-lg-7" id="cluster_info">
                                     <dl class="dl-horizontal" >
-                                        <dt>Inclu√≠do por:</dt> <dd>Militar que inseriu o processo</dd>
+                                        <dt>IncluÌ≠do por:</dt> <dd><? echo $criador['cargo_nome']; ?></dd>
                                         <dt>Em posse de:</dt> <dd><?php echo $funcoes[$processo['Processo']['posse_id']]; ?></dd>
-                                        <dt>Aut. instauradora:</dt> <dd><?php echo $processo['Processo']['instaurador']; ?></dd>
-                                        <dt>Encarregado:</dt> <dd> <?php echo $processo['Processo']['encarregado']; ?> </dd>
-                                        <dt>Escriv√£o:</dt> <dd> <?php echo $processo['Processo']['escrivao']; ?> </dd>
-                                        <dt>Investigado:</dt> <dd> <?php echo $processo['Processo']['investigado']; ?> </dd>
+                                        <dt>Aut. instauradora:</dt> <dd><?php echo $instaurador['cargo_nome']; ?></dd>
+                                        <dt>Encarregado:</dt> <dd> <?php echo $encarregado['cargo_nome']; ?> </dd>
+                                        <dt>Escriv„o:</dt> <dd> <?php echo $escrivao['cargo_nome']; ?> </dd>
+                                        <dt>Investigado:</dt> <dd> <?php echo $investigado['cargo_nome']; ?> </dd>
                                     </dl>
                                 </div>
                             </div>
 
                             <?php 
-                                if ($processo['Processo']['situacoes_id']==5){
+                                if ($processo['Processo']['estados_id']==5){
                                             echo ' ';
                                         }else{ ?>
 
@@ -155,7 +164,7 @@ echo $this->element('modal/usuarios/novo_encarregado');
                                         <div class="panel-heading">
                                             <div class="panel-options">
                                                 <ul class="nav nav-tabs">
-                                                    <li class="active"><a href="#tab-1" data-toggle="tab">Tramita√ß√£o</a></li>
+                                                    <li class="active"><a href="#tab-1" data-toggle="tab">TramitaÁ„o</a></li>
                                                     <li class=""><a href="#tab-2" data-toggle="tab">Autos do processo</a></li>
                                                     <li class=""><a href="#tab-3" data-toggle="tab">Processo digitalizado</a></li>
                                                 </ul>
@@ -183,7 +192,7 @@ echo $this->element('modal/usuarios/novo_encarregado');
                                             <td class="hidden-480"><?php echo $this->Formatacao->data($tramitacao['Tramitacao']['created']); ?></td>
                                             <td class="hidden-480"><?php echo $funcoes[$tramitacao['Tramitacao']['funcao_entrega_id']]; ?></td>
                                             <td class="hidden-480"><?php echo $funcoes[$tramitacao['Tramitacao']['funcao_recebe_id']]; ?></td>
-                                            <td class="hidden-phone"><?php echo $tramitacao['Tramitacao']['usuario_tramita_id'], ': ',$tramitacao['Tramitacao']['despacho']; ?></td>
+                                            <td class="hidden-phone"><?php echo /* $tramitacao['Tramitacao']['usuario_tramita_id'], ': ',*/ $tramitacao['Tramitacao']['despacho']; ?></td>
                                         <?php }; ?>
                                         </tr>
                                         <?php 
@@ -193,30 +202,52 @@ echo $this->element('modal/usuarios/novo_encarregado');
                                 </div>
                                 <div class="tab-pane" id="tab-2">
                                     <div class="feed-activity-list">
-                                        <?php 
-                                        foreach ($documentos as $documento){
-                                            if ($documento['Documento']['processo_id'] == $processo['Processo']['id']){
-                                        ?>
+                                        <?php foreach ($documentos_desse_processo as $documento){ ?>
                                         <div class="feed-element">
                                             <div href="#" class="pull-left">
-                                                <?php echo $this->Html->link('Visualizar', array('controller' => 'processos', 'action' => 'abrir_documento', $processo['Tipo_processo']['descricao'], $processo['Processo']['num_processo'] , $documento['Documento']['nome_arquivo']),array('type'=>'button','class'=>'btn btn-primary')); ?>
+                                                <?php echo $this->Html->link('Visualizar', array(
+                                                    'controller' => 'documentos',
+                                                    'action' => 'visualizar',
+                                                    $processo['Tipo_processo']['descricao'],
+                                                    str_replace('/','_',$processo['Processo']['num_processo']),
+                                                    str_replace('?','_',$documento['Documento']['nome_arquivo'])),
+                                                    array('type'=>'button','class'=>'btn btn-primary')); ?>
+                                            </div>
+                                            <!--assinatura do documento enviado-->
+                                            <div class="pull-right">
+                                                <?php if(empty($documento['Documento']['usuario_assina_id'])){ ?>
+                                                    <a class="btn btn-danger" data-toggle="collapse" data-target="#assinar<?php echo $documento['Documento']['id']; ?>">Assinar</a>
+                                                <?php } ?>
+
+                                                <div id="assinar<?php echo $documento['Documento']['id']; ?>" class="collapse">
+                                                        <?php echo $this->Form->create(false, array( 'url' => array ('controller'=>'documentos','action'=>'assinar')));
+                                                                //echo $this->Form->input('seq_documento', array('type'=>'hidden', 'value'=>$documento['Documento']['seq_documento']));
+                                                                //echo $this->Form->input('cod_encaminhamento', array('type'=>'hidden', 'value'=>1));//COD DE ASSINADO
+                                                                echo $this->Form->input('cpf', array('label'=>'CPF', 'class'=>'pull-right'));
+                                                                echo $this->Form->input('senha', array('label'=>'Senha', 'type'=>'password', 'class'=>'pull-right'));
+                                                                echo $this->Form->input('id', array('type'=>'hidden', 'value'=>$documento['Documento']['id']));
+                                                                //echo $this->Form->input('cod_funcao_origem', array('type'=>'hidden', 'value'=>$session->read('Funcao.seq_funcao')));
+                                                        echo $this->Form->end(array('label' => 'Ok', 'class'=>'btn btn-primary'));?>
+                                                </div>	
                                             </div>
                                             <div class="media-body ">
-                                                <small class="pull-right"><?php echo $documento['Documento']['created']; ?></small>
                                                 <strong><?php echo $documento['Tipo_documento']['descricao']; ?></strong>
-                                                , enviado por: <strong><?php echo $documento['Documento']['usuario_envia_id']; ?></strong><br>
+                                                <?php if($documento['Documento']['usuario_assina_id']){ ?>
+                                                    , assinado por: <strong><?php echo $this->App->getUsuario($documento['Documento']['usuario_assina_id'])['cargo_nome']; ?></strong><br>
+                                                <?php }else{ ?>
+                                                    , enviado por: <strong><?php echo $this->App->getUsuario($documento['Documento']['usuario_envia_id'])['cargo_nome']; ?></strong><br>
+                                                <?php } ?>
+                                                Em <small><?php echo $documento['Documento']['created']; ?></small>
                                                 <a> <?php echo $documento['Documento']['nome_arquivo']; ?></a><br>
-                                                <small class="text-muted"><?php echo $documento['Documento']['created']; ?></small>
                                                     <?php 
-                                                    if ($documento['Documento']['observacao']){ ?>
+                                                    if (!empty($documento['Documento']['observacao'])){ ?>
                                                         <div class="well">
-                                                            <?php echo substr($documento['Documento']['observacao'],0,100); ?>
+                                                            <?php echo substr($documento['Documento']['observacao'],0,10000); ?>
                                                         </div>
                                                     <?php } ?>
                                             </div>
                                         </div>
                                         <?php
-                                            }
                                         }
                                         ?>
                                     </div>
@@ -253,16 +284,50 @@ echo $this->element('modal/usuarios/novo_encarregado');
                     <p>
                         <?php echo $processo['Processo']['resumo']; ?>
                     </p>
+
+
                     <?php
-                        if( $usuario_atual['grupo'] == 1 || $usuario_atual['grupo'] == 2 || $usuario_atual['grupo'] == $processo['Processo']['posse_id']){
-                            if( $usuario_atual['grupo'] == 4 && $processo['Processo']['instaurador'] == $usuario_atual['cpf'] && $processo['Processo']['estados_id'] == 3){ ?>
-                    <div class="text-center">
-                        <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#solucionar">Emitir solucao</button>
-                    </div>
-                <?php } ?>
-                    <div class="text-center m-t-md">
-                        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#tramitar">Tramitar</button>
-                    </div>
+                        //Apenas o encarregado por esse processo pode designar um escriv„o para o mesmo;
+                        if ($usuario_atual['cpf'] == $processo['Processo']['encarregado'] && $processo['Processo']['estados_id'] != 5){ 
+                            if($processo['Processo']['escrivao']){?>
+                                <div class="text-center m-t-md">
+                                    <button type="button" class="btn btn-primary btn-m" data-toggle="modal" data-target="#novo_escrivao">Substituir Escriv„o</button>
+                                </div>
+                        <?php }else{ ?>
+                            <div class="text-center m-t-md">
+                                <button type="button" class="btn btn-primary btn-m" data-toggle="modal" data-target="#novo_escrivao">Designar Escriv„o</button>
+                            </div>
+                        <?php }} 
+                            //Apenas a corregedoria e o instaurador desse processo pode substituir o encarregado para o mesmo;
+                            if (($usuario_atual['grupo'] == 2 || $usuario_atual['cpf'] == $processo['Processo']['instaurador']) && $processo['Processo']['estados_id'] != 5){ 
+                        ?>
+                            <div class="text-center m-t-md">
+                                <button type="button" class="btn btn-primary btn-m" data-toggle="modal" data-target="#novo_encarregado">Substituir Encarregado</button>
+                            </div>
+                    <?php } ?>
+
+                    <?php
+                    //verifica se o processo foi arquivado ou se est· suspenso
+                    if ($processo['Processo']['estados_id']!=5){
+                        if ($processo['Processo']['estados_id']!=2){
+                    //verifica se a posse est· com o usu·rio atual (e se n„o est· suspenso) para exibir botıes de tramitar e emitir soluÁ„o
+                        if(($processo['Processo']['posse_id'] == $usuario_atual['grupo']) || $processo['Processo'][$funcoes[$processo['Processo']['posse_id']]] == $usuario_atual['cpf']){
+                            if($processo['Processo']['instaurador'] == $usuario_atual['cpf'] && $processo['Processo']['estados_id'] == 3 && $processo['Processo']['posse_id'] == 4){ ?>
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#solucionar">Emitir soluÁ„o</button>
+                                </div>
+                        <?php } 
+
+                    //confere se o processo possui relatÛrio e termo de encerramento e se est· em posse da corregedoria, para liberar o bot„o emitir parecer
+                    if (in_array(30, $tipo_documento_desse_processo) && in_array(31, $tipo_documento_desse_processo) && $processo['Processo']['posse_id'] == 2 && $usuario_atual['grupo'] == 2){
+                        ?>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#emitir_parecer">Emitir parecer</button>
+                        </div>
+                    <?php } ?>
+                        <div class="text-center m-t-md">
+                            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#tramitar">Tramitar</button>
+                        </div>
                     <?php }; 
                     //Apenas a autoridade instauradora pode prorrogar pela 1¬™vez e apenas o comandante geral pode prorrogar pela 2¬™
                         if($usuario_atual['funcao_id'] == 1260 && $processo['Processo']['estados_id'] == 1 && $processo['Processo']['prorrogacoes'] == 1){ ?>
@@ -278,26 +343,41 @@ echo $this->element('modal/usuarios/novo_encarregado');
                     </div>
                 <?php } ?>
                     <div class="text-center m-t-md">
-                        <?php 
-                    //Apenas a autoridade instauradora, o comandante geral e o sub comandante geral podem suspenbder o processo
-                        if($usuario_atual['funcao_id'] == (1260||1259) || $processo['Processo']['instaurador'] == $usuario_atual['cpf'] ){
-                            if ($processo['Processo']['estados_id'] == 2){ ?>
-                                <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#reabrir">Reabrir</button>
-                            <?php } else{ ?>
-                                <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#suspender">Suspender</button>
-                        <?php };
-                            }; ?>
                     </div>
                     <div class="text-center m-t-md">
                         <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#editar">Editar</button>
                     </div>
-                    <?php }; ?>
-                    
-                    <div class="text-center m-t-md">
-                        <button type="button" class="btn btn-s btn-primary" data-toggle="modal" data-target="#enviar_documento">Adicionar documento</button>
-                    </div>
+                    <?php }; 
+                    //O bot„o de adicionar documento sÛ aparece ao encarregado se possuir autuaÁ„o, portaria de abertura e termo de abertura
+                    if($processo['Processo']['estados_id']!=2){
+                        if(!$aviso){
+                        ?>
+                            <div class="text-center m-t-md">
+                                <button type="button" class="btn btn-s btn-primary" data-toggle="modal" data-target="#enviar_documento">Adicionar documentos</button>
+                            </div>
+                        <?php }elseif ($processo['Processo']['instaurador'] = $usuario_atual['cpf']) { ?>
+                            <div class="text-center m-t-md">
+                                <button type="button" class="btn btn-s btn-primary" data-toggle="modal" data-target="#enviar_documento">Adicionar documentos obrigatÛrios</button>
+                            </div>
+                        <?php }
+                        } 
+                    }
+                    //Apenas a autoridade instauradora, o comandante geral e o sub comandante geral podem suspender o processo
+                        if($usuario_atual['funcao_id'] == (1260||1259) || $processo['Processo']['instaurador'] == $usuario_atual['cpf'] ){
+                            if ($processo['Processo']['estados_id'] == 2){ ?>
+                                <div class="text-center m-t-md">
+                                    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#reabrir">Reabrir</button>
+                                </div>
+                            <?php } else{ ?>
+                                <div class="text-center m-t-md">
+                                    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#suspender">Suspender</button>
+                                </div>
+                        <?php }
+                            }
+                        } ?>
 
-                    <h3>Hist√≥rico:</h3>
+
+                    <h3>HistÛrico:</h3>
                     <ul class="list-unstyled project-files">
                         <li class='well'>
                             <?php
@@ -312,14 +392,14 @@ echo $this->element('modal/usuarios/novo_encarregado');
                                 if($processo['Suspensao'][$i]){
                                     if($processo['Suspensao'][$i]['data_termino']){
                                         $inicio = 'Foi <b>suspenso</b> <br> de: ';
-                                        $meio = ' at√©: ';
+                                        $meio = ' atÈ: ';
                                         $fim = $this->Formatacao->data($processo['Suspensao'][$i]['data_termino']);
                                     }else{
-                                        $inicio = 'Est√° <b>suspenso</b> desde: ';
+                                        $inicio = 'Est· <b>suspenso</b> desde: ';
                                         $meio = '';
                                         $fim = '';
                                     }
-                                    echo $inicio, $this->Formatacao->data($processo['Suspensao'][$i]['data_inicio']), $meio, $fim,'<br> pelo: ', $processo['Suspensao'][$i]['responsavel_legal'], ', BGO: ',$processo['Suspensao'][$i]['bgo'], '<hr>';
+                                    echo $inicio, $this->Formatacao->data($processo['Suspensao'][$i]['data_inicio']), $meio, $fim,'<br> por: ', $processo['Suspensao'][$i]['responsavel_legal'], ', BGO: ',$processo['Suspensao'][$i]['bgo'], '<hr>';
                                 }    
                             }
                                 ?>
@@ -368,6 +448,8 @@ echo $this->element('modal/usuarios/novo_encarregado');
             }
         }
     </script>
-<?php 
+<?php
+    } else{ 
+        echo 'VocÍ n„o tem permiss„o de acessar esse processo!';
     };
 ?>

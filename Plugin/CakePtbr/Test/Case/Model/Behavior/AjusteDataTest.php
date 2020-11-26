@@ -281,7 +281,7 @@ class CakePtbrAjusteData extends CakeTestCase {
 	}
 
 /**
- * MÃ©todo auxiliar para executar os testes
+ * Método auxiliar para executar os testes
  *
  * @param string $nomeModel Nome da model
  * @param array $esperado Valor esperado

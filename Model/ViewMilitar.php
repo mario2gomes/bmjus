@@ -9,7 +9,7 @@ class ViewMilitar extends AppModel {
     public $useTable = 'view_militares';
     public $displayField = 'cargo_nome';
     public $primaryKey = 'num_cpf';
-
+    public $tablePrefix = 'rh_';
     public $hasOne = array(
         'Usuario'=>array(
             'classname'=>'Usuario',
@@ -17,13 +17,11 @@ class ViewMilitar extends AppModel {
     );
     //Retorna os dados do limitar referente ao CPF informado
     public function getPessoa($cpf) {
-
 //            $alocacao = new UsuariosSetor();
 //            $setor = $alocacao->find('first', array('conditions'=>array('UsuariosSetor.mat_usuario'=>$mat)));
         $dados = array();
-        $militar = $this->find('first', array('fields' => array('num_matricula', 'cargo_nome', 'obm_id', 'sig_obm','funcao_id','num_cpf'), 'conditions' => array('num_cpf' => $cpf)));
-
-        if (count($militar)>0){
+        $militar = $this->find('first', array('fields' => array('num_matricula', 'cargo_nome', 'obm_id', 'sig_obm','funcao_id','num_cpf','quadro_id'), 'conditions' => array('num_cpf' => $cpf)));
+        if (count($militar)>0 and !empty($cpf)){
             //$dados['id'] = $militar['ViewMilitar']['id'];
             $dados['cargo_nome'] = $militar['ViewMilitar']['cargo_nome'];
             $dados['num_matricula'] = $militar['ViewMilitar']['num_matricula'];
@@ -32,6 +30,7 @@ class ViewMilitar extends AppModel {
             $dados['funcao_id'] = $militar['ViewMilitar']['funcao_id'];
             $dados['cpf'] = $militar['ViewMilitar']['num_cpf'];
             $dados['grupo'] = $militar['Usuario']['grupo_bmjus'];
+            $dados['quadro'] = $militar['ViewMilitar']['quadro_id'];
         }
         return $dados;
     }

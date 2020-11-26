@@ -1,6 +1,6 @@
 <?php 
 class Relatorio extends AppModel {
-
+    public $tablePrefix = 'cor_';
     public $sequence = 'cor_relatorios_seq';
     
 	public $belongsTo = array(

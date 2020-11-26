@@ -1132,7 +1132,7 @@ button.dim:active:before {
   overflow: hidden;
   padding: 4px 12px;
   position: relative;
-  width: 100%;
+  width: 200px;
 }
 .chosen-container-multi .chosen-choices li.search-choice {
   background: #f1f1f1;

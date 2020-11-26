@@ -18,8 +18,8 @@ $.extend($.jgrid,{
 	search : {
 		caption: "Recherche...",
 		Find: "Chercher",
-		Reset: "RÃ©initialiser",
-		odata: [{ oper:'eq', text:"Ã©gal"},{ oper:'ne', text:"diffÃ©rent"},{ oper:'lt', text:"infÃ©rieur"},{ oper:'le', text:"infÃ©rieur ou Ã©gal"},{ oper:'gt', text:"supÃ©rieur"},{ oper:'ge', text:"supÃ©rieur ou Ã©gal"},{ oper:'bw', text:"commence par"},{ oper:'bn', text:"ne commence pas par"},{ oper:'in', text:"est dans"},{ oper:'ni', text:"n'est pas dans"},{ oper:'ew', text:"finit par"},{ oper:'en', text:"ne finit pas par"},{ oper:'cn', text:"contient"},{ oper:'nc', text:"ne contient pas"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}],
+		Reset: "Réinitialiser",
+		odata: [{ oper:'eq', text:"égal"},{ oper:'ne', text:"différent"},{ oper:'lt', text:"inférieur"},{ oper:'le', text:"inférieur ou égal"},{ oper:'gt', text:"supérieur"},{ oper:'ge', text:"supérieur ou égal"},{ oper:'bw', text:"commence par"},{ oper:'bn', text:"ne commence pas par"},{ oper:'in', text:"est dans"},{ oper:'ni', text:"n'est pas dans"},{ oper:'ew', text:"finit par"},{ oper:'en', text:"ne finit pas par"},{ oper:'cn', text:"contient"},{ oper:'nc', text:"ne contient pas"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}],
 		groupOps: [	{ op: "AND", text: "tous" },	{ op: "OR",  text: "au moins un" }	],
 		operandTitle : "Click to select search operation.",
 		resetTitle : "Reset Search Value"
@@ -30,22 +30,22 @@ $.extend($.jgrid,{
 		bSubmit: "Valider",
 		bCancel: "Annuler",
 		bClose: "Fermer",
-		saveData: "Les donnÃ©es ont changÃ© ! Enregistrer les modifications ?",
+		saveData: "Les données ont changé ! Enregistrer les modifications ?",
 		bYes: "Oui",
 		bNo: "Non",
 		bExit: "Annuler",
 		msg: {
 			required: "Champ obligatoire",
 			number: "Saisissez un nombre correct",
-			minValue: "La valeur doit Ãªtre supÃ©rieure ou Ã©gale Ã ",
-			maxValue: "La valeur doit Ãªtre infÃ©rieure ou Ã©gale Ã ",
+			minValue: "La valeur doit être supérieure ou égale Ã ",
+			maxValue: "La valeur doit être inférieure ou égale Ã ",
 			email: "n'est pas un email correct",
 			integer: "Saisissez un entier correct",
-			url: "n'est pas une adresse correcte. PrÃ©fixe requis ('http://' or 'https://')",
-			nodefined : " n'est pas dÃ©fini!",
+			url: "n'est pas une adresse correcte. Préfixe requis ('http://' or 'https://')",
+			nodefined : " n'est pas défini!",
 			novalue : " la valeur de retour est requise!",
-			customarray : "Une fonction personnalisÃ©e devrait retourner un tableau (array)!",
-			customfcheck : "Une fonction personnalisÃ©e devrait Ãªtre prÃ©sente dans le cas d'une vÃ©rification personnalisÃ©e!"
+			customarray : "Une fonction personnalisée devrait retourner un tableau (array)!",
+			customfcheck : "Une fonction personnalisée devrait être présente dans le cas d'une vérification personnalisée!"
 		}
 	},
 	view : {
@@ -54,25 +54,25 @@ $.extend($.jgrid,{
 	},
 	del : {
 		caption: "Supprimer",
-		msg: "Supprimer les enregistrements sÃ©lectionnÃ©s ?",
+		msg: "Supprimer les enregistrements sélectionnés ?",
 		bSubmit: "Supprimer",
 		bCancel: "Annuler"
 	},
 	nav : {
 		edittext: " ",
-		edittitle: "Editer la ligne sÃ©lectionnÃ©e",
+		edittitle: "Editer la ligne sélectionnée",
 		addtext:" ",
 		addtitle: "Ajouter une ligne",
 		deltext: " ",
-		deltitle: "Supprimer la ligne sÃ©lectionnÃ©e",
+		deltitle: "Supprimer la ligne sélectionnée",
 		searchtext: " ",
 		searchtitle: "Chercher un enregistrement",
 		refreshtext: "",
 		refreshtitle: "Recharger le tableau",
 		alertcap: "Avertissement",
-		alerttext: "Veuillez sÃ©lectionner une ligne",
+		alerttext: "Veuillez sélectionner une ligne",
 		viewtext: "",
-		viewtitle: "Afficher la ligne sÃ©lectionnÃ©e"
+		viewtitle: "Afficher la ligne sélectionnée"
 	},
 	col : {
 		caption: "Afficher/Masquer les colonnes",
@@ -81,9 +81,9 @@ $.extend($.jgrid,{
 	},
 	errors : {
 		errcap : "Erreur",
-		nourl : "Aucune adresse n'est paramÃ©trÃ©e",
+		nourl : "Aucune adresse n'est paramétrée",
 		norecords: "Aucun enregistrement Ã  traiter",
-		model : "Nombre de titres (colNames) <> Nombre de donnÃ©es (colModel)!"
+		model : "Nombre de titres (colNames) <> Nombre de données (colModel)!"
 	},
 	formatter : {
 		integer : {thousandsSeparator: " ", defaultValue: '0'},
@@ -95,8 +95,8 @@ $.extend($.jgrid,{
 				"Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"
 			],
 			monthNames: [
-				"Jan", "FÃ©v", "Mar", "Avr", "Mai", "Jui", "Jul", "Aou", "Sep", "Oct", "Nov", "DÃ©c",
-				"Janvier", "FÃ©vrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "DÃ©cembre"
+				"Jan", "Fév", "Mar", "Avr", "Mai", "Jui", "Jul", "Aou", "Sep", "Oct", "Nov", "Déc",
+				"Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre"
 			],
 			AmPm : ["am","pm","AM","PM"],
 			S: function (j) {return j == 1 ? 'er' : 'e';},

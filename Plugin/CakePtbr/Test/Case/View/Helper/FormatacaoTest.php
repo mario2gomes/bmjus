@@ -1,6 +1,6 @@
 <?php
 /**
- * Testes do helper de formataÃ§Ã£o
+ * Testes do helper de formatação
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
@@ -24,7 +24,7 @@ App::uses('FormatacaoHelper', 'CakePtbr.View/Helper');
 class CakePtbrFormatacaoCase extends CakeTestCase {
 
 /**
- * FormataÃ§Ã£o
+ * Formatação
  *
  * @var object
  * @access public
@@ -55,7 +55,7 @@ class CakePtbrFormatacaoCase extends CakeTestCase {
 		$this->assertEqual($this->Formatacao->data(), date('d/m/Y'));
 		$this->assertEqual($this->Formatacao->data(strtotime('2009-04-21')), '21/04/2009');
 		$this->assertEqual($this->Formatacao->data('2009-04-21'), '21/04/2009');
-		$this->assertEqual($this->Formatacao->data('errado', array('invalid' => 'InvÃ¡lido')), 'InvÃ¡lido');
+		$this->assertEqual($this->Formatacao->data('errado', array('invalid' => 'Inválido')), 'Inválido');
 		$this->assertEqual($this->Formatacao->data(strtotime('2009-04-21 00:00:00 GMT'), array('userOffset' => '-1')), '20/04/2009');
 		$this->assertEqual($this->Formatacao->data('2009-04-21 00:00:00 GMT', array('userOffset' => '-1')), '20/04/2009');
 	}
@@ -72,7 +72,7 @@ class CakePtbrFormatacaoCase extends CakeTestCase {
 		$this->assertEqual($this->Formatacao->dataHora(strtotime('2009-04-21 10:20:30')), '21/04/2009 10:20:30');
 		$this->assertEqual($this->Formatacao->dataHora(strtotime('2009-04-21 10:20:30'), false), '21/04/2009 10:20');
 		$this->assertEqual($this->Formatacao->dataHora('2009-04-21 10:20:30', false), '21/04/2009 10:20');
-		$this->assertEqual($this->Formatacao->dataHora('errado', true, array('invalid' => 'InvÃ¡lido')), 'InvÃ¡lido');
+		$this->assertEqual($this->Formatacao->dataHora('errado', true, array('invalid' => 'Inválido')), 'Inválido');
 		$this->assertEqual($this->Formatacao->dataHora(strtotime('2009-04-21 10:20:30 GMT'), false, array('userOffset' => '+2')), '21/04/2009 12:20');
 		$this->assertEqual($this->Formatacao->dataHora(strtotime('2009-04-21 10:20:30 GMT'), false, array('userOffset' => '-2')), '21/04/2009 08:20');
 		$this->assertEqual($this->Formatacao->dataHora('2009-04-21 10:20:30 GMT', false, array('userOffset' => '-2')), '21/04/2009 08:20');
@@ -85,8 +85,8 @@ class CakePtbrFormatacaoCase extends CakeTestCase {
  * @access public
  */
 	public function testDataCompleta() {
-		$this->assertEqual($this->Formatacao->dataCompleta(strtotime('2009-04-21 10:20:30')), 'TerÃ§a-feira, 21 de Abril de 2009, 10:20:30');
-		$this->assertEqual($this->Formatacao->dataCompleta('2009-04-21 10:20:30'), 'TerÃ§a-feira, 21 de Abril de 2009, 10:20:30');
+		$this->assertEqual($this->Formatacao->dataCompleta(strtotime('2009-04-21 10:20:30')), 'Terça-feira, 21 de Abril de 2009, 10:20:30');
+		$this->assertEqual($this->Formatacao->dataCompleta('2009-04-21 10:20:30'), 'Terça-feira, 21 de Abril de 2009, 10:20:30');
 	}
 
 /**
@@ -172,7 +172,7 @@ class CakePtbrFormatacaoCase extends CakeTestCase {
 		$this->assertEqual($this->Formatacao->moedaPorExtenso(322), 'trezentos e vinte e dois reais');
 		$this->assertEqual($this->Formatacao->moedaPorExtenso(1234), 'um mil duzentos e trinta e quatro reais');
 		$this->assertEqual($this->Formatacao->moedaPorExtenso(100000), 'cem mil reais');
-		$this->assertEqual($this->Formatacao->moedaPorExtenso(1000000), 'um milhÃ£o de reais');
-		$this->assertEqual($this->Formatacao->moedaPorExtenso(1045763), 'um milhÃ£o, quarenta e cinco mil setecentos e sessenta e trÃªs reais');
+		$this->assertEqual($this->Formatacao->moedaPorExtenso(1000000), 'um milhão de reais');
+		$this->assertEqual($this->Formatacao->moedaPorExtenso(1045763), 'um milhão, quarenta e cinco mil setecentos e sessenta e três reais');
 	}
 }

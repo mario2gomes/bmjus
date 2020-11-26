@@ -12,13 +12,13 @@ $.extend($.jgrid,{
 		recordtext: "Amosando {0} - {1} de {2}",
 	    emptyrecords: "Sen rexistros que amosar",
 		loadtext: "Cargando...",
-		pgtext : "P√°xina {0} de {1}"
+		pgtext : "P·xina {0} de {1}"
 	},
 	search : {
-	    caption: "B√∫squeda...",
+	    caption: "B˙squeda...",
 	    Find: "Buscar",
 	    Reset: "Limpar",
-	    odata: [{ oper:'eq', text:"igual "},{ oper:'ne', text:"diferente a"},{ oper:'lt', text:"menor que"},{ oper:'le', text:"menor ou igual que"},{ oper:'gt', text:"maior que"},{ oper:'ge', text:"maior ou igual a"},{ oper:'bw', text:"empece por"},{ oper:'bn', text:"non empece por"},{ oper:'in', text:"est√° en"},{ oper:'ni', text:"non est√° en"},{ oper:'ew', text:"termina por"},{ oper:'en', text:"non termina por"},{ oper:'cn', text:"cont√©n"},{ oper:'nc', text:"non cont√©n"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}],
+	    odata: [{ oper:'eq', text:"igual "},{ oper:'ne', text:"diferente a"},{ oper:'lt', text:"menor que"},{ oper:'le', text:"menor ou igual que"},{ oper:'gt', text:"maior que"},{ oper:'ge', text:"maior ou igual a"},{ oper:'bw', text:"empece por"},{ oper:'bn', text:"non empece por"},{ oper:'in', text:"est· en"},{ oper:'ni', text:"non est· en"},{ oper:'ew', text:"termina por"},{ oper:'en', text:"non termina por"},{ oper:'cn', text:"contÈn"},{ oper:'nc', text:"non contÈn"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}],
 	    groupOps: [	{ op: "AND", text: "todo" },	{ op: "OR",  text: "calquera" }	],
 		operandTitle : "Click to select search operation.",
 		resetTitle : "Reset Search Value"
@@ -29,23 +29,23 @@ $.extend($.jgrid,{
 	    bSubmit: "Gardar",
 	    bCancel: "Cancelar",
 		bClose: "Pechar",
-		saveData: "Modific√°ronse os datos, quere gardar os cambios?",
+		saveData: "Modific·ronse os datos, quere gardar os cambios?",
 		bYes : "Si",
 		bNo : "Non",
 		bExit : "Cancelar",
 	    msg: {
 	        required:"Campo obrigatorio",
-	        number:"Introduza un n√∫mero",
+	        number:"Introduza un n˙mero",
 	        minValue:"O valor debe ser maior ou igual a ",
 	        maxValue:"O valor debe ser menor ou igual a ",
-	        email: "non √© un enderezo de correo v√°lido",
+	        email: "non È un enderezo de correo v·lido",
 	        integer: "Introduza un valor enteiro",
 			date: "Introduza unha data correcta ",
-			url: "non √© unha URL v√°lida. Prefixo requerido ('http://' ou 'https://')",
-			nodefined : " non est√° definido.",
-			novalue : " o valor de retorno √© obrigatorio.",
-			customarray : "A funci√≥n persoalizada debe devolver un array.",
-			customfcheck : "A funci√≥n persoalizada debe estar presente no caso de ter validaci√≥n persoalizada."
+			url: "non È unha URL v·lida. Prefixo requerido ('http://' ou 'https://')",
+			nodefined : " non est· definido.",
+			novalue : " o valor de retorno È obrigatorio.",
+			customarray : "A funciÛn persoalizada debe devolver un array.",
+			customfcheck : "A funciÛn persoalizada debe estar presente no caso de ter validaciÛn persoalizada."
 		}
 	},
 	view : {
@@ -66,7 +66,7 @@ $.extend($.jgrid,{
 	    deltext: " ",
 	    deltitle: "Eliminar a fila seleccionada",
 	    searchtext: " ",
-	    searchtitle: "Buscar informaci√≥n",
+	    searchtitle: "Buscar informaciÛn",
 	    refreshtext: "",
 	    refreshtitle: "Recargar datos",
 	    alertcap: "Aviso",
@@ -92,7 +92,7 @@ $.extend($.jgrid,{
 		date : {
 			dayNames:   [
 				"Do", "Lu", "Ma", "Me", "Xo", "Ve", "Sa",
-				"Domingo", "Luns", "Martes", "M√©rcoles", "Xoves", "Vernes", "S√°bado"
+				"Domingo", "Luns", "Martes", "MÈrcoles", "Xoves", "Vernes", "S·bado"
 			],
 			monthNames: [
 				"Xan", "Feb", "Mar", "Abr", "Mai", "Xu√±", "Xul", "Ago", "Set", "Out", "Nov", "Dec",

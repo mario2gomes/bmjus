@@ -1,6 +1,6 @@
 <?php
 /**
- * Behavior de acesso a servi√ßos dos Correios
+ * Behavior de acesso a serviÁos dos Correios
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
@@ -36,21 +36,21 @@ App::uses('HttpSocket', 'Network/Http');
 class CorreiosBehavior extends ModelBehavior {
 
 /**
- * C√°lculo do valor do frete
+ * C·lculo do valor do frete
  *
  * @param object $model
- * @param integer $servico C√≥digo do servi√ßo, ver as defines CORREIOS_*
+ * @param integer $servico CÛdigo do serviÁo, ver as defines CORREIOS_*
  * @param string $cepOrigem CEP de origem no formato XXXXX-XXX
  * @param string $cepDestino CEP de destino no formato XXXXX-XXX
  * @param float $peso Peso do pacote, em quilos
- * @param boolean $maoPropria Usar recurso de m√£o pr√≥pria?
+ * @param boolean $maoPropria Usar recurso de m„o prÛpria?
  * @param float $valorDeclarado Valor declarado do pacote
  * @param boolean $avisoRecebimento Aviso de recebimento?
  * @return mixed Array com os dados do frete ou integer com erro. Ver defines ERRO_CORREIOS_* para erros.
  * @access public
  */
 	public function valorFrete(&$model, $servico, $cepOrigem, $cepDestino, $peso, $maoPropria = false, $valorDeclarado = 0.0, $avisoRecebimento = false) {
-		// Valida√ß√£o dos par√¢metros
+		// ValidaÁ„o dos par√¢metros
 		$tipos = array(CORREIOS_SEDEX, CORREIOS_SEDEX_A_COBRAR, CORREIOS_SEDEX_10, CORREIOS_SEDEX_HOJE, CORREIOS_ENCOMENDA_NORMAL);
 		if (!in_array($servico, $tipos)) {
 			return ERRO_CORREIOS_PARAMETROS_INVALIDOS;
@@ -116,11 +116,11 @@ class CorreiosBehavior extends ModelBehavior {
 	}
 
 /**
- * Pegar o endere√ßo de um CEP espec√≠fico
+ * Pegar o endereÁo de um CEP espec√≠fico
  *
  * @param object $model
  * @param string $cep CEP no format XXXXX-XXX
- * @return mixed Array com os dados do endere√ßo ou interger para erro. Ver defines ERRO_CORREIOS_* para os erros.
+ * @return mixed Array com os dados do endereÁo ou interger para erro. Ver defines ERRO_CORREIOS_* para os erros.
  * @access public
  */
 	public function endereco(&$model, $cep) {
@@ -152,12 +152,12 @@ class CorreiosBehavior extends ModelBehavior {
 			return $retornoCorreios;
 		}
 
-		// Convertendo para o encoding da aplica√ß√£o. Isto s√≥ funciona se a extens√£o multibyte estiver ativa
+		// Convertendo para o encoding da aplicaÁ„o. Isto sÛ funciona se a extens„o multibyte estiver ativa
 		$encoding = Configure::read('App.encoding');
 		if (function_exists('mb_convert_encoding') && $encoding != null && strcasecmp($encoding, 'iso-8859-1') != 0) {
 			$retornoCorreios = mb_convert_encoding($retornoCorreios, $encoding, 'ISO-8859-1');
 		}
-		// Checar se o conte√∫do est√° l√° e reduzir o escopo de busca dos valores
+		// Checar se o conte˙do est· l· e reduzir o escopo de busca dos valores
 		if (!preg_match('/\<b\>CEP:\<\/b\>(.*)\<b\>Prazo de Entrega/sm', $retornoCorreios, $matches)) {
 			return ERRO_CORREIOS_CONTEUDO_INVALIDO;
 		}
@@ -177,7 +177,7 @@ class CorreiosBehavior extends ModelBehavior {
 	}
 
 /**
- * Verificar se o CEP digitado est√° correto
+ * Verificar se o CEP digitado est· correto
  *
  * @param string $cep CEP
  * @return boolean CEP Correto
@@ -190,10 +190,10 @@ class CorreiosBehavior extends ModelBehavior {
 /**
  * Requisita dados dos Correios
  *
- * @param string $url Caminho relativo da p√°gina nos Correios
- * @param string $method M√©todo de requisi√ß√£o (POST/GET)
- * @param array $query Dados para enviar na p√°gina
- * @return string P√°gina solicitada
+ * @param string $url Caminho relativo da p·gina nos Correios
+ * @param string $method MÈtodo de requisiÁ„o (POST/GET)
+ * @param array $query Dados para enviar na p·gina
+ * @return string P·gina solicitada
  * @access protected
  */
 	protected function _requisitaUrl($url, $method, $query) {

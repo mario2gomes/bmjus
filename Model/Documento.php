@@ -1,6 +1,6 @@
 <?php
 class Documento extends AppModel{
-
+    public $tablePrefix = 'cor_';
     public function initialize(array $config){
         $this->addBehavior('Timestamp');
     }
@@ -15,7 +15,7 @@ class Documento extends AppModel{
         'Tipo_documento' => array(
             'className' => 'Tipo_documento',
             'dependent' => true,
-            'foreignKey' => 'tipo_documento_id')
+            'foreignKey' => 'tipo_documento_id'),
 	    );
 
 	public $validate = array(
@@ -28,9 +28,11 @@ class Documento extends AppModel{
         'nome_arquivo' => array(
             'rule' => 'notBlank'
         ),
+
         'tipo_arquivo' => array(
             'rule' => 'notBlank'
         ),
+        
         'tamanho_arquivo' => array(
             'rule' => 'notBlank'
         ),
@@ -44,5 +46,6 @@ class Documento extends AppModel{
             'rule' => 'notBlank'
         )
     ); 
+    
 }
 ?>

@@ -1,7 +1,7 @@
 ;(function($){
 /**
  * jqGrid Hungarian Translation
- * ≈êrszigety √Åd√°m udx6bs@freemail.hu
+ * ≈êrszigety √Åd·m udx6bs@freemail.hu
  * http://trirand.com/blog/ 
  * Dual licensed under the MIT and GPL licenses:
  * http://www.opensource.org/licenses/mit-license.php
@@ -12,81 +12,81 @@ $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
 	defaults : {
 		recordtext: "Oldal {0} - {1} / {2}",
-		emptyrecords: "Nincs tal√°lat",
-		loadtext: "Bet√∂lt√©s...",
+		emptyrecords: "Nincs tal·lat",
+		loadtext: "Bet√∂ltÈs...",
 		pgtext : "Oldal {0} / {1}"
 	},
 	search : {
-		caption: "Keres√©s...",
+		caption: "KeresÈs...",
 		Find: "Keres",
-		Reset: "Alap√©rtelmezett",
-		odata: [{ oper:'eq', text:"egyenl≈ë"},{ oper:'ne', text:"nem egyenl≈ë"},{ oper:'lt', text:"kevesebb"},{ oper:'le', text:"kevesebb vagy egyenl≈ë"},{ oper:'gt', text:"nagyobb"},{ oper:'ge', text:"nagyobb vagy egyenl≈ë"},{ oper:'bw', text:"ezzel kezd≈ëdik"},{ oper:'bn', text:"nem ezzel kezd≈ëdik"},{ oper:'in', text:"tartalmaz"},{ oper:'ni', text:"nem tartalmaz"},{ oper:'ew', text:"v√©gz≈ëdik"},{ oper:'en', text:"nem v√©gz≈ëdik"},{ oper:'cn', text:"tartalmaz"},{ oper:'nc', text:"nem tartalmaz"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}],
+		Reset: "AlapÈrtelmezett",
+		odata: [{ oper:'eq', text:"egyenl≈ë"},{ oper:'ne', text:"nem egyenl≈ë"},{ oper:'lt', text:"kevesebb"},{ oper:'le', text:"kevesebb vagy egyenl≈ë"},{ oper:'gt', text:"nagyobb"},{ oper:'ge', text:"nagyobb vagy egyenl≈ë"},{ oper:'bw', text:"ezzel kezd≈ëdik"},{ oper:'bn', text:"nem ezzel kezd≈ëdik"},{ oper:'in', text:"tartalmaz"},{ oper:'ni', text:"nem tartalmaz"},{ oper:'ew', text:"vÈgz≈ëdik"},{ oper:'en', text:"nem vÈgz≈ëdik"},{ oper:'cn', text:"tartalmaz"},{ oper:'nc', text:"nem tartalmaz"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}],
 		groupOps: [	{ op: "AND", text: "all" },	{ op: "OR",  text: "any" }	],
 		operandTitle : "Click to select search operation.",
 		resetTitle : "Reset Search Value"
 	},
 	edit : {
-		addCaption: "√öj t√©tel",
-		editCaption: "T√©tel szerkeszt√©se",
-		bSubmit: "Ment√©s",
-		bCancel: "M√©gse",
-		bClose: "Bez√°r√°s",
-		saveData: "A t√©tel megv√°ltozott! T√©tel ment√©se?",
+		addCaption: "√öj tÈtel",
+		editCaption: "TÈtel szerkesztÈse",
+		bSubmit: "MentÈs",
+		bCancel: "MÈgse",
+		bClose: "Bez·r·s",
+		saveData: "A tÈtel megv·ltozott! TÈtel mentÈse?",
 		bYes : "Igen",
 		bNo : "Nem",
-		bExit : "M√©gse",
+		bExit : "MÈgse",
 		msg: {
 			required:"K√∂telez≈ë mez≈ë",
-			number:"K√©rj√ºk, adjon meg egy helyes sz√°mot",
+			number:"KÈrj√ºk, adjon meg egy helyes sz·mot",
 			minValue:"Nagyobb vagy egyenl≈ënek kell lenni mint ",
 			maxValue:"Kisebb vagy egyenl≈ënek kell lennie mint",
-			email: "hib√°s emailc√≠m",
-			integer: "K√©rj√ºk adjon meg egy helyes eg√©sz sz√°mot",
-			date: "K√©rj√ºk adjon meg egy helyes d√°tumot",
+			email: "hib·s emailc√≠m",
+			integer: "KÈrj√ºk adjon meg egy helyes egÈsz sz·mot",
+			date: "KÈrj√ºk adjon meg egy helyes d·tumot",
 			url: "nem helyes c√≠m. El≈ëtag k√∂telez≈ë ('http://' vagy 'https://')",
-			nodefined : " nem defini√°lt!",
-			novalue : " visszat√©r√©si √©rt√©k k√∂telez≈ë!!",
+			nodefined : " nem defini·lt!",
+			novalue : " visszatÈrÈsi ÈrtÈk k√∂telez≈ë!!",
 			customarray : "Custom function should return array!",
 			customfcheck : "Custom function should be present in case of custom checking!"
 			
 		}
 	},
 	view : {
-		caption: "T√©tel megtekint√©se",
-		bClose: "Bez√°r√°s"
+		caption: "TÈtel megtekintÈse",
+		bClose: "Bez·r·s"
 	},
 	del : {
-		caption: "T√∂rl√©s",
-		msg: "Kiv√°laztott t√©tel(ek) t√∂rl√©se?",
-		bSubmit: "T√∂rl√©s",
-		bCancel: "M√©gse"
+		caption: "T√∂rlÈs",
+		msg: "Kiv·laztott tÈtel(ek) t√∂rlÈse?",
+		bSubmit: "T√∂rlÈs",
+		bCancel: "MÈgse"
 	},
 	nav : {
 		edittext: "",
-		edittitle: "T√©tel szerkeszt√©se",
+		edittitle: "TÈtel szerkesztÈse",
 		addtext:"",
-		addtitle: "√öj t√©tel hozz√°ad√°sa",
+		addtitle: "√öj tÈtel hozz·ad·sa",
 		deltext: "",
-		deltitle: "T√©tel t√∂rl√©se",
+		deltitle: "TÈtel t√∂rlÈse",
 		searchtext: "",
-		searchtitle: "Keres√©s",
+		searchtitle: "KeresÈs",
 		refreshtext: "",
-		refreshtitle: "Friss√≠t√©s",
-		alertcap: "Figyelmeztet√©s",
-		alerttext: "K√©rem v√°lasszon t√©telt.",
+		refreshtitle: "Friss√≠tÈs",
+		alertcap: "FigyelmeztetÈs",
+		alerttext: "KÈrem v·lasszon tÈtelt.",
 		viewtext: "",
-		viewtitle: "T√©tel megtekint√©se"
+		viewtitle: "TÈtel megtekintÈse"
 	},
 	col : {
-		caption: "Oszlopok kiv√°laszt√°sa",
+		caption: "Oszlopok kiv·laszt·sa",
 		bSubmit: "Ok",
-		bCancel: "M√©gse"
+		bCancel: "MÈgse"
 	},
 	errors : {
 		errcap : "Hiba",
-		nourl : "Nincs URL be√°ll√≠tva",
-		norecords: "Nincs feldolgoz√°sra v√°r√≥ t√©tel",
-		model : "colNames √©s colModel hossza nem egyenl≈ë!"
+		nourl : "Nincs URL be·ll√≠tva",
+		norecords: "Nincs feldolgoz·sra v·rÛ tÈtel",
+		model : "colNames Ès colModel hossza nem egyenl≈ë!"
 	},
 	formatter : {
 		integer : {thousandsSeparator: " ", defaultValue: '0'},
@@ -94,12 +94,12 @@ $.extend($.jgrid,{
 		currency : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: '0,00'},
 		date : {
 			dayNames:   [
-				"Va", "H√©", "Ke", "Sze", "Cs√º", "P√©", "Szo",
-				"Vas√°rnap", "H√©tf≈ë", "Kedd", "Szerda", "Cs√ºt√∂rt√∂k", "P√©ntek", "Szombat"
+				"Va", "HÈ", "Ke", "Sze", "Cs√º", "PÈ", "Szo",
+				"Vas·rnap", "HÈtf≈ë", "Kedd", "Szerda", "Cs√ºt√∂rt√∂k", "PÈntek", "Szombat"
 			],
 			monthNames: [
-				"Jan", "Feb", "M√°r", "√Åpr", "M√°j", "J√∫n", "J√∫l", "Aug", "Szep", "Okt", "Nov", "Dec",
-				"Janu√°r", "Febru√°r", "M√°rcius", "√Åprili", "M√°jus", "J√∫nius", "J√∫lius", "Augusztus", "Szeptember", "Okt√≥ber", "November", "December"
+				"Jan", "Feb", "M·r", "√Åpr", "M·j", "J˙n", "J˙l", "Aug", "Szep", "Okt", "Nov", "Dec",
+				"Janu·r", "Febru·r", "M·rcius", "√Åprili", "M·jus", "J˙nius", "J˙lius", "Augusztus", "Szeptember", "OktÛber", "November", "December"
 			],
 			AmPm : ["de","du","DE","DU"],
 			S: function (j) {return '.-ik';},
@@ -110,7 +110,7 @@ $.extend($.jgrid,{
 				ISO8601Long:"Y-m-d H:i:s",
 				ISO8601Short:"Y-m-d",
 				ShortDate: "Y/j/n",
-				LongDate: "Y. F h√≥ d., l",
+				LongDate: "Y. F hÛ d., l",
 				FullDateTime: "l, F d, Y g:i:s A",
 				MonthDay: "F d",
 				ShortTime: "a g:i",

@@ -18,7 +18,7 @@
 class AjusteDataBehavior extends ModelBehavior {
 
 /**
- * ConfiguraÃ§Ã£o dos campos
+ * Configuração dos campos
  *
  * @var array
  * @access public

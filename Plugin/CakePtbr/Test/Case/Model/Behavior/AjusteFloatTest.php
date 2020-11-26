@@ -223,7 +223,7 @@ class CakePtbrAjusteFloat extends CakeTestCase {
 		$result = $this->Produto->read(array('valor'), $id);
 		$this->assertEqual(array('Produto' => array('valor' => '5000.00')), $result);
 
-		$result = $this->Produto->read(array('nome'), $id); // Verificar se dÃ¡ erro quando nÃ£o vem o campo
+		$result = $this->Produto->read(array('nome'), $id); // Verificar se dá erro quando não vem o campo
 		$this->assertEqual(array('Produto' => array('nome' => 'Produto 4')), $result);
 	}
 }

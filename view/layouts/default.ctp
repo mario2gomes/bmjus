@@ -1,5 +1,4 @@
 <?php
-$usuario_atual['cargo_nome'] = 'Seja bem vindo ten fulano';
 /**
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
@@ -15,31 +14,53 @@ $usuario_atual['cargo_nome'] = 'Seja bem vindo ten fulano';
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
-$cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
+//$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+//$cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <?php echo $this->Html->charset(); ?>    
+
+    <?php echo $this->Html->charset(); ?> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>     
         <?php echo $this->fetch('title'); ?>
     </title>
-        <?php
+    <?php
         echo $this->Html->meta('icon');
 
         //echo $this->Html->css(array('plugins/datepicker/datepicker3'));
-        echo $this->Html->css(array('plugins/toastr/toastr.min','plugins/dataTables/dataTables.bootstrap', 'plugins/dataTables/dataTables.responsive.css', 'plugins/dataTables/dataTables.tableTools.min'));
-        echo $this->Html->css(array('plugins/chosen/chosen'));
+        echo $this->Html->css(array(
+            'plugins/toastr/toastr.min',
+            'plugins/dataTables/dataTables.bootstrap',
+            'plugins/dataTables/dataTables.responsive.css', 
+            'plugins/dataTables/dataTables.tableTools.min'));
+        echo $this->Html->css(array(
+            'plugins/iCheck/custom',
+            'plugins/colorpicker/bootstrap-colorpicker.min',
+            'plugins/cropper/cropper.min',
+            'plugins/switchery/switchery',
+            'plugins/jasny/jasny-bootstrap.min',
+            'plugins/nouslider/jquery.nouislider',
+            'plugins/datapicker/datepicker3',
+            'plugins/ionRangeSlider/ion.rangeSlider',
+            'plugins/ionRangeSlider/ion.rangeSlider.skinFlat',
+            'plugins/chosen/chosen',
+            ));
         echo $this->Html->css(array('bootstrap.min', 'font-awesome', 'animate', 'style'));//, 'plugins/c3/c3.min'));
-        ?>
-        <?php
+        
         //Main Scripts
         echo $this->Html->script(array('jquery-2.1.1', 'bootstrap.min'));
         //Custom Scripts
-        echo $this->Html->script(array('inspinia', 'plugins/pace/pace.min', 'plugins/metisMenu/jquery.metisMenu', 'plugins/slimscroll/jquery.slimscroll.min', 'plugins/toastr/toastr.min', 'plugins/chosen/chosen.jquery','tabelaPesquisa'));//,'plugins/bootbox/bootbox.min', 'gatilhos'));
+        echo $this->Html->script(array(
+        'inspinia', 
+        'plugins/pace/pace.min', 
+        'plugins/metisMenu/jquery.metisMenu',
+        'plugins/slimscroll/jquery.slimscroll.min', 
+        'plugins/toastr/toastr.min', 
+        'plugins/chosen/chosen.jquery',
+        'tabelaPesquisa'));//,'plugins/bootbox/bootbox.min', 'gatilhos'));
         //scripts para tabelas
         echo $this->Html->script(array(
             'plugins/dataTables/jquery.dataTables', 
@@ -49,12 +70,61 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             'bootstrap-popover'
         ));
 
+        //Flot script
+        echo $this->Html->script(array(
+            'plugins/flot/jquery.flot',
+            'plugins/flot/jquery.flot.tooltip.min',
+            'plugins/flot/jquery.flot.spline',
+            'plugins/flot/jquery.flot.resize',
+            'plugins/flot/jquery.flot.pie'
+        ));
+
+        //Peity script (gr·ficos)
+        echo $this->Html->script(array(
+            'plugins/peity/jquery.peity.min',
+            'plugins/demo/peity-demo'
+        ));
+
+        //Gitter script
+        echo $this->Html->script(array(
+            'plugins/gritter/jquery.gritter.min'
+        ));
+
+        //jQuery UI script
+        echo $this->Html->script(array(
+            'plugins/jquery-ui/jquery-ui.min'
+        ));
+
+        //Sparkline script
+        echo $this->Html->script(array(
+            'plugins/sparkline/jquery.sparkline.min',
+            'demo/sparkline-demo'
+        ));
+
+        //ChartJS script (gr·ficos)
+        echo $this->Html->script(array(
+            'plugins/chartJs/Chart.min'
+        ));
+
+        echo $this->Html->script(array(
+            'plugins/jsKnob/jquery.knob',
+            'plugins/datapicker/bootstrap-datepicker',
+            'plugins/nouslider/jquery.nouislider.min',
+            'plugins/switchery/switchery',
+            'plugins/ionRangeSlider/ion.rangeSlider.min',
+            'plugins/iCheck/icheck.min',
+            'plugins/metisMenu/jquery.metisMenu',
+            'plugins/colorpicker/bootstrap-colorpicker.min',
+            'plugins/cropper/cropper.min'
+        ));
+
         //Inclui o chat
         echo $this->element('chat');
         echo $this->fetch('meta');
         echo $this->fetch('css');
         echo $this->fetch('script');
-        ?>
+    ?>
+
 </head>
 
 <body class="pace-done mini-navbar">
@@ -69,7 +139,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                 <a class="navbar-minimalize" href="#"><h2 class="font-bold"><i class="fa fa-bars"></i> BMJUS</h2></a>
                                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                     <span class="clear"> 
-                                        <span class="block m-t-xs"> <strong class="font-bold"><?= $usuario_atual['cargo_nome'] ?></strong></span>
+                                        <span class="block m-t-xs"> <strong class="font-bold"><?php echo 'Seja bem vindo '.'</br>'.$usuario_atual['cargo_nome']; ?></strong></span>
                                     </span> 
                                 </a>
                                 <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -84,14 +154,15 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         <li class="active">
                             <a><i class="fa fa-file-text-o"></i><span class="nav-label">Processos</span> <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li class="active"><?php echo $this->Html->link('Rela√ß√£o de processos', array('controller' => 'processos', 'action' => 'lista')); ?></li>
-                                <li ><a>Calend√°rio</a></li>
+                                <li class="active"><?php echo $this->Html->link('RelaÁ„o de processos', array('controller' => 'processos', 'action' => 'lista')); ?></li>
+                                <li><?php echo $this->Html->link('Painel estatÌstico', array('controller' => 'processos', 'action' => 'index')); ?></li>
+                                <li ><a>Calend·rio</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a><i class="fa fa-user"></i> <span class="nav-label">Usu√°rios</span> <span class="fa arrow"></span></a>
+                            <a><i class="fa fa-user"></i> <span class="nav-label">Usu·rios</span> <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li class="active"><?php echo $this->Html->link('Rela√ß√£o de usu√°rios', array('controller' => 'usuarios', 'action' => 'lista')); ?></li>
+                                <li class="active"><?php echo $this->Html->link('RelaÁ„o de usu·rios', array('controller' => 'usuarios', 'action' => 'lista')); ?></li>
                             </ul>
                         </li>
                         <li>
@@ -180,6 +251,20 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 
         });
+
+        var config = {
+                '.chosen-select'           : {},
+                '.chosen-select-deselect'  : {allow_single_deselect:true},
+                '.chosen-select-no-single' : {disable_search_threshold:10},
+                '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+                '.chosen-select-width'     : {width:"95%"}
+            }
+            for (var selector in config) {
+                $(selector).chosen(config[selector]);
+            }
+
     </script>
 </body>
 </html>
+
+

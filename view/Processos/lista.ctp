@@ -1,8 +1,8 @@
-<?php echo $this->element('modal/processos/novo') ?>
+<?php echo $this->element('modal/processos/novo'); ?>
 
 <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-sm-4">
-                    <h2>RelaÃ§Ã£o de processos</h2>
+                    <h2>Relação de processos</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a>Processos</a>
@@ -30,7 +30,7 @@
                         </div>
                         <div class="ibox-content">    
                             <div class="project-list">
-                                <!--dataTables-example: tabela dinÃ¢mica moldÃ¡vel javascript-->
+                                <!--dataTables-example: tabela dinâmica moldável javascript-->
                                 <table class="table table-hover table-mail table-striped dataTables-example">
                                     <thead>
                                         <tr>
@@ -44,13 +44,20 @@
                                     <tbody>
                                     <?php foreach ($processos as $processo){
                                     $numero = $processo['Processo']['num_processo'] ;
-                                    //O usuÃ¡rio visualiza apenas os processos com os quais estÃ¡ envolvido
-                                    //usuÃ¡rio adm ou corregedoria visualiza todos
+                                    //O usuário visualiza apenas os processos com os quais está envolvido
+                                    //usuário adm ou corregedoria visualiza todos
                                         if( $usuario_atual['grupo'] != 1 && 
                                             $usuario_atual['grupo'] != 2 &&
-                                            (($usuario_atual['grupo'] == 3 && $processo['Processo']['encarregado']!=$usuario_atual['cpf']) ||
-                                            ($usuario_atual['grupo'] == 4  && $processo['Processo']['instaurador'] != $usuario_atual['cpf']) ||
-                                            ($usuario_atual['grupo'] == 5 && $processo['Processo']['investigado'] != $usuario_atual['cpf'])) &&
+                                            //($usuario_atual['obm'] != $processo['Processo']['obm'] || $usuario_atual['grupo'] != 4) &&
+
+                                            //(($usuario_atual['grupo'] == 3 && $processo['Processo']['encarregado']!=$usuario_atual['cpf']) ||
+                                            //($usuario_atual['grupo'] == 4  && $processo['Processo']['instaurador'] != $usuario_atual['cpf']) ||
+                                            //($usuario_atual['grupo'] == 5 && $processo['Processo']['investigado'] != $usuario_atual['cpf']))
+
+                                            $processo['Processo']['encarregado']!=$usuario_atual['cpf'] &&
+                                            $processo['Processo']['escrivao']!=$usuario_atual['cpf'] &&
+                                            $processo['Processo']['instaurador'] != $usuario_atual['cpf'] &&
+                                            $processo['Processo']['investigado'] != $usuario_atual['cpf'] &&
                                             $usuario_atual['funcao_id'] != 1260
                                         ){ continue; } 
                                         ?>                        
@@ -59,11 +66,11 @@
                                     style="background-color:#FFEAEA"
                                         <?php } ?> >
                                         <td class="project-title">
-                                            <a><?php echo $processo['Tipo_processo']['descricao'], ' ', $this->Html->link($numero, array('controller' => 'processos', 'action' => 'detalhe', $processo['Processo']['id'])),' ', $processo['Processo']['obm']; ?></a>
+                                            <?php echo $this->Html->link($processo['Tipo_processo']['descricao']." ".$numero, array('controller' => 'processos', 'action' => 'detalhe',$processo['Processo']['id'])); ?>
                                             <br/>
                                             <small>Aberto em: <?php echo $this-> Formatacao ->data($processo['Processo']['data_bgo']);?></small>
                                         <td>
-                                            <?php echo $processo['Processo']['instaurador'];?>
+                                            <?php echo $processo['Processo']['instaurador']; ?>
                                         </td>
                                         <td>
                                             </a>
@@ -103,11 +110,11 @@
                                         <?php
                                         switch ($processo['Processo']['estados_id']) {
                                             case 1:
-                                                echo 'PrevisÃ£o de tÃ©rmino: ', $this -> Formatacao -> data ($processo['Processo']['previsao_termino']);?>
+                                                echo 'Previsão de término: ', $this -> Formatacao -> data ($processo['Processo']['previsao_termino']);?>
                                                 <div class="progress progress-mini">
                                                     <div style="width: <?php echo $this -> Prazos-> progresso($processo['Processo']['data_bgo'], $processo['Processo']['prazo']) ?>;" class="progress-bar"></div>
                                                 </div>
-                                                <?php //echo 'Prazo para entrega do relatÃ³rio: ', $this -> Prazos-> data_termino($processo['Processo']['data_bgo'], $processo['Relatorio']['prazo']); ?>
+                                                <?php //echo 'Prazo para entrega do relatório: ', $this -> Prazos-> data_termino($processo['Processo']['data_bgo'], $processo['Relatorio']['prazo']); ?>
                                                 <!-- <div class="progress progress-mini">
                                                     <div style="width: <?php //echo $this -> Prazos-> progresso($processo['Processo']['data_bgo'], $processo['Relatorio']['prazo']) ?>;" class="progress-bar"></div>
                                                 </div>  -->
@@ -124,8 +131,8 @@
                                             <?php
                                                 break;
                                             case 4:
-                                                echo 'Processo concluÃ­do em: ', $processo['Relatorio']['entrega'];
-                                                echo '<br /> Aguardando anÃ¡lise';
+                                                echo 'Processo concluído em: ', $processo['Relatorio']['entrega'];
+                                                echo '<br /> Aguardando análise';
                                                 break;
                                             case 5:
                                                 echo 'Processo arquivado';

@@ -1,6 +1,6 @@
 <?php
 /**
- * Testes das funÃ§Ãµes de internacionalizaÃ§Ã£o
+ * Testes das funções de internacionalização
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
@@ -25,8 +25,8 @@ class CakePtbrI18nCase extends CakeTestCase {
  * @access public
  */
 	public function testCore() {
-		$this->assertEqual(__('Missing Component File'), 'Arquivo de Component nÃ£o encontrado');
-		$this->assertEqual(__d('default', 'Missing Database'), 'Database nÃ£o encontrado');
+		$this->assertEqual(__('Missing Component File'), 'Arquivo de Component não encontrado');
+		$this->assertEqual(__d('default', 'Missing Database'), 'Database não encontrado');
 	}
 
 /**
@@ -41,7 +41,7 @@ class CakePtbrI18nCase extends CakeTestCase {
 		$this->assertEqual($result, $expected);
 
 		$result = __c('day', 5);
-		$expected = array('Domingo', 'Segunda', 'TerÃ§a', 'Quarta', 'Quinta', 'Sexta', 'Sábado');
+		$expected = array('Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado');
 		$this->assertEqual($result, $expected);
 
 		$result = __c('abmon', 5);

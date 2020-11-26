@@ -111,7 +111,7 @@ class EstadoBrasileiroTestCase extends CakeTestCase {
 		$this->assertEqual($results, 'Santa Catarina');
 
 		$results = $this->EstadoBrasileiro->estadoPorSigla('SP');
-		$this->assertEqual($results, 'SÃ£o Paulo');
+		$this->assertEqual($results, 'São Paulo');
 
 		$results = $this->EstadoBrasileiro->estadoPorSigla('XX');
 		$this->assertIdentical($results, false);
@@ -127,7 +127,7 @@ class EstadoBrasileiroTestCase extends CakeTestCase {
 		$results = $this->EstadoBrasileiro->siglaPorEstado('Santa Catarina');
 		$this->assertEqual($results, 'SC');
 
-		$results = $this->EstadoBrasileiro->siglaPorEstado('SÃ£o Paulo');
+		$results = $this->EstadoBrasileiro->siglaPorEstado('São Paulo');
 		$this->assertEqual($results, 'SP');
 
 		$results = $this->EstadoBrasileiro->siglaPorEstado('Sao Paulo');
@@ -143,7 +143,7 @@ class EstadoBrasileiroTestCase extends CakeTestCase {
 	public function testEstadosDoSul() {
 		$results = $this->EstadoBrasileiro->estadosDoSul();
 		$expected = array(
-			'PR' => 'ParanÃ¡',
+			'PR' => 'Paraná',
 			'RS' => 'Rio Grande do Sul',
 			'SC' => 'Santa Catarina'
 		);
@@ -162,7 +162,7 @@ class EstadoBrasileiroTestCase extends CakeTestCase {
 			'ES' => 'EspÃ­rito Santo',
 			'MG' => 'Minas Gerais',
 			'RJ' => 'Rio de Janeiro',
-			'SP' => 'SÃ£o Paulo'
+			'SP' => 'São Paulo'
 		);
 		$this->assertEqual($results, $expected);
 	}
@@ -177,7 +177,7 @@ class EstadoBrasileiroTestCase extends CakeTestCase {
 		$results = $this->EstadoBrasileiro->estadosDoCentroOeste();
 		$expected = array(
 			'DF' => 'Distrito Federal',
-			'GO' => 'GoiÃ¡s',
+			'GO' => 'Goiás',
 			'MT' => 'Mato Grosso',
 			'MS' => 'Mato Grosso do Sul'
 		);
@@ -198,9 +198,9 @@ class EstadoBrasileiroTestCase extends CakeTestCase {
 		$results = $this->EstadoBrasileiro->estadosDoNorte();
 		$expected = array(
 			'AC' => 'Acre',
-			'AP' => 'AmapÃ¡',
+			'AP' => 'Amapá',
 			'AM' => 'Amazonas',
-			'PA' => 'ParÃ¡',
+			'PA' => 'Pará',
 			'RO' => 'RondÃ´nia',
 			'RR' => 'Roraima',
 			'TO' => 'Tocantins'
@@ -219,8 +219,8 @@ class EstadoBrasileiroTestCase extends CakeTestCase {
 		$expected = array(
 			'AL' => 'Alagoas',
 			'BA' => 'Bahia',
-			'CE' => 'CearÃ¡',
-			'MA' => 'MaranhÃ£o',
+			'CE' => 'Ceará',
+			'MA' => 'Maranhão',
 			'PB' => 'ParaÃ­ba',
 			'PI' => 'PiauÃ­',
 			'PE' => 'Pernambuco',

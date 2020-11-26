@@ -66,7 +66,7 @@ msgid "Name"
 msgstr "Nome"
 
 msgid "authorization"
-msgstr "autorizaÃ§Ã£o"
+msgstr "autorização"
 
 msgid "authorized"
 msgstr "autorizado"
@@ -78,7 +78,7 @@ msgid "Roles without corresponding Aro"
 msgstr "Grupos não correspondem ao Aro"
 
 msgid "Users without corresponding Aro"
-msgstr "UsuÃ£rios não correspondem ao Aro"
+msgstr "Usuãrios não correspondem ao Aro"
 
 msgid "Some users AROS are missing. Click on a role to assign one to a user."
 msgstr "Alguns usuários não estão associados as ações. Clique no grupo para associar."
@@ -195,7 +195,7 @@ msgid "The <em>%s</em> model is not configured to act as an <em>ACL requester</e
 msgstr "O modelo <em>%s</em> não está configurado em <em>ACL requester</em>"
 
 msgid "In a classical ACL configuration, the models that represent the users and the roles must act as <em>ACL requesters</em> (see %s)."
-msgstr "Em uma configuraÃ§Ã£o de ACL clÃ¡ssicos, os modelos que representam os usuários e os grupos devem agir como <em> solicitantes ACL </ em> (veja% s)."
+msgstr "Em uma configuração de ACL clássicos, os modelos que representam os usuários e os grupos devem agir como <em> solicitantes ACL </ em> (veja% s)."
 
 msgid "Acts As a Requester"
 msgstr "Agir como um Requester"

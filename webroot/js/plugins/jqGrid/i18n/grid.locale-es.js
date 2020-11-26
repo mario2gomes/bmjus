@@ -14,13 +14,13 @@ $.extend($.jgrid,{
 		recordtext: "Mostrando {0} - {1} de {2}",
 	    emptyrecords: "Sin registros que mostrar",
 		loadtext: "Cargando...",
-		pgtext : "P√°gina {0} de {1}"
+		pgtext : "P·gina {0} de {1}"
 	},
 	search : {
-	    caption: "B√∫squeda...",
+	    caption: "B˙squeda...",
 	    Find: "Buscar",
 	    Reset: "Limpiar",
-	    odata: [{ oper:'eq', text:"igual "},{ oper:'ne', text:"no igual a"},{ oper:'lt', text:"menor que"},{ oper:'le', text:"menor o igual que"},{ oper:'gt', text:"mayor que"},{ oper:'ge', text:"mayor o igual a"},{ oper:'bw', text:"empiece por"},{ oper:'bn', text:"no empiece por"},{ oper:'in', text:"est√° en"},{ oper:'ni', text:"no est√° en"},{ oper:'ew', text:"termina por"},{ oper:'en', text:"no termina por"},{ oper:'cn', text:"contiene"},{ oper:'nc', text:"no contiene"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}],
+	    odata: [{ oper:'eq', text:"igual "},{ oper:'ne', text:"no igual a"},{ oper:'lt', text:"menor que"},{ oper:'le', text:"menor o igual que"},{ oper:'gt', text:"mayor que"},{ oper:'ge', text:"mayor o igual a"},{ oper:'bw', text:"empiece por"},{ oper:'bn', text:"no empiece por"},{ oper:'in', text:"est· en"},{ oper:'ni', text:"no est· en"},{ oper:'ew', text:"termina por"},{ oper:'en', text:"no termina por"},{ oper:'cn', text:"contiene"},{ oper:'nc', text:"no contiene"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}],
 	    groupOps: [	{ op: "AND", text: "todo" },	{ op: "OR",  text: "cualquier" }	],
 		operandTitle : "Click to select search operation.",
 		resetTitle : "Reset Search Value"
@@ -37,17 +37,17 @@ $.extend($.jgrid,{
 		bExit : "Cancelar",
 	    msg: {
 	        required:"Campo obligatorio",
-	        number:"Introduzca un n√∫mero",
+	        number:"Introduzca un n˙mero",
 	        minValue:"El valor debe ser mayor o igual a ",
 	        maxValue:"El valor debe ser menor o igual a ",
-	        email: "no es una direcci√≥n de correo v√°lida",
+	        email: "no es una direcciÛn de correo v·lida",
 	        integer: "Introduzca un valor entero",
 			date: "Introduza una fecha correcta ",
-			url: "no es una URL v√°lida. Prefijo requerido ('http://' or 'https://')",
-			nodefined : " no est√° definido.",
+			url: "no es una URL v·lida. Prefijo requerido ('http://' or 'https://')",
+			nodefined : " no est· definido.",
 			novalue : " valor de retorno es requerido.",
-			customarray : "La funci√≥n personalizada debe devolver un array.",
-			customfcheck : "La funci√≥n personalizada debe estar presente en el caso de validaci√≥n personalizada."
+			customarray : "La funciÛn personalizada debe devolver un array.",
+			customfcheck : "La funciÛn personalizada debe estar presente en el caso de validaciÛn personalizada."
 		}
 	},
 	view : {
@@ -68,7 +68,7 @@ $.extend($.jgrid,{
 	    deltext: " ",
 	    deltitle: "Eliminar fila seleccionada",
 	    searchtext: " ",
-	    searchtitle: "Buscar informaci√≥n",
+	    searchtitle: "Buscar informaciÛn",
 	    refreshtext: "",
 	    refreshtitle: "Recargar datos",
 	    alertcap: "Aviso",

@@ -1,7 +1,7 @@
 ;(function($){
 /**
  * jqGrid Catalan Translation
- * Traducci√≥ jqGrid en Catat√† per Faserline, S.L.
+ * TraducciÛ jqGrid en Catat√† per Faserline, S.L.
  * http://www.faserline.com
  * Dual licensed under the MIT and GPL licenses:
  * http://www.opensource.org/licenses/mit-license.php
@@ -39,10 +39,10 @@ $.extend($.jgrid,{
 		    number:"Introdueixi un nombre",
 		    minValue:"El valor ha de ser major o igual que ",
 		    maxValue:"El valor ha de ser menor o igual a ",
-		    email: "no √©s una direcci√≥ de correu v√†lida",
+		    email: "no Ès una direcciÛ de correu v√†lida",
 		    integer: "Introdueixi un valor enter",
 			date: "Introdueixi una data correcta ",
-			url: "no √©s una URL v√†lida. Prefix requerit ('http://' or 'https://')",
+			url: "no Ès una URL v√†lida. Prefix requerit ('http://' or 'https://')",
 			nodefined : " is not defined!",
 			novalue : " return value is required!",
 			customarray : "Custom function should return array!",
@@ -67,7 +67,7 @@ $.extend($.jgrid,{
 		deltext: " ",
 		deltitle: "Eliminar fila seleccionada",
 		searchtext: " ",
-		searchtitle: "Cercar informaci√≥",
+		searchtitle: "Cercar informaciÛ",
 		refreshtext: "",
 		refreshtitle: "Refrescar taula",
 		alertcap: "Av√≠s",
@@ -85,7 +85,7 @@ $.extend($.jgrid,{
 		errcap : "Error",
 		nourl : "No s'ha especificat una URL",
 		norecords: "No hi ha dades per processar",
-		model : "Les columnes de noms s√≥n diferents de les columnes del model"
+		model : "Les columnes de noms sÛn diferents de les columnes del model"
 	},
 	formatter : {
 		integer : {thousandsSeparator: ".", defaultValue: '0'},
@@ -97,8 +97,8 @@ $.extend($.jgrid,{
 				"Diumenge", "Dilluns", "Dimarts", "Dimecres", "Dijous", "Divendres", "Dissabte"
 			],
 			monthNames: [
-				"Gen", "Febr", "Mar√ß", "Abr", "Maig", "Juny", "Jul", "Ag", "Set", "Oct", "Nov", "Des",
-				"Gener", "Febrer", "Mar√ß", "Abril", "Maig", "Juny", "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Desembre"
+				"Gen", "Febr", "MarÁ", "Abr", "Maig", "Juny", "Jul", "Ag", "Set", "Oct", "Nov", "Des",
+				"Gener", "Febrer", "MarÁ", "Abril", "Maig", "Juny", "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Desembre"
 			],
 			AmPm : ["am","pm","AM","PM"],
 			S: function (j) {return j < 11 || j > 13 ? ['st', 'nd', 'rd', 'th'][Math.min((j - 1) % 10, 3)] : 'th'},

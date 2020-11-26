@@ -1,6 +1,6 @@
 <?php
 	class Estado extends AppModel {
-
+        public $tablePrefix = 'cor_';
     public $hasMany = array(
     	'Processo' => array(
         'className' => 'Processo',

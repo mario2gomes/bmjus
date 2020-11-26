@@ -16,7 +16,7 @@ $.jgrid = $.jgrid || {};
 $.extend($.jgrid,{
 	defaults : {
 		recordtext: "Poka偶 {0} - {1} z {2}",
-		emptyrecords: "Brak rekord贸w do pokazania",
+		emptyrecords: "Brak rekord體 do pokazania",
 		loadtext: "艁adowanie...",
 		pgtext : "Strona {0} z {1}"
 	},
@@ -24,7 +24,7 @@ $.extend($.jgrid,{
 		caption: "Wyszukiwanie...",
 		Find: "Szukaj",
 		Reset: "Czy艣膰",
-		odata: [{ oper:'eq', text:"dok艂adnie"},{ oper:'ne', text:"r贸偶ne od"},{ oper:'lt', text:"mniejsze od"},{ oper:'le', text:"mniejsze lub r贸wne"},{ oper:'gt', text:"wi臋ksze od"},{ oper:'ge', text:"wi臋ksze lub r贸wne"},{ oper:'bw', text:"zaczyna si臋 od"},{ oper:'bn', text:"nie zaczyna si臋 od"},{ oper:'in', text:"jest w"},{ oper:'ni', text:"nie jest w"},{ oper:'ew', text:"ko艅czy si臋 na"},{ oper:'en', text:"nie ko艅czy si臋 na"},{ oper:'cn', text:"zawiera"},{ oper:'nc', text:"nie zawiera"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}],
+		odata: [{ oper:'eq', text:"dok艂adnie"},{ oper:'ne', text:"r笈糿e od"},{ oper:'lt', text:"mniejsze od"},{ oper:'le', text:"mniejsze lub r體ne"},{ oper:'gt', text:"wi臋ksze od"},{ oper:'ge', text:"wi臋ksze lub r體ne"},{ oper:'bw', text:"zaczyna si臋 od"},{ oper:'bn', text:"nie zaczyna si臋 od"},{ oper:'in', text:"jest w"},{ oper:'ni', text:"nie jest w"},{ oper:'ew', text:"ko艅czy si臋 na"},{ oper:'en', text:"nie ko艅czy si臋 na"},{ oper:'cn', text:"zawiera"},{ oper:'nc', text:"nie zawiera"},{ oper:'nu', text:'is null'},{ oper:'nn', text:'is not null'}],
 		groupOps: [	{ op: "AND", text: "oraz" },	{ op: "OR",  text: "lub" }	],
 		operandTitle : "Click to select search operation.",
 		resetTitle : "Reset Search Value"
@@ -42,8 +42,8 @@ $.extend($.jgrid,{
 		msg: {
 			required: "Pole jest wymagane",
 			number: "Prosz臋 wpisa膰 poprawn膮 liczb臋",
-			minValue: "warto艣膰 musi by膰 wi臋ksza lub r贸wna od",
-			maxValue: "warto艣膰 musi by膰 mniejsza lub r贸wna od",
+			minValue: "warto艣膰 musi by膰 wi臋ksza lub r體na od",
+			maxValue: "warto艣膰 musi by膰 mniejsza lub r體na od",
 			email: "nie jest poprawnym adresem e-mail",
 			integer: "Prosz臋 wpisa膰 poprawn膮 liczb臋",
 			date: "Prosz臋 podaj poprawn膮 dat臋",

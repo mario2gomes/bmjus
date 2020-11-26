@@ -22,23 +22,23 @@ msgstr ""
 
 #: Controller/AclAppController.php:74
 msgid "The role model name is unknown. The ACL plugin bootstrap.php file has to be loaded in order to work. (see the README file)"
-msgstr "Le nom du mod√®le servant de r√¥le est inconnu. Le fichier bootstrap.php du plugin ACL doit √™tre charg√© pour que le plugin fonctionne. (voir fichier README)"
+msgstr "Le nom du mod√®le servant de r√¥le est inconnu. Le fichier bootstrap.php du plugin ACL doit Ítre chargÈ pour que le plugin fonctionne. (voir fichier README)"
 
 #: Controller/AcosController.php:26
 msgid "The actions in the ACO table have been deleted"
-msgstr "Les actions dans la table ACO ont √©t√© effac√©es"
+msgstr "Les actions dans la table ACO ont ÈtÈ effacÈes"
 
 #: Controller/AcosController.php:30
 msgid "The actions in the ACO table could not be deleted"
-msgstr "Les actions dans la table ACO n'ont pas pu √™tre effac√©es"
+msgstr "Les actions dans la table ACO n'ont pas pu Ítre effacÈes"
 
 #: Controller/ArosController.php:202
 msgid "The user role has been updated"
-msgstr "Le r√¥le de l'utilisateur a √©t√© modifi√©"
+msgstr "Le r√¥le de l'utilisateur a ÈtÈ modifiÈ"
 
 #: Controller/ArosController.php:206
 msgid "The user role could not be updated"
-msgstr "Le r√¥le de l'utilisateur n'a pas pu √™tre mis √† jour"
+msgstr "Le r√¥le de l'utilisateur n'a pas pu Ítre mis √† jour"
 
 #: Controller/ArosController.php:383
 #: Controller/ArosController.php:478
@@ -48,19 +48,19 @@ msgstr "L'utilisateur '%s' n'existe pas dans la table des AROs"
 
 #: Controller/ArosController.php:456
 msgid "The permissions have been cleared"
-msgstr "Les permissions ont √©t√© effac√©es"
+msgstr "Les permissions ont ÈtÈ effacÈes"
 
 #: Controller/ArosController.php:460
 msgid "The permissions could not be cleared"
-msgstr "Les permissions ont √©t√© effac√©es"
+msgstr "Les permissions ont ÈtÈ effacÈes"
 
 #: Controller/ArosController.php:484
 msgid "The specific permissions have been cleared"
-msgstr "Les permissions sp√©cifiques de l'utilisateur ont √©t√© effac√©es"
+msgstr "Les permissions spÈcifiques de l'utilisateur ont ÈtÈ effacÈes"
 
 #: Controller/ArosController.php:488
 msgid "The specific permissions could not be cleared"
-msgstr "Les permissions sp√©cifiques de l'utilisateur n'ont pas pu √™tre effac√©es"
+msgstr "Les permissions spÈcifiques de l'utilisateur n'ont pas pu Ítre effacÈes"
 
 #: Controller/ArosController.php:507
 #: Controller/ArosController.php:529
@@ -71,58 +71,58 @@ msgstr "Le r√¥le '%s' n'existe pas dans la table des AROs"
 #: Controller/Component/AclManagerComponent.php:41
 #, php-format
 msgid "the %s directory is not writable"
-msgstr "le dossier %s est interdit en √©criture"
+msgstr "le dossier %s est interdit en Ècriture"
 
 #: Controller/Component/AclManagerComponent.php:274
 msgid "Created Aco node for controllers"
-msgstr "noeud ACO cr√©√© pour les contr√¥leurs"
+msgstr "noeud ACO crÈÈ pour les contr√¥leurs"
 
 #: Controller/Component/AclManagerComponent.php:297
 msgid "Aco node '%s' created"
-msgstr "Le noeud ACO '%s' a √©t√© cr√©√©"
+msgstr "Le noeud ACO '%s' a ÈtÈ crÈÈ"
 
 #: Controller/Component/AclManagerComponent.php:312
 #, php-format
 msgid "Created Aco node for %s plugin"
-msgstr "noeud ACO cr√©√© pour le plugin %s"
+msgstr "noeud ACO crÈÈ pour le plugin %s"
 
 #: Controller/Component/AclManagerComponent.php:339
 #, php-format
 msgid "Created Aco node for %s/%s"
-msgstr "noeud ACO cr√©√© pour %s/%s"
+msgstr "noeud ACO crÈÈ pour %s/%s"
 
 #: Controller/Component/AclManagerComponent.php:351
 #: Controller/Component/AclManagerComponent.php:378
 #, php-format
 msgid "Created Aco node for %s"
-msgstr "noeud ACO cr√©√© pour %s"
+msgstr "noeud ACO crÈÈ pour %s"
 
 #: Controller/Component/AclManagerComponent.php:479
 #, php-format
 msgid "Aco node '%s' has been deleted"
-msgstr "Le noeud ACO '%s' a √©t√© effac√©"
+msgstr "Le noeud ACO '%s' a ÈtÈ effacÈ"
 
 #: Controller/Component/AclManagerComponent.php:483
 #, php-format
 msgid "Aco node '%s' could not be deleted"
-msgstr "Le noeud ACO '%s' n'a pas pu √™tre effac√©"
+msgstr "Le noeud ACO '%s' n'a pas pu Ítre effacÈ"
 
 #: Controller/Component/AclManagerComponent.php:568
 #: Controller/Component/AclManagerComponent.php:580
 msgid "An error occured while saving the specific permission"
-msgstr "Une erreur est survenue en sauvant la permission sp√©cifique"
+msgstr "Une erreur est survenue en sauvant la permission spÈcifique"
 
 #: Controller/Component/AclManagerComponent.php:602
 msgid "An error occured while deleting the specific permission"
-msgstr "Une erreur est survenue en effa√ßant la permission sp√©cifique"
+msgstr "Une erreur est survenue en effaÁant la permission spÈcifique"
 
 #: Controller/Component/AclManagerComponent.php:612
 msgid "The specific permission id could not be retrieved"
-msgstr "La permission sp√©cifique n'a pas √©t√© trouv√©e"
+msgstr "La permission spÈcifique n'a pas ÈtÈ trouvÈe"
 
 #: Controller/Component/AclManagerComponent.php:621
 msgid "The child ACO id could not be retrieved"
-msgstr "L'√©l√©ment ACO enfant n'a pas √©t√© trouv√©"
+msgstr "L'ÈlÈment ACO enfant n'a pas ÈtÈ trouvÈ"
 
 #: Controller/Component/AclManagerComponent.php:634
 msgid "Invalid ARO"
@@ -136,7 +136,7 @@ msgstr "Synchroniser les ACOs"
 #: View/Elements/Acos/links.ctp:7
 #: View/Elements/Acos/links.ctp:9
 msgid "are you sure ?"
-msgstr "√™tes-vous s√ªr ?"
+msgstr "Ítes-vous s√ªr ?"
 
 #: View/Elements/Acos/links.ctp:7
 msgid "Clear actions ACOs"
@@ -144,7 +144,7 @@ msgstr "Destruction des ACOs"
 
 #: View/Elements/Acos/links.ctp:8
 msgid "Build actions ACOs"
-msgstr "Compl√©ter les ACOs"
+msgstr "ComplÈter les ACOs"
 
 #: View/Elements/Acos/links.ctp:9
 msgid "Prune actions ACOs"
@@ -152,7 +152,7 @@ msgstr "Nettoyer les ACOs"
 
 #: View/Elements/Aros/links.ctp:6
 msgid "Build missing AROs"
-msgstr "Compl√©ter les AROs"
+msgstr "ComplÈter les AROs"
 
 #: View/Elements/Aros/links.ctp:7
 msgid "Users roles"
@@ -185,7 +185,7 @@ msgstr "aller √† la page d'accueil"
 
 #: View/Acos/admin_has_updates.ctp:8
 msgid "Some controllers have been modified, resulting in actions that are not referenced as ACO in the database or ACO records that are obsolete"
-msgstr "Certains contr√¥leurs ont √©t√© modifi√©s. En cons√©quence certaines actions ne sont pas r√©f√©renc√©es dans la table des ACO ou au contraire ne devraient plus l'√™tre"
+msgstr "Certains contr√¥leurs ont ÈtÈ modifiÈs. En consÈquence certaines actions ne sont pas rÈfÈrencÈes dans la table des ACO ou au contraire ne devraient plus l'Ítre"
 
 #: View/Acos/admin_has_updates.ctp:12
 #: View/Acos/admin_synchronize.ctp:56
@@ -207,7 +207,7 @@ msgstr "Synchroniser les ACOs"
 
 #: View/Acos/admin_has_updates.ctp:34
 msgid "Please be aware that this message will appear only once. But you can always rebuild the ACOs by going to the ACO tab."
-msgstr "Veuillez noter que ce message n'appara√Ætra qu'une seule fois. Vous pouvez cependant compl√©ter les ACOs √† tout moment en vous rendant sur l'onglet des <em>Actions</em>."
+msgstr "Veuillez noter que ce message n'appara√Ætra qu'une seule fois. Vous pouvez cependant complÈter les ACOs √† tout moment en vous rendant sur l'onglet des <em>Actions</em>."
 
 #: View/Acos/admin_synchronize.ctp:12
 msgid "New ACOs"
@@ -215,19 +215,19 @@ msgstr "Nouveaux ACOs"
 
 #: View/Acos/admin_synchronize.ctp:17
 msgid "The following actions ACOs have been created"
-msgstr "Les ACOs pour les actions suivantes ont √©t√© cr√©√©s"
+msgstr "Les ACOs pour les actions suivantes ont ÈtÈ crÈÈs"
 
 #: View/Acos/admin_synchronize.ctp:24
 msgid "There was no new actions ACOs to create"
-msgstr "Aucune nouvelle action √† cr√©er comme ACO n'a √©t√© trouv√©e"
+msgstr "Aucune nouvelle action √† crÈer comme ACO n'a ÈtÈ trouvÈe"
 
 #: View/Acos/admin_synchronize.ctp:33
 msgid "The following actions ACOs have been deleted"
-msgstr "Les ACOs pour les actions suivantes ont √©t√© effac√©s"
+msgstr "Les ACOs pour les actions suivantes ont ÈtÈ effacÈs"
 
 #: View/Acos/admin_synchronize.ctp:40
 msgid "There was no action ACO to delete"
-msgstr "Aucun noeud ACO √† effacer n'a √©t√© trouv√©"
+msgstr "Aucun noeud ACO √† effacer n'a ÈtÈ trouvÈ"
 
 #: View/Acos/admin_synchronize.ctp:47
 msgid "This page allows you to synchronize the existing controllers and actions with the ACO datatable."
@@ -239,7 +239,7 @@ msgstr "Noeuds ACO obsol√®tes"
 
 #: View/Acos/admin_synchronize.ctp:81
 msgid "Clicking the link will not change or remove permissions for existing actions ACOs."
-msgstr "Cliquer sur le lien ne modifiera pas les permissions existantes pour les actions d√©j√† r√©pertori√©es."
+msgstr "Cliquer sur le lien ne modifiera pas les permissions existantes pour les actions dÈj√† rÈpertoriÈes."
 
 #: View/Acos/admin_synchronize.ctp:85
 msgid "Synchronize"
@@ -247,15 +247,15 @@ msgstr "Synchroniser"
 
 #: View/Acos/admin_synchronize.ctp:91
 msgid "The ACO datatable is already synchronized"
-msgstr "La table ACO est d√©j√† synchronis√©e"
+msgstr "La table ACO est dÈj√† synchronisÈe"
 
 #: View/Acos/admin_prune_acos.ctp:15
 msgid "The following actions ACOs have been pruned"
-msgstr "Les noeuds ACOs pour les actions suivantes ont √©t√© effac√©s"
+msgstr "Les noeuds ACOs pour les actions suivantes ont ÈtÈ effacÈs"
 
 #: View/Acos/admin_prune_acos.ctp:22
 msgid "There was no actions ACOs to prune"
-msgstr "Aucun noeud ACO √† effacer n'a √©t√© trouv√©"
+msgstr "Aucun noeud ACO √† effacer n'a ÈtÈ trouvÈ"
 
 #: View/Acos/admin_prune_acos.ctp:29
 msgid "This page allows you to prune obsolete ACOs."
@@ -275,36 +275,36 @@ msgstr "Il n'y a aucun noeud ACO √† effacer"
 
 #: View/Acos/admin_empty_acos.ctp:12
 msgid "This page allows you to clear all actions ACOs."
-msgstr "Cette page permet d'effacer les actions r√©pertori√©es comme ACOs."
+msgstr "Cette page permet d'effacer les actions rÈpertoriÈes comme ACOs."
 
 #: View/Acos/admin_empty_acos.ctp:18
 msgid "Clicking the link will destroy all existing actions ACOs and associated permissions."
-msgstr "Cliquer sur le lien d√©truira toutes les actions r√©pertori√©es comme ACOs et leurs premissions associ√©es."
+msgstr "Cliquer sur le lien dÈtruira toutes les actions rÈpertoriÈes comme ACOs et leurs premissions associÈes."
 
 #: View/Acos/admin_empty_acos.ctp:22
 msgid "Clear ACOs"
-msgstr "D√©truire les ACOs existants"
+msgstr "DÈtruire les ACOs existants"
 
 #: View/Acos/admin_empty_acos.ctp:22
 msgid "Are you sure you want to destroy all existing ACOs ?"
-msgstr "√ätes-vous s√ªr de vouloir d√©truire les ACOs existants ?"
+msgstr "√ätes-vous s√ªr de vouloir dÈtruire les ACOs existants ?"
 
 #: View/Acos/admin_build_acl.ctp:29
 msgid "This page allows you to build missing actions ACOs if any."
-msgstr "Cette page permet de compl√©ter la table des ACOs en ajoutant les √©ventuelles actions non-r√©pertori√©es."
+msgstr "Cette page permet de complÈter la table des ACOs en ajoutant les Èventuelles actions non-rÈpertoriÈes."
 
 #: View/Acos/admin_build_acl.ctp:45
 msgid "Clicking the link will not destroy existing actions ACOs."
-msgstr "Cliquer sur le lien ne d√©truira pas les actions d√©j√† r√©pertori√©es."
+msgstr "Cliquer sur le lien ne dÈtruira pas les actions dÈj√† rÈpertoriÈes."
 
 #: View/Acos/admin_build_acl.ctp:49
 #: View/Aros/admin_check.ctp:43
 msgid "Build"
-msgstr "Compl√©ter"
+msgstr "ComplÈter"
 
 #: View/Acos/admin_build_acl.ctp:55
 msgid "There is no ACO node to create"
-msgstr "Il n'y a aucun noeud ACO √† cr√©er"
+msgstr "Il n'y a aucun noeud ACO √† crÈer"
 
 #: View/Aros/admin_check.ctp:12
 msgid "Roles without corresponding Aro"
@@ -350,20 +350,20 @@ msgstr "Le r√¥le n'existe pas dans la table ARO"
 #: View/Aros/admin_not_acl_requester.ctp:18
 #, php-format
 msgid "The <em>%s</em> model is not configured to act as an <em>ACL requester</em>"
-msgstr "Le mod√®le <em>%s</em> n'est pas configur√© comme un <em>ACL requester</em>"
+msgstr "Le mod√®le <em>%s</em> n'est pas configurÈ comme un <em>ACL requester</em>"
 
 #: View/Aros/admin_not_acl_requester.ctp:25
 #, php-format
 msgid "In a classical ACL configuration, the models that represent the users and the roles must act as <em>ACL requesters</em> (see %s)."
-msgstr "Dans une configuration ACL classique, les mod√®les repr√©sentant les utilisateurs et les r√¥les doivent agir comme des <em>ACL requesters</em> (voir %s)."
+msgstr "Dans une configuration ACL classique, les mod√®les reprÈsentant les utilisateurs et les r√¥les doivent agir comme des <em>ACL requesters</em> (voir %s)."
 
 #: View/Aros/admin_not_acl_requester.ctp:26
 msgid "Acts As a Requester"
-msgstr "Agir comme un Requ√™teur"
+msgstr "Agir comme un RequÍteur"
 
 #: View/Aros/admin_not_acl_requester.ctp:30
 msgid "If you wish, you can disable this alert by setting the ACL plugin parameter 'acl.check_act_as_requester' to <em>false</em>."
-msgstr "Si vous le souhaitez, vous pouvez d√©sactiver cette alerte en mettant le param√®tre du plugin 'acl.check_act_as_requester' √† <em>false</em>."
+msgstr "Si vous le souhaitez, vous pouvez dÈsactiver cette alerte en mettant le param√®tre du plugin 'acl.check_act_as_requester' √† <em>false</em>."
 
 #: View/Aros/admin_ajax_user_permissions.ctp:12
 msgid "User"
@@ -383,7 +383,7 @@ msgstr "Modifier le r√¥le de l'utilisateur"
 #: View/Aros/admin_ajax_user_permissions.ctp:46
 #: View/Aros/admin_user_permissions.ctp:105
 msgid "This user has specific permissions"
-msgstr "Cet utilisateur a des permissions sp√©cifiques"
+msgstr "Cet utilisateur a des permissions spÈcifiques"
 
 #: View/Aros/admin_ajax_user_permissions.ctp:48
 #: View/Aros/admin_user_permissions.ctp:107
@@ -393,7 +393,7 @@ msgstr "Effacer"
 #: View/Aros/admin_ajax_user_permissions.ctp:48
 #: View/Aros/admin_user_permissions.ctp:107
 msgid "Are you sure you want to clear the permissions specific to this user ?"
-msgstr "√ätes-vous s√ªr de vouloir d√©truire les permissions sp√©cifiques de cet utilisateur ?"
+msgstr "√ätes-vous s√ªr de vouloir dÈtruire les permissions spÈcifiques de cet utilisateur ?"
 
 #: View/Aros/admin_ajax_user_permissions.ctp:60
 #: View/Aros/admin_user_permissions.ctp:119
@@ -426,18 +426,18 @@ msgstr "Plugin"
 #: View/Aros/admin_ajax_role_permissions.ctp:195
 #: View/Aros/admin_role_permissions.ctp:222
 msgid "authorized"
-msgstr "autoris√©"
+msgstr "autorisÈ"
 
 #: View/Aros/admin_ajax_user_permissions.ctp:169
 #: View/Aros/admin_user_permissions.ctp:247
 #: View/Aros/admin_ajax_role_permissions.ctp:197
 #: View/Aros/admin_role_permissions.ctp:224
 msgid "blocked"
-msgstr "bloqu√©"
+msgstr "bloquÈ"
 
 #: View/Aros/admin_user_permissions.ctp:19
 msgid "This page allows to manage users specific rights"
-msgstr "Cette page permet de g√©rer les droits particuliers de chaque utilisateur"
+msgstr "Cette page permet de gÈrer les droits particuliers de chaque utilisateur"
 
 #: View/Aros/admin_user_permissions.ctp:25
 #: View/Aros/admin_user_permissions.ctp:37
@@ -451,7 +451,7 @@ msgstr "filtrer"
 
 #: View/Aros/admin_user_permissions.ctp:47
 msgid "Manage user specific rights"
-msgstr "G√©rer les droits particuliers de l'utilisateur"
+msgstr "GÈrer les droits particuliers de l'utilisateur"
 
 #: View/Aros/admin_users.ctp:11
 #: View/Aros/admin_users.ctp:23
@@ -460,7 +460,7 @@ msgstr "nom"
 
 #: View/Aros/admin_users.ctp:76
 msgid "Some users AROS are missing. Click on a role to assign one to a user."
-msgstr "Certains utilisateurs n'ont pas de ARO associ√©. Vous pouvez les cr√©er en cliquant sur un r√¥le."
+msgstr "Certains utilisateurs n'ont pas de ARO associÈ. Vous pouvez les crÈer en cliquant sur un r√¥le."
 
 #: View/Aros/admin_ajax_role_permissions.ctp:17
 #: View/Aros/admin_role_permissions.ctp:17
@@ -470,7 +470,7 @@ msgstr "Vider la table des permissions"
 #: View/Aros/admin_ajax_role_permissions.ctp:17
 #: View/Aros/admin_role_permissions.ctp:17
 msgid "Are you sure you want to delete all roles and users permissions ?"
-msgstr "√ätes-vous s√ªr de vouloir d√©truire l'ensembe des permissions des r√¥les et des utilisateurs ?"
+msgstr "√ätes-vous s√ªr de vouloir dÈtruire l'ensembe des permissions des r√¥les et des utilisateurs ?"
 
 #: View/Aros/admin_ajax_role_permissions.ctp:29
 #: View/Aros/admin_role_permissions.ctp:29
@@ -495,21 +495,21 @@ msgid "Are you sure you want to deny access to all actions of each controller to
 msgstr "√ätes-vous s√ªr de vouloir bloquer l'acc√®s √† toutes les actions de tous les contr√¥leurs au r√¥le '%s' ?"
 
 msgid "previous"
-msgstr "pr√©c√©dent"
+msgstr "prÈcÈdent"
 
 msgid "next"
 msgstr "suivant"
 
 #~ msgid "It will build missing actions ACOs if any and prune obsolete ones."
 #~ msgstr ""
-#~ "Cela compl√©tera les noeuds ACOs manquants nettoyera les noeuds ACOs "
+#~ "Cela complÈtera les noeuds ACOs manquants nettoyera les noeuds ACOs "
 #~ "obsol√®tes."
 
 #~ msgid ""
 #~ "It will build missing actions ACOs if any and prune any superfluous ones "
 #~ "(any ACO pointing to controllers and actions that have been removed)."
 #~ msgstr ""
-#~ "Cela compl√©tera les ACOs manquants s'il y en a et nettoyera d'√©ventuels "
+#~ "Cela complÈtera les ACOs manquants s'il y en a et nettoyera d'Èventuels "
 #~ "ACOs obsol√®tes."
 
 #~ msgid ""

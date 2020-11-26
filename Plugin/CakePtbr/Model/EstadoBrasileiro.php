@@ -1,6 +1,6 @@
 <?php
 /**
- * Model com as informaÃ§Ãµes dos estados brasileiros
+ * Model com as informações dos estados brasileiros
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
@@ -120,7 +120,7 @@ class EstadoBrasileiro extends AppModel {
  * Nome do estado conforme a sigla
  *
  * @param string $sigla Sigla do estado
- * @return string Nome do estado. False quando sigla for invÃ¡lida
+ * @return string Nome do estado. False quando sigla for inválida
  * @access public
  */
 	public function estadoPorSigla($sigla) {
@@ -134,7 +134,7 @@ class EstadoBrasileiro extends AppModel {
  * Sigla do estado conforme o nome
  *
  * @param string $estado
- * @return string Sigla do estado. False quando estado for invÃ¡lido
+ * @return string Sigla do estado. False quando estado for inválido
  * @access public
  */
 	public function siglaPorEstado($estado) {
@@ -199,7 +199,7 @@ class EstadoBrasileiro extends AppModel {
 	}
 
 /**
- * MÃ©todo auxiliar para pegar os estados
+ * Método auxiliar para pegar os estados
  *
  * @param array $estados Listas dos estados que deseja filtrar
  * @return array Lista dos estados

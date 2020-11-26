@@ -1,6 +1,6 @@
 <?php 
 class Suspensao extends AppModel {
-
+    public $tablePrefix = 'cor_';
     public $sequence = 'cor_suspensoes_seq';
     
 	public $belongsTo = array(

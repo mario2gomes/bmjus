@@ -1,5 +1,6 @@
 <?php 
 class Analise extends AppModel {
+    public $tablePrefix = 'cor_';
 
 	public $belongsTo = array(
         'Situacao' => array(

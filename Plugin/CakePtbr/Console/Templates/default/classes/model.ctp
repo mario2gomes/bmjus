@@ -74,11 +74,11 @@ if (!empty($validate)):
 		foreach ($validations as $key => $validator):
 			echo "\t\t\t'$key' => array(\n";
 			echo "\t\t\t\t'rule' => array('$validator'),\n";
-			echo "\t\t\t\t//'message' => 'Sua mensagem de valida√ß√£o aqui',\n";
+			echo "\t\t\t\t//'message' => 'Sua mensagem de validaÁ„o aqui',\n";
 			echo "\t\t\t\t//'allowEmpty' => false,\n";
 			echo "\t\t\t\t//'required' => false,\n";
-			echo "\t\t\t\t//'last' => false, // Para a valida√ß√£o ap√≥s esta regra\n";
-			echo "\t\t\t\t//'on' => 'create', // Limitar a valida√ß√£o para as opera√ß√µes 'create' ou 'update'\n";
+			echo "\t\t\t\t//'last' => false, // Para a validaÁ„o apÛs esta regra\n";
+			echo "\t\t\t\t//'on' => 'create', // Limitar a validaÁ„o para as operaÁıes 'create' ou 'update'\n";
 			echo "\t\t\t),\n";
 		endforeach;
 		echo "\t\t),\n";
@@ -90,7 +90,7 @@ foreach ($associations as $assoc):
 	if (!empty($assoc)):
 ?>
 
-	// As associa√ß√µes abaixo foram criadas com todas as chaves poss√≠veis, ent√£o √© poss√≠vel remover as que n√£o s√£o necess√°rias
+	// As associaÁıes abaixo foram criadas com todas as chaves poss√≠veis, ent„o È poss√≠vel remover as que n„o s„o necess·rias
 <?php
 		break;
 	endif;
@@ -99,7 +99,7 @@ endforeach;
 foreach (array('hasOne', 'belongsTo') as $assocType):
 	if (!empty($associations[$assocType])):
 		$typeCount = count($associations[$assocType]);
-		echo "\n/**\n * Associa√ß√µes $assocType\n *\n * @var array\n */";
+		echo "\n/**\n * AssociaÁıes $assocType\n *\n * @var array\n */";
 		echo "\n\tpublic \$$assocType = array(";
 		foreach ($associations[$assocType] as $i => $relation):
 			$out = "\n\t\t'{$relation['alias']}' => array(\n";
@@ -120,7 +120,7 @@ endforeach;
 
 if (!empty($associations['hasMany'])):
 	$belongsToCount = count($associations['hasMany']);
-	echo "\n/**\n * Associa√ß√µes hasMany\n *\n * @var array\n */";
+	echo "\n/**\n * AssociaÁıes hasMany\n *\n * @var array\n */";
 	echo "\n\tpublic \$hasMany = array(";
 	foreach ($associations['hasMany'] as $i => $relation):
 		$out = "\n\t\t'{$relation['alias']}' => array(\n";
@@ -146,7 +146,7 @@ endif;
 
 if (!empty($associations['hasAndBelongsToMany'])):
 	$habtmCount = count($associations['hasAndBelongsToMany']);
-	echo "\n/**\n * Associa√ß√µes hasAndBelongsToMany\n *\n * @var array\n */";
+	echo "\n/**\n * AssociaÁıes hasAndBelongsToMany\n *\n * @var array\n */";
 	echo "\n\tpublic \$hasAndBelongsToMany = array(";
 	foreach ($associations['hasAndBelongsToMany'] as $i => $relation):
 		$out = "\n\t\t'{$relation['alias']}' => array(\n";

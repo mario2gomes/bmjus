@@ -21,13 +21,13 @@ $.extend($.jgrid,{
 		recordtext: "Ver {0} - {1} de {2}",
 	    emptyrecords: "Nenhum registro para visualizar",
 		loadtext: "Carregando...",
-		pgtext : "P√°gina {0} de {1}"
+		pgtext : "P·gina {0} de {1}"
 	},
 	search : {
 	    caption: "Procurar...",
 	    Find: "Procurar",
 	    Reset: "Resetar",
-	    odata: [{ oper:'eq', text:"igual"},{ oper:'ne', text:"diferente"},{ oper:'lt', text:"menor"},{ oper:'le', text:"menor ou igual"},{ oper:'gt', text:"maior"},{ oper:'ge', text:"maior ou igual"},{ oper:'bw', text:"inicia com"},{ oper:'bn', text:"n√£o inicia com"},{ oper:'in', text:"est√° em"},{ oper:'ni', text:"n√£o est√° em"},{ oper:'ew', text:"termina com"},{ oper:'en', text:"n√£o termina com"},{ oper:'cn', text:"cont√©m"},{ oper:'nc', text:"n√£o cont√©m"},{ oper:'nu', text:"nulo"},{ oper:'nn', text:"n√£o nulo"}],
+	    odata: [{ oper:'eq', text:"igual"},{ oper:'ne', text:"diferente"},{ oper:'lt', text:"menor"},{ oper:'le', text:"menor ou igual"},{ oper:'gt', text:"maior"},{ oper:'ge', text:"maior ou igual"},{ oper:'bw', text:"inicia com"},{ oper:'bn', text:"n„o inicia com"},{ oper:'in', text:"est· em"},{ oper:'ni', text:"n„o est· em"},{ oper:'ew', text:"termina com"},{ oper:'en', text:"n„o termina com"},{ oper:'cn', text:"contÈm"},{ oper:'nc', text:"n„o contÈm"},{ oper:'nu', text:"nulo"},{ oper:'nn', text:"n„o nulo"}],
 	    groupOps: [	{ op: "AND", text: "todos" },{ op: "OR",  text: "qualquer um" }	],
 		operandTitle : "Click to select search operation.",
 		resetTitle : "Reset Search Value"
@@ -38,23 +38,23 @@ $.extend($.jgrid,{
 	    bSubmit: "Enviar",
 	    bCancel: "Cancelar",
 		bClose: "Fechar",
-		saveData: "Os dados foram alterados! Salvar altera√ß√µes?",
+		saveData: "Os dados foram alterados! Salvar alteraÁıes?",
 		bYes : "Sim",
-		bNo : "N√£o",
+		bNo : "N„o",
 		bExit : "Cancelar",
 	    msg: {
-	        required:"Campo obrigat√≥rio",
-	        number:"Por favor, informe um n√∫mero v√°lido",
+	        required:"Campo obrigatÛrio",
+	        number:"Por favor, informe um n˙mero v·lido",
 	        minValue:"valor deve ser igual ou maior que ",
 	        maxValue:"valor deve ser menor ou igual a",
-	        email: "este e-mail n√£o √© v√°lido",
+	        email: "este e-mail n„o È v·lido",
 	        integer: "Por favor, informe um valor inteiro",
-			date: "Por favor, informe uma data v√°lida",
-			url: "n√£o √© uma URL v√°lida. Prefixo obrigat√≥rio ('http://' or 'https://')",
-			nodefined : " n√£o est√° definido!",
-			novalue : " um valor de retorno √© obrigat√≥rio!",
-			customarray : "Fun√ß√£o customizada deve retornar um array!",
-			customfcheck : "Fun√ß√£o customizada deve estar presente em caso de valida√ß√£o customizada!"
+			date: "Por favor, informe uma data v·lida",
+			url: "n„o È uma URL v·lida. Prefixo obrigatÛrio ('http://' or 'https://')",
+			nodefined : " n„o est· definido!",
+			novalue : " um valor de retorno È obrigatÛrio!",
+			customarray : "FunÁ„o customizada deve retornar um array!",
+			customfcheck : "FunÁ„o customizada deve estar presente em caso de validaÁ„o customizada!"
 		}
 	},
 	view : {
@@ -100,12 +100,12 @@ $.extend($.jgrid,{
 		currency : {decimalSeparator:",", thousandsSeparator: ".", decimalPlaces: 2, prefix: "R$ ", suffix:"", defaultValue: '0,00'},
 		date : {
 			dayNames:   [
-				"Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "S√°b",
-				"Domingo", "Segunda", "Ter√ßa", "Quarta", "Quinta", "Sexta", "S√°bado"
+				"Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "S·b",
+				"Domingo", "Segunda", "TerÁa", "Quarta", "Quinta", "Sexta", "S·bado"
 			],
 			monthNames: [
 				"Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez",
-				"Janeiro", "Fevereiro", "Mar√ßo", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+				"Janeiro", "Fevereiro", "MarÁo", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
 			],
 			AmPm : ["am","pm","AM","PM"],
 			S: function (j) {return j < 11 || j > 13 ? ['¬∫', '¬∫', '¬∫', '¬∫'][Math.min((j - 1) % 10, 3)] : '¬∫'},

@@ -24,7 +24,7 @@ require_once dirname(dirname(__FILE__)) . DS . 'Inflexao.php';
 	<?php  foreach ($fields as $field):?>
 		<th><?php echo "<?php echo \$this->Paginator->sort('{$field}');?>";?></th>
 	<?php endforeach;?>
-		<th class="actions"><?php echo "<?php echo __('AÃ§Ãµes');?>";?></th>
+		<th class="actions"><?php echo "<?php echo __('Ações');?>";?></th>
 	</tr>
 	<?php
 	echo "<?php foreach (\${$pluralVar} as \${$singularVar}): ?>\n";
@@ -48,7 +48,7 @@ require_once dirname(dirname(__FILE__)) . DS . 'Inflexao.php';
 		echo "\t\t<td class=\"actions\">\n";
 		echo "\t\t\t<?php echo \$this->Html->link(__('Ver'), array('action' => 'view', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?>\n";
 		echo "\t\t\t<?php echo \$this->Html->link(__('Editar'), array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?>\n";
-		echo "\t\t\t<?php echo \$this->Form->postLink(__('Excluir'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), null, __('VocÃª tem certeza que deseja excluir o # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?>\n";
+		echo "\t\t\t<?php echo \$this->Form->postLink(__('Excluir'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), null, __('Você tem certeza que deseja excluir o # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?>\n";
 		echo "\t\t</td>\n";
 	echo "\t</tr>\n";
 
@@ -58,7 +58,7 @@ require_once dirname(dirname(__FILE__)) . DS . 'Inflexao.php';
 	<p>
 	<?php echo "<?php
 	echo \$this->Paginator->counter(array(
-	'format' => __('PÃ¡gina {:page} de {:pages}, mostrando {:current} registros de {:count}, comeÃ§ando no registro {:start}, e terminando no {:end}')
+	'format' => __('Página {:page} de {:pages}, mostrando {:current} registros de {:count}, começando no registro {:start}, e terminando no {:end}')
 	));
 	?>";?>
 	</p>
@@ -68,13 +68,13 @@ require_once dirname(dirname(__FILE__)) . DS . 'Inflexao.php';
 		echo "<?php\n";
 		echo "\t\techo \$this->Paginator->prev('< ' . __('anterior'), array(), null, array('class' => 'prev disabled'));\n";
 		echo "\t\techo \$this->Paginator->numbers(array('separator' => ''));\n";
-		echo "\t\techo \$this->Paginator->next(__('prÃ³xima') . ' >', array(), null, array('class' => 'next disabled'));\n";
+		echo "\t\techo \$this->Paginator->next(__('próxima') . ' >', array(), null, array('class' => 'next disabled'));\n";
 		echo "\t?>\n";
 	?>
 	</div>
 </div>
 <div class="actions">
-	<h3><?php echo "<?php echo __('AÃ§Ãµes'); ?>"; ?></h3>
+	<h3><?php echo "<?php echo __('Ações'); ?>"; ?></h3>
 	<ul>
 		<li><?php echo "<?php echo \$this->Html->link(__('Novo " . Inflexao::acentos($singularHumanName) . "'), array('action' => 'add')); ?>";?></li>
 <?php

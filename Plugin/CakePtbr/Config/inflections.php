@@ -1,6 +1,6 @@
 <?php
 /**
- * Ajustes das inflections para português
+ * Ajustes das inflections para portugu�s
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
@@ -11,7 +11,7 @@
  * @link          http://wiki.github.com/jrbasso/cake_ptbr/inflections
  */
 
-// Alteração do inflector
+// Altera��o do inflector
 $_uninflected = array('atlas', 'lapis', 'onibus', 'pires', 'virus', '.*x', 'status');
 $_pluralIrregular = array(
 	'abdomens' => 'abdomen',
@@ -94,12 +94,12 @@ Inflector::rules('transliteration', array(
 	'/Æ/' => 'AE',
 	'/ß/'=> 'ss',
 	'/Œ/' => 'OE',
-	'/à|á|â|ã|ä|å|ª/' => 'a',
-	'/è|é|ê|ë|&/' => 'e',
+	'/à|�|â|�|ä|å|ª/' => 'a',
+	'/è|�|�|ë|&/' => 'e',
 	'/ì|í|î|ï/' => 'i',
-	'/ò|ó|ô|õ|ö|ø|º/' => 'o',
-	'/ù|ú|û|ü/' => 'u',
-	'/ç/' => 'c',
+	'/ò|�|ô|�|ö|ø|º/' => 'o',
+	'/ù|�|û|ü/' => 'u',
+	'/�/' => 'c',
 	'/ð/' => 'd',
 	'/ñ/' => 'n',
 	'/š/' => 's',

@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Application level Controller
  *
@@ -22,6 +22,8 @@
 App::uses('Controller', 'Controller');
 App::uses('Folder','Utility');
 App::uses('File','Utility');
+App::uses('HttpSocket','Network/Http');
+
 
 /**
  * Application Controller
@@ -35,61 +37,84 @@ App::uses('File','Utility');
 
 class AppController extends Controller {
 
-    public $helpers = array ('Html','Form', 'Flash', 'CakePtbr.Formatacao');
+    public $helpers = array ('Html','Form', 'Session', 'Flash', 'CakePtbr.Formatacao');
 	public $components = array(
+        'Acl',
         'Flash',
         'Prazos',
-/*        'Session',
         'Auth' => array(
             'flash' => array(
                 'element' => 'error',
                 'key' => 'auth',
                 'params' => array()
             ),
-            'authError' => 'VocÃª nÃ£o tem permissÃ£o para acessar essa funcionalidade.',
-                'authorize' => array(
-                    'Actions' => array('actionPath' => 'controllers'),
-                    'all' => array('userModel' => 'Usuario')
+            'authError' => 'Você não tem permissão para acessar essa funcionalidade.',
+            'authorize' => array(
+                'Actions' => array('actionPath' => 'controllers'),
+                'all' => array('userModel' => 'Usuario')
             ),
+
             'loginAction' => array(
                 'controller' => 'usuarios',
                 'action' => 'login',
-                'plugin' => null
             ),
+
             'logoutRedirect' => array(
                 'controller' => 'usuarios',
                 'action' => 'login',
             ),
+
             'loginRedirect' => array(
-                'controller' => 'painel',
+                'controller' => 'processos',
                 'action' => 'index',
-                'plugin' => false
             )
-           ),
-*/
-//          'Acl'
-//        'DebugKit.Toolbar'
+        ),
+        'Session',
+//      'DebugKit.Toolbar'
       );
 
 	function beforeFilter(){
+        $this->Auth->allow();
         $this->loadModel('ViewMilitar');
         $this->loadModel('Usuario');
         $this->loadModel('Processo');
         
-        //$Usuario = $this-> ViewMilitar->getPessoa(287555); 
-        $Usuario_atual = $this-> ViewMilitar->getPessoa('02382122463'); // administrador       
-        //$Usuario_atual = $this-> ViewMilitar->getPessoa('20827202415'); // corregedoria       
-        //$Usuario_atual = $this-> ViewMilitar->getPessoa('05125027499'); // encarregado       
+
+        $this-> loadModel('Documento');
+        $documentos = $this-> Documento-> find('all', ['order'=> ['Documento.numero_de_ordem'=>'ASC']]);
+        $this-> set('documentos',$documentos);
+
+        $this->loadModel('Tipo_documento');
+        $tipo_documento = $this-> Tipo_documento -> find('list', array('fields'=>array('descricao')));
+        $this->set('tipo_documentos', $tipo_documento);
+
+        //$usuario_atual = $this-> ViewMilitar->getPessoa('02382122463'); // administrador       
+        //$usuario_atual = $this-> ViewMilitar->getPessoa('64796094415'); // instaurador       
+        //$usuario_atual = $this-> ViewMilitar->getPessoa('78674611400'); // corregedoria       
+//trocar o CPF entre parenteses pelo id dinamico do usuário da sessão
+        //pr($this-> Auth);
+        $usuario_cpf = $this-> Session-> read()['Auth']['User']['cpf'];
+        $usuario_atual = $this-> ViewMilitar->getPessoa($usuario_cpf); // encarregado
+        //pr($usuario_atual);
+        //App::uses('HttpSocket','Network/Http');
+
+        //$httpsocket = new HttpSocket();
+        //$resposta = $httpsocket->get('https://nominatim.openstreetmap.org/search?q=rua+industrial+climerio+sarmento&format=json');
+        //pr($resposta);
+
+
+
+        
         //$Grupo = pr($this-> Session-> read('Auth'));;
         //$Grupo_atual = 4;
         //$this->set('processos',$this-> Processo-> find('all'));
-        $this->set('usuario_atual',$Usuario_atual);
+        $this->set('usuario_atual',$usuario_atual);
         //$this->set('grupo_atual',$Grupo_atual);
         //pr ('Grupo id: '.$Grupo_atual);
-        //pr ('UsuÃ¡rio: ');
+        //pr ('Usuário: ');
         //pr($Usuario_atual);
 
-        //Configure AuthComponent (de acordo com o tutorial cakephp, mas essa configuraÃ§Ã£o jÃ¡ estÃ¡ no component auth)
+        //Configure AuthComponent (de acordo com o tutorial cakephp, mas essa configuração já está no component auth)
 /*        $this->Auth->loginAction = array(
           'controller' => 'users',
           'action' => 'login'
@@ -130,7 +155,7 @@ class AppController extends Controller {
         $plugin = $this->params['plugin'];
         $controller = $this->params['controller'];
         $action = $this->params['action'];
-        //Checa as aÃ§Ãµes pÃºblicas e libera
+        //Checa as ações públicas e libera
         if (isset($allow[$plugin][$controller])) {
             if (in_array($action, $allow[$plugin][$controller])) {
                 $this->Auth->allow();

@@ -1,6 +1,6 @@
 <?php
 /**
- * Classe auxiliar para ajustar as palavras na geraÃ§Ã£o dos templates
+ * Classe auxiliar para ajustar as palavras na geração dos templates
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
@@ -36,19 +36,19 @@ class Inflexao {
 			}
 		}
 		if (preg_match('/(.*)cao$/', $palavra, $matches)) {
-			return $matches[1] . 'Ã§Ã£o';
+			return $matches[1] . 'ção';
 		}
 		if (preg_match('/(.*)ao(s)?$/', $palavra, $matches)) {
-			return $matches[1] . 'Ã£o' . (isset($matches[2]) ? $matches[2] : '');
+			return $matches[1] . 'ão' . (isset($matches[2]) ? $matches[2] : '');
 		}
 		if (preg_match('/(.*)coes$/', $palavra, $matches)) {
-			return $matches[1] . 'Ã§Ãµes';
+			return $matches[1] . 'ções';
 		}
 		if (preg_match('/(.*)oes$/', $palavra, $matches)) {
-			return $matches[1] . 'Ãµes';
+			return $matches[1] . 'ões';
 		}
 		if (preg_match('/(.*)aes$/', $palavra, $matches)) {
-			return $matches[1] . 'Ã£es';
+			return $matches[1] . 'ães';
 		}
 		return $palavra;
 	}

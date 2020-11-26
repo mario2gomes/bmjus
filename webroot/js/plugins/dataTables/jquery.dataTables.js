@@ -11013,7 +11013,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "PrÃ³xima",
+				"sNext": "Próxima",
 	
 	
 				/**
@@ -11059,7 +11059,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "Sem processos disponÃ­veis na tabela",
+			"sEmptyTable": "Sem processos disponí­veis na tabela",
 	
 	
 			/**

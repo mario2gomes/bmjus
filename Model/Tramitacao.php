@@ -1,6 +1,6 @@
 <?php 
 class Tramitacao extends AppModel {
-
+    public $tablePrefix = 'cor_';
 	public $belongsTo = array(
         'Processo' => array(
             'className' => 'Processo',

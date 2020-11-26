@@ -1,6 +1,6 @@
 <?php
 /**
- * Helper para formataÃ§Ã£o de dados no padrÃ£o brasileiro
+ * Helper para formatação de dados no padrão brasileiro
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
@@ -11,7 +11,7 @@
  */
 
 /**
- * FormataÃ§Ã£o Helper
+ * Formatação Helper
  *
  * @link http://wiki.github.com/jrbasso/cake_ptbr/helper-formatao
  */
@@ -29,7 +29,7 @@ class FormatacaoHelper extends AppHelper {
  * Formata a data
  *
  * @param integer $data Data em timestamp ou null para atual
- * @param array $opcoes Ã‰ possÃ­vel definir o valor de 'invalid' e 'userOffset' que serÃ£o usados pelo helper Time
+ * @param array $opcoes Ã‰ possÃ­vel definir o valor de 'invalid' e 'userOffset' que serão usados pelo helper Time
  * @return string Data no formato dd/mm/aaaa
  * @access public
  */
@@ -53,7 +53,7 @@ class FormatacaoHelper extends AppHelper {
  *
  * @param integer $dataHora Data e hora em timestamp ou null para atual
  * @param boolean $segundos Mostrar os segundos
- * @param array $opcoes Ã‰ possÃ­vel definir o valor de 'invalid' e 'userOffset' que serÃ£o usados pelo helper Time
+ * @param array $opcoes Ã‰ possÃ­vel definir o valor de 'invalid' e 'userOffset' que serão usados pelo helper Time
  * @return string Data no formato dd/mm/aaaa hh:mm:ss
  * @access public
  */
@@ -75,7 +75,7 @@ class FormatacaoHelper extends AppHelper {
  * Mostrar a data completa
  *
  * @param integer $dataHora Data e hora em timestamp ou null para atual
- * @return string DescriÃ§Ã£o da data no estilo "Sexta-feira", 01 de Janeiro de 2010, 00:00:00"
+ * @return string Descrição da data no estilo "Sexta-feira", 01 de Janeiro de 2010, 00:00:00"
  * @access public
  */
 	public function dataCompleta($dataHora = null) {
@@ -92,7 +92,7 @@ class FormatacaoHelper extends AppHelper {
  * Mostrar o dia da semana de uma determinada data
  *
  * @param integer $dataHora Data e hora em timestamp ou null para atual
- * @return string DescriÃ§Ã£o da data no estilo "Sexta-feira", 01 de Janeiro de 2010, 00:00:00"
+ * @return string Descrição da data no estilo "Sexta-feira", 01 de Janeiro de 2010, 00:00:00"
  * @access public
  */
 	public function diaSemana($dataHora = null) {
@@ -125,8 +125,8 @@ class FormatacaoHelper extends AppHelper {
  * Mostrar uma data em tempo
  *
  * @param integer $dataHora Data e hora em timestamp, dd/mm/YYYY ou null para atual
- * @param string $limite null, caso nÃ£o haja expiraÃ§Ã£o ou entÃ£o, forneÃ§a um tempo usando o formato inglÃªs para strtotime: Ex: 1 year
- * @return string DescriÃ§Ã£o da data em tempo ex.: a 1 minuto, a 1 semana
+ * @param string $limite null, caso não haja expiração ou então, forneça um tempo usando o formato inglês para strtotime: Ex: 1 year
+ * @return string Descrição da data em tempo ex.: a 1 minuto, a 1 semana
  * @access public
  */
 	public function tempo($dataHora = null, $limite = '30 days'){
@@ -186,11 +186,11 @@ class FormatacaoHelper extends AppHelper {
 
 
 /**
- * NÃºmero float com ponto ao invÃ©s de vÃ­rgula
+ * Número float com ponto ao invés de vÃ­rgula
  *
- * @param float $numero NÃºmero
- * @param integer $casasDecimais NÃºmero de casas decimais
- * @return string NÃºmero formatado
+ * @param float $numero Número
+ * @param integer $casasDecimais Número de casas decimais
+ * @return string Número formatado
  * @access public
  */
 	public function precisao($numero, $casasDecimais = 3) {
@@ -200,9 +200,9 @@ class FormatacaoHelper extends AppHelper {
 /**
  * Valor formatado com sÃ­mbolo de %
  *
- * @param float $numero NÃºmero
- * @param integer $casasDecimais NÃºmero de casas decimais
- * @return string NÃºmero formatado com %
+ * @param float $numero Número
+ * @param integer $casasDecimais Número de casas decimais
+ * @return string Número formatado com %
  * @access public
  */
 	public function porcentagem($numero, $casasDecimais = 2) {
@@ -213,7 +213,7 @@ class FormatacaoHelper extends AppHelper {
  * Formata um valor para reais
  *
  * @param float $valor Valor
- * @param array $opcoes Mesmas opÃ§Ãµes de Number::currency()
+ * @param array $opcoes Mesmas opções de Number::currency()
  * @return string Valor formatado em reais
  * @access public
  */
@@ -254,13 +254,13 @@ class FormatacaoHelper extends AppHelper {
  * @link http://forum.imasters.uol.com.br/index.php?showtopic=125375
  */
 	public function moedaPorExtenso($numero) {
-		$singular = array('centavo', 'real', 'mil', 'milhÃ£o', 'bilhÃ£o', 'trilhÃ£o', 'quatrilhÃ£o');
-		$plural = array('centavos', 'reais', 'mil', 'milhÃµes', 'bilhÃµes', 'trilhÃµes', 'quatrilhÃµes');
+		$singular = array('centavo', 'real', 'mil', 'milhão', 'bilhão', 'trilhão', 'quatrilhão');
+		$plural = array('centavos', 'reais', 'mil', 'milhões', 'bilhões', 'trilhões', 'quatrilhões');
 
 		$c = array('', 'cem', 'duzentos', 'trezentos', 'quatrocentos', 'quinhentos', 'seiscentos', 'setecentos', 'oitocentos', 'novecentos');
 		$d = array('', 'dez', 'vinte', 'trinta', 'quarenta', 'cinquenta', 'sessenta', 'setenta', 'oitenta', 'noventa');
 		$d10 = array('dez', 'onze', 'doze', 'treze', 'quatorze', 'quinze', 'dezesseis', 'dezesete', 'dezoito', 'dezenove');
-		$u = array('', 'um', 'dois', 'trÃªs', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove');
+		$u = array('', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove');
 
 		$z = 0;
 		$rt = '';

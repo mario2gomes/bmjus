@@ -1,6 +1,6 @@
 <?php
 /**
- * AlteraÃ§Ã£o para as frases do core ficarem em portuguÃªs
+ * Alteração para as frases do core ficarem em português
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
@@ -11,7 +11,7 @@
  * @link          http://wiki.github.com/jrbasso/cake_ptbr/traduzir-as-mensagens-do-core
  */
 
-// Definindo idioma da aplicaÃ§Ã£o
+// Definindo idioma da aplicação
 Configure::write('Config.language', 'pt-br');
 
 // Adicionando o caminho do locale

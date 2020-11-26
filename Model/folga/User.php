@@ -1,5 +1,5 @@
 <?php
-    //uso do componente auth para autenticaÃ§Ã£o
+    //uso do componente auth para autenticação
     App::uses('AuthComponent', 'Controller/Component');
 	class User extends AppModel {
 
@@ -24,7 +24,7 @@
         'username' => array(
             'required'=> array (
                 'rule' => array('notBlank'),
-                'message' => 'Preencha o nome do usuÃ¡rio'
+                'message' => 'Preencha o nome do usuário'
             )
         ),
         'password' => array(
@@ -36,13 +36,13 @@
         'role' => array(
             'valid'=> array (
                 'rule' => array('inList', array(1,2,3)),
-                'message' => 'FunÃ§Ã£o invÃ¡lida',
+                'message' => 'Função inválida',
                 'allowEmpty' => false
             )
         )
     );
 
-    //funÃ§Ã£o de encriptaÃ§Ã£o da senha
+    //função de encriptação da senha
     public function beforeSave($options = array()) {
         if (isset($this->data[$this->alias]['password'])) {
             $this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['password']);

@@ -12,7 +12,7 @@ $.extend($.jgrid,{
 		recordtext: "View {0} - {1} of {2}",
 	    emptyrecords: "No records to view",
 		loadtext: "A carregar...",
-		pgtext : "PÃ¡gina {0} de {1}"
+		pgtext : "Página {0} de {1}"
 	},
 	search : {
 	    caption: "Busca...",

@@ -1,6 +1,6 @@
 <?php
 	class Tipo_documento extends AppModel {
-
+        public $tablePrefix = 'cor_';
     public $hasMany = array(
     	'Documento' => array(
         'className' => 'Documento',

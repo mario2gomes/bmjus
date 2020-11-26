@@ -225,8 +225,8 @@ class AclManagerComponent extends Component
         
         $aco =& $this->Acl->Aco;
         
-        $acos = array();
-        
+		$acos = array();
+		
         $controllers_aco = $aco->find('first', array('fields' => array('id'), 'conditions' => array('alias' => 'controllers'), 'recursive' => -1));
         
         if(!empty($controllers_aco))

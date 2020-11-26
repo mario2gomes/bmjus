@@ -1,6 +1,6 @@
 <?php 
 class Prorrogacao extends AppModel {
-
+    public $tablePrefix = 'cor_';
     public $sequence = 'cor_prorrogacoes_seq';
     
 	public $belongsTo = array(
@@ -29,7 +29,7 @@ class Prorrogacao extends AppModel {
         'qtd_dias' => array(
             'rule' => 'notBlank',
             'rule' => 'naturalNumber',
-            'message' => 'Apenas nÃºmeros',
+            'message' => 'Apenas números',
         )
     );
 } ?>

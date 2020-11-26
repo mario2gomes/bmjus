@@ -1,5 +1,5 @@
 <?php class Punicao extends AppModel {
-
+    public $tablePrefix = 'cor_';
     public $hasOne = array(
             'Processo' => array(
             'className' => 'Processo',
@@ -15,10 +15,10 @@
             'dependent' => true,
             'type' => 'RIGHT',  
             'foreignKey' => 'Tipo_punicoes_id'
-        ),
-            'Intensidade' => array(
-            'foreignKey' => 'Intensidades_id'
         )
+            //'Intensidade' => array(
+            //'foreignKey' => 'Intensidades_id'
+        //)
 	);
 
 	public $validate = array(
@@ -33,10 +33,10 @@
         ),       
         'alteracao' => array(
             'rule' => 'notBlank'
-        ),       
-        'intensidade' => array(
-            'rule' => 'notBlank'
-        ),       
+        ),      
+        //'intensidade' => array(
+          //  'rule' => 'notBlank'
+        //),       
         'tipo_punicoes_id' => array(
             'rule' => 'notBlank'
         )       

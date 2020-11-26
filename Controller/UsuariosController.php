@@ -5,22 +5,48 @@ App::uses('AppController', 'Controller');
 class UsuariosController extends AppController {
     public $helpers = array ('Html','Form','Flash','Estatistica');
     public $components = array('Flash','Acl');
-
-    //funÃ§Ã£o de login
-/*  public function login() {
+    public $tablePrefix = 'cor_';
+    //função de login
+  public function loginold() {
 
         if ($this->Auth->login()) {
             $this->redirect($this->Auth->redirect());
         } else {
-            $this->Session->error('Login ou senha invÃ¡lidas! Por favor, tente novamente!');
+            $this->Session->error('Login ou senha inválidas! Por favor, tente novamente!');
         }
     }
 
-    //funÃ§Ã£o de logout
+    //função de logout
     public function logout() {
-        $this->redirect($this->Auth->logout());
+        return $this->redirect($this->Auth->logout());
     }
 
+
+    public function login() {
+        //$this->set('title_for_layout', 'BMJUS - Login');
+        //$this->layout = 'login';
+		if ($this->request->is('mobile')) {
+			$this->layout = 'mobile_publico';
+		}
+		
+        if ($this->request->is('post')) {
+
+            $cpf = $this->request->data['cpf'];
+            $pass = $this->request->data['sen_usuario'];
+
+            if ($this->Usuario->autenticar($cpf, $pass)) {
+
+                $user = $this->Usuario->getUsuarioAuth();
+                $this->Auth->login($user);
+                $this->redirect($this->Auth->redirect());
+            } else {
+
+                $this->Session->setFlash('CPF ou senha inválidos! Por favor, tente novamente!', 'Flash/error_animated');
+            }
+        }
+    }
+
+/*
     //index: 
     public function index() {
         $this->User->recursive = 0;
@@ -32,13 +58,19 @@ class UsuariosController extends AppController {
 */
     public function lista() {
         $this->set('usuarios', $this-> Usuario-> find('all', array('conditions'=>array('Usuario.grupo_bmjus !='=>0))));
-        $this->set('nomes', $this-> Usuario-> find('list', array('fields' => 'nome')));
+        //Militares que podem ser encarregados
+        //$this->set('usuarios_encarregados', $this-> Usuario-> find('all', array('conditions'=>array('ViewMilitar.quadro_id'=>array(111,121,131,141,151,161,122,123),'ViewMilitar.status_id'=>1))));
+        //$this->set('usuarios', $this-> Usuario-> find('all', array('conditions'=>array('Usuario.grupo_bmjus !='=>0))));
+        //$this->set('usuarios', $this-> Usuario-> find('all', array('conditions'=>array('Usuario.grupo_bmjus !='=>0))));
+        //$this->set('nomes', $this-> Usuario-> find('list', array('fields' => 'nome')));
 
     }
 
     public function perfil($cpf=null){
+        $usuario = $this->Usuario->findByCpf($cpf);
+
         $this->layout = 'ajax';
-        $this->set(compact('cpf'));
+        $this->set(compact('usuario'));
     }
 
     function detalhe($cpf = null) {
@@ -50,7 +82,7 @@ class UsuariosController extends AppController {
         }
     }
 
-    //DesignaÃ§Ã£o de autoridade instauradora (reduzir pra uma sÃ³ funÃ§Ã£o de designaÃ§Ã£o com todos as funÃ§Ãµes por variÃ¡vel)
+    //Designação de autoridade instauradora (reduzir pra uma só função de designação com todos as funções por variável)
     public function novo_instaurador(){
         if ($this-> request->is('post')) {
             $this-> Usuario-> id= $this->request->data['Usuario']['cpf'];
@@ -59,67 +91,98 @@ class UsuariosController extends AppController {
                 $this-> redirect(array('action'=>'lista','ã…¤'));
             }
             else{
-                $this-> Flash-> error('Erro na designaÃ§Ã£oo');
+                $this-> Flash-> error('Erro na designaçãoo');
                 $this-> redirect(array('action'=>'lista','ã…¤'));
             }
         }
     }
 
-    //DesignaÃ§Ã£o de escrivÃ£o
+    //Designação de escrivão
     public function novo_escrivao(){
         if ($this-> request->is('post')) {
             $this-> Usuario-> id= $this->request->data['Usuario']['cpf'];
-            if($this-> Usuario-> saveField('grupo_bmjus',5)){
-                $id = $this->request->data['Usuario']['id'];
-                $this-> Processo-> id = $id;
-                $this-> Processo-> saveField('escrivao',$this->request->data['Usuario']['cpf']);
-                $this-> Flash-> success('EscrivÃ£o designado');
+            $id = $this->request->data['Usuario']['id'];
+            $this-> Processo-> id = $id;
+            if($this-> Processo-> saveField('escrivao',$this->request->data['Usuario']['cpf'])){
+                $this-> Flash-> success('Escrivão designado');
                 $this-> redirect(array('controller'=>'processos','action'=>'detalhe',$id));
             }
             else{
-                $this-> Flash-> error('Erro na designaÃ§Ã£oo');
+                $this-> Flash-> error('Erro na designaçãoo');
                 $this-> redirect(array('controller'=>'processos','action'=>'detalhe',$id));
             }
         }
     }
 
-    //DesignaÃ§Ã£o de escrivÃ£o
+    //Designação de escrivão
     public function novo_encarregado(){
         if ($this-> request->is('post')) {
             $this-> Usuario-> id= $this->request->data['Usuario']['cpf'];
-            if($this-> Usuario-> saveField('grupo_bmjus',3)){
-                $id = $this->request->data['Usuario']['id'];
-                $this-> Processo-> id = $id;
-                $this-> Processo-> saveField('encarregado',$this->request->data['Usuario']['cpf']);
+            $id = $this->request->data['Usuario']['id'];
+            $this-> Processo-> id = $id;
+            if($this-> Processo-> saveField('encarregado',$this->request->data['Usuario']['cpf'])){
                 $this-> Flash-> success('Encarregado substituÃ­do');
                 $this-> redirect(array('controller'=>'processos','action'=>'detalhe',$id));
             }
             else{
-                $this-> Flash-> error('Erro na substituiÃ§Ã£o');
+                $this-> Flash-> error('Erro na substituição');
                 $this-> redirect(array('controller'=>'processos','action'=>'detalhe',$id));
             }
         }
     }
 
+    function busca($oficial=null){
+        if($oficial==1){
+            $quadro = array(111,121,131,141,151,161,122,123);
+        }else{
+            $quadro = array(111,121,131,141,151,161,122,123,211,221,231,241,555);
+        }
 
-//encarregados sÃ£o designados pela autoridade (na abertura do processo)
+        $texto = utf8_decode($_POST['texto']);
+            $texto = mb_strtoupper($texto);//Altera o encode e põe em caixa alta
+            
+            //Pesquisa o militar
+            $this->ViewMilitar->recursive = -1;
+            $militar = $this->ViewMilitar->find('all', array('conditions'=>array('ViewMilitar.nom_guerra LIKE '=> '%'.$texto.'%','ViewMilitar.status_id'=>1,"ViewMilitar.quadro_id"=>$quadro), 'order'=>array('nom_guerra')));
 
-//escrivÃ£es sÃ£o designados pelo encarregado a qualquer momento
+            //Monta a lista para enviar
+            $src = array();     
 
-//invetigados sao incluÃ­dos na citaÃ§Ã£o
+            foreach($militar as $mil){
+                    $temp = array();
+                    $mat = substr($mil['ViewMilitar']['num_matricula'], 0, strlen($mil['ViewMilitar']['num_matricula'])-1) .'-'.substr($mil['ViewMilitar']['num_matricula'], strlen($mil['ViewMilitar']['num_matricula'])-1);
+                    $temp['id'] = $mil['ViewMilitar']['num_cpf'];                    
+                    $temp['name'] = utf8_encode($mil['ViewMilitar']['cargo_nome']) .' mat. '.$mat;
+                    $src[] = $temp;
+            }
+
+            $json_response = json_encode($src);
+            echo $json_response;
+
+            $this->autoRender = false;
+        }
+
+    
+
+
+//encarregados são designados pela autoridade (na abertura do processo)
+
+//escrivães são designados pelo encarregado a qualquer momento
+
+//invetigados sao incluÃ­dos na citação
 
 
 //>>>>>>>>>>>>>>>>>>>>>>>>
 
-    //exibiÃ§Ã£o do usuÃ¡rios
+    //exibição do usuários
 /*    public function perfil($id = null) {
         if (!$this->User->exists($id)) {
-            throw new NotFoundException(__('UsuÃ¡rio invÃ¡lido'));
+            throw new NotFoundException(__('Usuário inválido'));
         }
         $this->set('user', $this->User->findById($id));
     }
 */
-    //adicionar usuÃ¡rio
+    //adicionar usuário
     public function add() {
         $this->set('userId', $this->Auth->user('id'));
         $this->set('userRolesId', $this->Auth->user('roles_id'));
@@ -137,11 +200,11 @@ class UsuariosController extends AppController {
 
 
 
-    //editar usuÃ¡rio
+    //editar usuário
     public function edit($id = null) {
         $this->User->id = $id;
         if (!$this->User->exists()) {
-            throw new NotFoundException(__('UsuÃ¡rio invÃ¡lido'));
+            throw new NotFoundException(__('Usuário inválido'));
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->save($this->request->data)) {
@@ -156,6 +219,22 @@ class UsuariosController extends AppController {
         }
     }    
 
+
+    //foto do usuário
+    function foto($id) {
+        // le no banco o campo blob q refere a foto em função da mat 
+        $this->loadModel('Militar');
+        $this->Militar->recursive = -1;
+        $militar = $this->Militar->read('blb_foto', $id);
+
+        $foto = $militar['Militar']['blb_foto'];
+
+        if (empty($foto)) {
+            $foto = file_get_contents(WWW_ROOT . 'img' . DS . 'sem_foto.png');
+        }
+        $this->set('foto', $foto);
+        $this->layout = 'foto';
+    }
 
 }
 
@@ -172,7 +251,7 @@ class UsuariosController extends AppController {
                 $this->Session->setFlash('A sua senha foi alterada com sucesso!', 'default', array('class' => 'success'));
                 $this->redirect(array('action' => 'perfil'));
             } else {
-                $this->Session->setFlash('A sua senha nÃ£o pÃ´de ser alterada!Tente novamente!');
+                $this->Session->setFlash('A sua senha não pÃ´de ser alterada!Tente novamente!');
             }
         }
         if (empty($this->data)) {
@@ -199,7 +278,7 @@ class UsuariosController extends AppController {
 //            $this->redirect(array('Controller' => 'processos', 'action'=>'lista'));
             } else {
 
-                $this->Session->setFlash('Matricula e senha invÃ¡lidas! Por favor, tente novamente!', 'Flash/error_animated');
+                $this->Session->setFlash('Matricula e senha inválidas! Por favor, tente novamente!', 'Flash/error_animated');
             }
         }
     }
@@ -278,14 +357,14 @@ class UsuariosController extends AppController {
             $usuario = $this->Usuario->find('first', array('fields'=>array('mat_usuario', 'grupo_sgo', 'cpf'), 'conditions' => array('mat_usuario' => $this->request->data['Usuario']['mat_busca'])));
             
             if(empty($usuario)){
-                $this->Session->setFlash('UsuÃ¡rio nÃ£o encontrado.', 'Flash/error');
+                $this->Session->setFlash('Usuário não encontrado.', 'Flash/error');
             }
             $this->set(compact('perfis', 'usuario'));
         }
     }
 
     function edit_perfil() {
-        //Faz a alteraÃ§Ã£o
+        //Faz a alteração
         if ($this->request->is('post')) {
             $this->loadModel('Usuario');
             $this->Usuario->create();
@@ -311,7 +390,7 @@ class UsuariosController extends AppController {
 //tirado do app folgas
 /*
 
-    //funÃ§Ãµes executadas sem autenticaÃ§Ã£o (add)
+    //funções executadas sem autenticação (add)
     public function beforeFilter() {
         parent::beforeFilter();
         $this->Auth->allow('add');
@@ -324,13 +403,13 @@ class UsuariosController extends AppController {
         }
         $this->User->id = $id;
         if (!$this->User->exists()) {
-            throw new NotFoundException(__('UsuÃ¡rio invÃ¡lido'));
+            throw new NotFoundException(__('Usuário inválido'));
         }
         if ($this->User->delete()) {
             $this->Flash->success(__('Militar removido'));
             $this->redirect(array('action' => 'index'));
         }
-        $this->Flash->error(__('Erro, militar nÃ£o removido'));
+        $this->Flash->error(__('Erro, militar não removido'));
         $this->redirect(array('action' => 'index'));
     }
 
@@ -347,7 +426,7 @@ class UsuariosController extends AppController {
     public function criar_aro_grupos() {
     $aro = $this->Acl->Aro;
 
-        //CriaÃ§Ã£o do array com descriÃ§Ã£o dos grupos
+        //Criação do array com descrição dos grupos
         $groups = array(
             0 => array(
                 'alias' => 'administrador'
@@ -360,7 +439,7 @@ class UsuariosController extends AppController {
             ),
         );
 
-        // IteraÃ§ao para criaÃ§Ã£o do ARO grupo
+        // Iteraçao para criação do ARO grupo
         foreach ($groups as $data) {
             // Remember to call create() when saving in loops...
             $aro->create();
@@ -369,7 +448,7 @@ class UsuariosController extends AppController {
             $aro->save($data);
         }
 
-        $this->Flash->success('Grupo de usuÃ¡rios criado');
+        $this->Flash->success('Grupo de usuários criado');
         $this->redirect(array('action' => 'index'));
         // Other action logic goes here...
     }
@@ -408,7 +487,7 @@ class UsuariosController extends AppController {
             $aro->save($data);
         }
 
-        $this->Flash->success('Grupo de usuÃ¡rios criado');
+        $this->Flash->success('Grupo de usuários criado');
         $this->redirect(array('action' => 'index'));
 
         // Other action logic goes here...

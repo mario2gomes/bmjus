@@ -6,6 +6,6 @@ class Militar extends AppModel {
     public $name = 'Militar';
     public $useDbConfig = 'bmrh';
     public $useTable = 'militares';
-	
+	var $actsAs = array('blob');
 }
 ?>

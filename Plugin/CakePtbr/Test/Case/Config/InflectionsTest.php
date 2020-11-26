@@ -1,6 +1,6 @@
 <?php
 /**
- * Testes das regras de pluralizaÃ§Ã£o e singularizaÃ§Ã£o
+ * Testes das regras de pluralização e singularização
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
@@ -100,9 +100,9 @@ class CakePtbrInflectionsCase extends CakeTestCase {
  * @access public
  */
 	public function testSlug() {
-		$this->assertEqual(Inflector::slug('JoÃ£o'), 'Joao');
-		$this->assertEqual(Inflector::slug('ConseqÃ¼Ãªncia'), 'Consequencia');
-		$this->assertEqual(Inflector::slug('LinguiÃ§a nÃ£o Ãºtil Ã¡gua'), 'Linguica_nao_util_agua');
+		$this->assertEqual(Inflector::slug('João'), 'Joao');
+		$this->assertEqual(Inflector::slug('ConseqÃ¼ência'), 'Consequencia');
+		$this->assertEqual(Inflector::slug('Linguiça não útil água'), 'Linguica_nao_util_agua');
 		$this->assertEqual(Inflector::slug('ÃƒÃ“&'), 'AOe');
 		$this->assertEqual(Inflector::slug('Ã¤Ã¼ au Sandoval'), 'au_au_Sandoval');
 	}

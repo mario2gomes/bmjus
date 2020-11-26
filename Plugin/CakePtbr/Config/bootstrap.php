@@ -1,6 +1,6 @@
 <?php
 /**
- * Arquivo para adaptaÃ§Ã£o da aplicaÃ§Ã£o para PortuguÃªs-Brasil
+ * Arquivo para adaptação da aplicação para Português-Brasil
  *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
@@ -10,8 +10,8 @@
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 
-// TraduÃ§Ã£o das mensagens do core
+// Tradução das mensagens do core
 include CakePlugin::path('CakePtbr') . 'Config' . DS . 'traducao_core.php';
 
-// AlteraÃ§Ã£o das regras de inflections
+// Alteração das regras de inflections
 include CakePlugin::path('CakePtbr') . 'Config' . DS . 'inflections.php';
