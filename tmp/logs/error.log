@@ -41207,3 +41207,419 @@ Stack Trace:
 #1 C:\wamp64\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ArosController), Object(CakeRequest))
 #2 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2020-11-26 14:58:00 Error: [MissingControllerException] Controller class User.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'User.pngController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/user.png
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 14:58:24 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 14:58:25 Error: [MissingActionException] Action ArosController::admin_user.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'ArosController',
+  'action' => 'admin_user.png',
+)
+Request URL: /sistemas/bmjus/admin/acl/aros/user.png
+Stack Trace:
+#0 C:\wamp64\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp64\www\cakebase2x\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(ArosController), Object(CakeRequest))
+#2 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2020-11-26 14:58:25 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:20:14 Error: [MissingControllerException] Controller class User.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'User.pngController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/user.png
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:20:14 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:20:29 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:20:30 Error: [MissingControllerException] Controller class User.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'User.pngController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/user.png
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:21:03 Error: [MissingControllerException] Controller class User.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'User.pngController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/user.png
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:21:03 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:21:24 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:21:25 Error: [MissingControllerException] Controller class User.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'User.pngController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/user.png
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:22:45 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:22:45 Error: [MissingControllerException] Controller class User.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'User.pngController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/user.png
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:33:22 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:34:03 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:34:28 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:34:56 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:35:09 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:40:20 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:40:32 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:40:51 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:41:34 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:42:00 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:42:12 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:42:58 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:43:14 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:52:20 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-11-26 15:52:23 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-12-03 15:48:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-12-03 15:48:19 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-12-09 14:07:04 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-12-09 14:07:26 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-12-09 14:07:30 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-12-10 10:05:05 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-12-14 12:49:25 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-12-14 15:22:15 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-12-14 15:22:18 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-12-14 15:26:10 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-12-14 15:26:20 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-12-14 15:27:09 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-12-14 15:27:11 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-12-14 15:27:12 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-12-14 15:28:48 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-12-14 15:48:25 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2020-12-14 15:49:17 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /sistemas/bmjus/js/plugins/demo/peity-demo.js
+Stack Trace:
+#0 C:\wamp64\www\sistemas\bmjus\webroot\index.php(123): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
